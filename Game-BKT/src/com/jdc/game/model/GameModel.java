@@ -1,4 +1,4 @@
-package com.jdc.game;
+package com.jdc.game.model;
 
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -6,7 +6,7 @@ import java.util.Collections;
 import java.util.List;
 import java.util.stream.Collectors;
 
-import com.jdc.game.GameItem.Item;
+import com.jdc.game.model.GameItem.Item;
 
 public class GameModel {
 

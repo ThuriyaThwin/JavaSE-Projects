@@ -1,4 +1,4 @@
-package com.jdc.game;
+package com.jdc.game.model;
 
 import java.io.File;
 

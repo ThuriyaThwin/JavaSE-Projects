@@ -1,6 +1,9 @@
-package com.jdc.game;
+package com.jdc.game.utils;
 
 import java.util.function.Consumer;
+
+import com.jdc.game.controller.GameController;
+import com.jdc.game.model.GameItem;
 
 import javafx.animation.Animation.Status;
 import javafx.animation.ScaleTransition;
@@ -20,7 +23,7 @@ public class GameItemButton extends VBox {
 		setAlignment(Pos.CENTER);
 		setSpacing(10);
 		setPrefWidth(100);
-		Image image = new Image(this.getClass().getResourceAsStream(item.getImage())); 
+		Image image = new Image(GameController.class.getResourceAsStream(item.getImage())); 
 		ImageView imageView = new ImageView(image);
 		imageView.setFitHeight(80);
 		imageView.setPreserveRatio(true);

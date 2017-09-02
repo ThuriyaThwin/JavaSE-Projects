@@ -1,10 +1,17 @@
-package com.jdc.game;
+package com.jdc.game.controller;
 
 import java.io.File;
 import java.net.URL;
 import java.util.List;
 import java.util.ResourceBundle;
 import java.util.stream.Collectors;
+
+import com.jdc.game.model.GameItem;
+import com.jdc.game.model.GameModel;
+import com.jdc.game.model.GameResult;
+import com.jdc.game.utils.CharacterAnimation;
+import com.jdc.game.utils.GameItemButton;
+import com.jdc.game.utils.SideAnimation;
 
 import javafx.animation.ParallelTransition;
 import javafx.animation.PauseTransition;

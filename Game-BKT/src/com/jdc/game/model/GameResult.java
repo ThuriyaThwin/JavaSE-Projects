@@ -1,4 +1,4 @@
-package com.jdc.game;
+package com.jdc.game.model;
 
 import javafx.beans.binding.StringBinding;
 import javafx.beans.property.IntegerProperty;

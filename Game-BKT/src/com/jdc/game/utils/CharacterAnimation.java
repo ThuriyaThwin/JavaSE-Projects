@@ -1,4 +1,4 @@
-package com.jdc.game;
+package com.jdc.game.utils;
 
 import javafx.animation.ScaleTransition;
 import javafx.animation.SequentialTransition;
