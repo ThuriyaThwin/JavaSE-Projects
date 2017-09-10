@@ -7,6 +7,14 @@ public class Course {
 	private int fees;
 	private double duration;
 	private String description;
+	
+	public String getFeesStr() {
+		return String.format("%d MMK", fees);
+	}
+	
+	public String getDurationStr() {
+		return String.format("%f Month", duration);
+	}
 
 	public int getId() {
 		return id;

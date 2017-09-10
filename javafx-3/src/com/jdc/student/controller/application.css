@@ -19,7 +19,12 @@
 }
 
 .ContentPane {
-	
+	-fx-pref-width: 900px;
+	-fx-pref-height: 640px;
+}
+
+.Padding20 {
+	-fx-padding: 20;
 }
 
 .MessagePane {

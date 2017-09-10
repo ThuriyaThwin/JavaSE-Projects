@@ -7,7 +7,13 @@ import java.util.ResourceBundle;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.ComboBox;
+import javafx.scene.control.ContextMenu;
 import javafx.scene.control.Label;
+import javafx.scene.control.ListView;
+import javafx.scene.control.MenuItem;
+import javafx.scene.control.TableColumn;
+import javafx.scene.control.TableView;
+import javafx.scene.control.cell.PropertyValueFactory;
 
 public class CollectionController implements Initializable {
 
@@ -24,6 +30,16 @@ public class CollectionController implements Initializable {
 	private Label lab2;
 	@FXML
 	private Label lab3;
+	
+	@FXML
+	private ListView<Course> list1;
+	@FXML
+	private ListView<String> list2;
+	
+	@FXML
+	private TableView<Course> table;
+	@FXML
+	private TableColumn<Course, String> nameColumn; 
 	
 	public void show() {
 		String str1 = comb1.getValue();
@@ -53,6 +69,7 @@ public class CollectionController implements Initializable {
 	@Override
 	public void initialize(URL location, ResourceBundle resources) {
 		
+		// Combo Box
 		comb1.getItems().add("Hello");
 		comb1.getItems().add("Java");
 		comb1.getItems().add("Android");
@@ -64,6 +81,27 @@ public class CollectionController implements Initializable {
 			.addAll(CourseModel.getModel().getCourses());
 	
 		clear();
+		
+		// List View
+		list1.getItems().addAll(CourseModel.getModel().getCourses());
+		list1.setOnMouseClicked(event -> {
+			Course c = list1.getSelectionModel().getSelectedItem();
+			list2.getItems().add(c.getName());
+		});
+		
+		MenuItem delete = new MenuItem("Delete");
+		delete.setOnAction(event -> {
+			int index = list2.getSelectionModel().getSelectedIndex();
+			if(index >= 0) {
+				list2.getItems().remove(index);
+			}
+		});
+		
+		list2.setContextMenu(new ContextMenu(delete));
+		
+		// table view
+		nameColumn.setCellValueFactory(new PropertyValueFactory<>("name"));
+		table.getItems().addAll(CourseModel.getModel().getCourses());
 	}
 
 }
