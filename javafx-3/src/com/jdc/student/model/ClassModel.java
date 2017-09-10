@@ -10,6 +10,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import com.jdc.student.model.entity.Class;
+import com.jdc.student.model.entity.Course;
 import com.jdc.student.model.vo.ClassVO;
 
 public class ClassModel {
@@ -90,21 +91,21 @@ public class ClassModel {
 	}
 
 	public List<ClassVO> find() {
-		return find(0, null, 0);
+		return find(null, null, 0);
 	}
 
-	public List<ClassVO> find(int courseId) {
-		return find(courseId, null, 0);
+	public List<ClassVO> find(Course course) {
+		return find(course, null, 0);
 	}
 
-	public List<ClassVO> find(int courseId, LocalDate dateFrom, int fees) {
+	public List<ClassVO> find(Course course, LocalDate dateFrom, int fees) {
 		StringBuilder sb = new StringBuilder("select * from class where 1 = 1 ");
 		List<Object> params = new ArrayList<>();
 		List<ClassVO> result = new ArrayList<>();
 		
-		if(courseId > 0) {
+		if(course != null) {
 			sb.append("and course_id = ? ");
-			params.add(courseId);
+			params.add(course.getId());
 		}
 		
 		if(null != dateFrom) {

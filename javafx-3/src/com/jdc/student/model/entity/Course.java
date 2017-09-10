@@ -56,4 +56,8 @@ public class Course {
 		this.description = description;
 	}
 
+	@Override
+	public String toString() {
+		return name;
+	}
 }
