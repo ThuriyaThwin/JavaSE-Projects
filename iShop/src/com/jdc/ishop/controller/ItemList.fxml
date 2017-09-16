@@ -10,8 +10,7 @@
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.VBox?>
 
-
-<VBox styleClass="ContentView" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/8.0.111" fx:controller="com.jdc.ishop.controller.ItemList">
+<VBox styleClass="ContentView" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.jdc.ishop.controller.ItemList">
    <stylesheets>
       <URL value="@color.css" />
       <URL value="@layout.css" />
@@ -20,9 +19,9 @@
       <HBox>
          <children>
             <ComboBox fx:id="schCategory" prefHeight="27.0" prefWidth="183.0" promptText="Category" />
-            <TextField fx:id="priceFrom" prefHeight="27.0" prefWidth="180.0" promptText="Price From" />
-            <TextField fx:id="priceTo" layoutX="193.0" layoutY="10.0" prefHeight="27.0" prefWidth="168.0" promptText="Price To" />
-            <TextField fx:id="schName" layoutX="400.0" layoutY="10.0" prefHeight="27.0" prefWidth="163.0" promptText="Name" />
+            <TextField fx:id="priceFrom" prefHeight="27.0" prefWidth="140.0" promptText="Price From" />
+            <TextField fx:id="priceTo" layoutX="193.0" layoutY="10.0" prefHeight="27.0" prefWidth="140.0" promptText="Price To" />
+            <TextField fx:id="schName" layoutX="400.0" layoutY="10.0" prefHeight="27.0" prefWidth="163.0" promptText="Name" HBox.hgrow="ALWAYS" />
             <Button mnemonicParsing="false" onAction="#clear" text="CLEAR" />
             <Button mnemonicParsing="false" onAction="#addNew" text="ADD NEW" />
          </children>
