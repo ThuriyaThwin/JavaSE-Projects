@@ -43,7 +43,7 @@ public class ManagerHome implements Initializable {
 
     @FXML
     void showHome(MouseEvent event) {
-    	loadView("Admin Home", "Home.fxml");
+    	loadView("iShop Manager", "Home.fxml");
     }
 
     @FXML

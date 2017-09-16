@@ -6,7 +6,6 @@
 <?import javafx.scene.chart.BarChart?>
 <?import javafx.scene.chart.CategoryAxis?>
 <?import javafx.scene.chart.NumberAxis?>
-<?import javafx.scene.chart.PieChart?>
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.DatePicker?>
 <?import javafx.scene.control.Label?>
@@ -15,8 +14,7 @@
 <?import javafx.scene.shape.SVGPath?>
 <?import javafx.scene.text.Font?>
 
-
-<VBox spacing="20.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/8.0.111">
+<VBox spacing="20.0" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1">
    <stylesheets>
       <URL value="@color.css" />
       <URL value="@layout.css" />
@@ -24,7 +22,7 @@
    <children>
       <HBox prefHeight="312.0" prefWidth="900.0">
          <children>
-            <BarChart prefHeight="312.0" prefWidth="600.0">
+            <BarChart prefHeight="312.0" prefWidth="600.0" HBox.hgrow="ALWAYS">
               <xAxis>
                 <CategoryAxis side="BOTTOM" />
               </xAxis>
@@ -32,7 +30,6 @@
                 <NumberAxis side="LEFT" />
               </yAxis>
             </BarChart>
-            <PieChart prefHeight="333.0" prefWidth="299.0" />
          </children>
       </HBox>
       <HBox spacing="10.0">
@@ -45,7 +42,7 @@
             <Insets left="45.0" />
          </padding>
       </HBox>
-      <HBox styleClass="Space10">
+      <HBox spacing="30.0">
          <children>
             <VBox alignment="CENTER" prefHeight="120.0" prefWidth="220.0" styleClass="back4">
                <children>
@@ -79,7 +76,7 @@
             </VBox>
             <VBox alignment="CENTER" layoutX="55.0" layoutY="10.0" prefHeight="120.0" prefWidth="220.0" styleClass="back4">
                <children>
-                  <HBox alignment="BOTTOM_LEFT" spacing="10.0">
+                  <HBox alignment="BOTTOM_LEFT" maxHeight="95.0" minHeight="95.0" prefHeight="95.0" spacing="10.0">
                      <children>
                         <SVGPath content="M-24-7v80L1,48l25,25V-7H-24z" fill="WHITE">
                            <HBox.margin>
