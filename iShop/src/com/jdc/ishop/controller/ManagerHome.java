@@ -13,6 +13,7 @@ import javafx.application.Platform;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
+import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.control.Label;
 import javafx.scene.input.MouseEvent;
@@ -66,6 +67,8 @@ public class ManagerHome implements Initializable {
 		loadView("Admin Home", "Home.fxml");
 	}
 
+	Node oldView = null;
+
 	public void loadView(String title, String viewName) {
 		clearMessage();
 		
@@ -92,7 +95,9 @@ public class ManagerHome implements Initializable {
 			// load view
 			Parent view = FXMLLoader.load(getClass().getResource(viewName));
 			view.setLayoutX(1180);
-			contextView.getChildren().clear();
+			if(contextView.getChildren().size() > 0) {
+				oldView = contextView.getChildren().get(0);
+			}
 			contextView.getChildren().add(view);
 			
 			// set to context view
@@ -103,6 +108,12 @@ public class ManagerHome implements Initializable {
 			
 			trans.setAutoReverse(false);
 			trans.setCycleCount(1);
+			
+			trans.setOnFinished(a -> {
+				if(null != oldView) {
+					contextView.getChildren().remove(oldView);
+				}
+			});
 			
 			ParallelTransition move = new ParallelTransition(titleTrans, trans);
 			move.play();
