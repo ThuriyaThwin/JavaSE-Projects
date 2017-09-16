@@ -10,33 +10,36 @@
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.VBox?>
 
-<VBox xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.jdc.ishop.controller.MemberList">
+<VBox styleClass="ContentView" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.jdc.ishop.controller.MemberList">
    <stylesheets>
       <URL value="@color.css" />
       <URL value="@layout.css" />
    </stylesheets>
    <children>
-      <HBox styleClass="Space10">
+      <HBox>
          <children>
             <ComboBox fx:id="schRole" prefWidth="150.0" promptText="Search Role" />
             <TextField fx:id="schName" promptText="Search Name" />
             <Button mnemonicParsing="false" onAction="#clear" text="CLEAR" />
             <Button mnemonicParsing="false" onAction="#addNew" text="ADD NEW" />
          </children>
+         <styleClass>
+            <String fx:value="Space10" />
+            <String fx:value="Padding10" />
+         </styleClass>
       </HBox>
-      <TableView fx:id="table" prefHeight="200.0" prefWidth="200.0" VBox.vgrow="ALWAYS">
-        <columns>
-          <TableColumn prefWidth="150.0" text="Role" />
-          <TableColumn prefWidth="144.0" text="Login ID" />
-            <TableColumn prefWidth="200.0" text="Name" />
-            <TableColumn prefWidth="162.0" text="Phone" />
-            <TableColumn prefWidth="218.0" text="Email" />
-        </columns>
-      </TableView>
+      <VBox styleClass="Padding10" VBox.vgrow="ALWAYS">
+         <children>
+            <TableView fx:id="table" prefHeight="200.0" prefWidth="200.0" VBox.vgrow="ALWAYS">
+              <columns>
+                <TableColumn prefWidth="150.0" text="Role" />
+                <TableColumn prefWidth="144.0" text="Login ID" />
+                  <TableColumn prefWidth="200.0" text="Name" />
+                  <TableColumn prefWidth="162.0" text="Phone" />
+                  <TableColumn prefWidth="218.0" text="Email" />
+              </columns>
+            </TableView>
+         </children>
+      </VBox>
    </children>
-   <styleClass>
-      <String fx:value="ContentView" />
-      <String fx:value="Padding10" />
-      <String fx:value="Space10" />
-   </styleClass>
 </VBox>

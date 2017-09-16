@@ -53,6 +53,7 @@
 .ContentView {
 	-fx-pref-width: 900px;
 	-fx-pref-height: 520px;
+	-fx-padding: 0 0 0 10;
 }
 
 .BrandLogo {
