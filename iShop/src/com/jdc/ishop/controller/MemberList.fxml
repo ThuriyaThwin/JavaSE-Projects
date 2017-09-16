@@ -20,8 +20,16 @@
          <children>
             <ComboBox fx:id="schRole" prefWidth="150.0" promptText="Search Role" styleClass="back2" />
             <TextField fx:id="schName" promptText="Search Name" styleClass="back2" />
-            <Button mnemonicParsing="false" onAction="#clear" styleClass="back3" text="CLEAR" />
-            <Button mnemonicParsing="false" onAction="#addNew" styleClass="back3" text="ADD NEW" />
+            <Button mnemonicParsing="false" onAction="#clear" text="CLEAR">
+               <styleClass>
+                  <String fx:value="back3" />
+                  <String fx:value="text1" />
+               </styleClass></Button>
+            <Button mnemonicParsing="false" onAction="#addNew" text="ADD NEW">
+               <styleClass>
+                  <String fx:value="back3" />
+                  <String fx:value="text1" />
+               </styleClass></Button>
          </children>
          <styleClass>
             <String fx:value="Space10" />

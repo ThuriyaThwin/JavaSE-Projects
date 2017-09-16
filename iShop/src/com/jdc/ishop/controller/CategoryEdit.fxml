@@ -18,8 +18,8 @@
    <children>
       <HBox>
          <children>
-            <SVGPath content="M6 0v32l10-10 10 10v-32z" />
-            <Label fx:id="title" text="Add Category" />
+            <SVGPath content="M6 0v32l10-10 10 10v-32z" styleClass="text1" />
+            <Label fx:id="title" styleClass="text1" text="Add Category" />
          </children>
          <styleClass>
             <String fx:value="LoginTitlePane" />
@@ -36,14 +36,23 @@
                      <styleClass>
                         <String fx:value="AlignLeft" />
                         <String fx:value="back2" />
+                        <String fx:value="text1" />
                      </styleClass></TextField>
                </children>
             </VBox>
             <CheckBox fx:id="deleteFlag" mnemonicParsing="false" styleClass="text4" text="Sole Out" />
             <HBox styleClass="Space10">
                <children>
-                  <Button mnemonicParsing="false" onAction="#close" styleClass="back3" text="CLOSE" />
-                  <Button layoutX="10.0" layoutY="10.0" mnemonicParsing="false" onAction="#save" styleClass="back3" text="SAVE" />
+                  <Button mnemonicParsing="false" onAction="#close" text="CLOSE">
+                     <styleClass>
+                        <String fx:value="back3" />
+                        <String fx:value="text1" />
+                     </styleClass></Button>
+                  <Button layoutX="10.0" layoutY="10.0" mnemonicParsing="false" onAction="#save" text="SAVE">
+                     <styleClass>
+                        <String fx:value="back3" />
+                        <String fx:value="text1" />
+                     </styleClass></Button>
                </children>
             </HBox>
          </children>

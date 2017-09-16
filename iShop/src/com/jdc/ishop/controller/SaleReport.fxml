@@ -23,7 +23,11 @@
             <DatePicker fx:id="schDateFrom" promptText="Date From" />
             <DatePicker fx:id="schDateTo" promptText="Date To" />
             <TextField fx:id="schEmployee" promptText="Sale Employee" styleClass="back2" HBox.hgrow="ALWAYS" />
-            <Button mnemonicParsing="false" onAction="#clear" styleClass="back3" text="CLEAR" />
+            <Button mnemonicParsing="false" onAction="#clear" text="CLEAR">
+               <styleClass>
+                  <String fx:value="back3" />
+                  <String fx:value="text1" />
+               </styleClass></Button>
          </children>
          <styleClass>
             <String fx:value="Padding10" />

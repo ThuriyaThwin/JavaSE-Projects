@@ -17,9 +17,17 @@
    <children>
       <HBox>
          <children>
-            <TextField fx:id="schName" prefHeight="27.0" prefWidth="236.0" styleClass="back2" />
-            <Button mnemonicParsing="false" onAction="#clear" styleClass="back3" text="CLEAR" />
-            <Button mnemonicParsing="false" onAction="#addNew" styleClass="back3" text="ADD NEW" />
+            <TextField fx:id="schName" prefHeight="27.0" prefWidth="236.0" promptText="Category Name" styleClass="back2" />
+            <Button mnemonicParsing="false" onAction="#clear" text="CLEAR">
+               <styleClass>
+                  <String fx:value="back3" />
+                  <String fx:value="text1" />
+               </styleClass></Button>
+            <Button mnemonicParsing="false" onAction="#addNew" text="ADD NEW">
+               <styleClass>
+                  <String fx:value="back3" />
+                  <String fx:value="text1" />
+               </styleClass></Button>
          </children>
          <styleClass>
             <String fx:value="Space10" />

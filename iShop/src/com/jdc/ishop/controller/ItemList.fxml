@@ -18,12 +18,38 @@
    <children>
       <HBox>
          <children>
-            <ComboBox fx:id="schCategory" prefHeight="27.0" prefWidth="183.0" promptText="Category" styleClass="back2" />
-            <TextField fx:id="priceFrom" prefHeight="27.0" prefWidth="140.0" promptText="Price From" styleClass="back2" />
-            <TextField fx:id="priceTo" layoutX="193.0" layoutY="10.0" prefHeight="27.0" prefWidth="140.0" promptText="Price To" styleClass="back2" />
-            <TextField fx:id="schName" layoutX="400.0" layoutY="10.0" prefHeight="27.0" prefWidth="163.0" promptText="Name" styleClass="back2" HBox.hgrow="ALWAYS" />
-            <Button mnemonicParsing="false" onAction="#clear" styleClass="back3" text="CLEAR" />
-            <Button mnemonicParsing="false" onAction="#addNew" styleClass="back3" text="ADD NEW" />
+            <ComboBox fx:id="schCategory" prefHeight="27.0" prefWidth="183.0" promptText="Category">
+               <styleClass>
+                  <String fx:value="back2" />
+                  <String fx:value="text1" />
+               </styleClass>
+            </ComboBox>
+            <TextField fx:id="priceFrom" prefHeight="27.0" prefWidth="140.0" promptText="Price From">
+               <styleClass>
+                  <String fx:value="back2" />
+                  <String fx:value="text4" />
+               </styleClass>
+            </TextField>
+            <TextField fx:id="priceTo" layoutX="193.0" layoutY="10.0" prefHeight="27.0" prefWidth="140.0" promptText="Price To">
+               <styleClass>
+                  <String fx:value="back2" />
+                  <String fx:value="text4" />
+               </styleClass></TextField>
+            <TextField fx:id="schName" layoutX="400.0" layoutY="10.0" prefHeight="27.0" prefWidth="163.0" promptText="Name" HBox.hgrow="ALWAYS">
+               <styleClass>
+                  <String fx:value="back2" />
+                  <String fx:value="text4" />
+               </styleClass></TextField>
+            <Button mnemonicParsing="false" onAction="#clear" text="CLEAR">
+               <styleClass>
+                  <String fx:value="back3" />
+                  <String fx:value="text1" />
+               </styleClass></Button>
+            <Button mnemonicParsing="false" onAction="#addNew" text="ADD NEW">
+               <styleClass>
+                  <String fx:value="back3" />
+                  <String fx:value="text1" />
+               </styleClass></Button>
          </children>
          <styleClass>
             <String fx:value="Padding10" />

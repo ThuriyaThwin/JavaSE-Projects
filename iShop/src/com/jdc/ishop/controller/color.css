@@ -1,31 +1,35 @@
 .back1 {
-	-fx-background-color: #e0f7fa;	
+	-fx-background-color: #efebe9;	
 }
 
 .back2 {
-	-fx-background-color: #80deea;	
+	-fx-background-color: #d7ccc8;	
 }
 
 .back3 {
-	-fx-background-color: #00bcd4;	
+	-fx-background-color: #795548;	
 }
 
 .back4 {
-	-fx-background-color: #006064;	
+	-fx-background-color: #3e2723;	
 }
 
 .text1 {
-	-fx-text-fill: #e0f7fa;
+	-fx-text-fill: #efebe9;
+	-fx-fill: #efebe9;
 }
 
 .text2 {
-	-fx-text-fill: #80deea;	
+	-fx-text-fill: #d7ccc8;	
+	-fx-fill: #d7ccc8;
 }
 
 .text3 {
-	-fx-text-fill: #00bcd4;	
+	-fx-text-fill: #795548;	
+	-fx-fill: #795548;
 }
 
 .text4 {
-	-fx-text-fill: #006064;	
+	-fx-text-fill: #3e2723;	
+	-fx-fill: #3e2723;
 }

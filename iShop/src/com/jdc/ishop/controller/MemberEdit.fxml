@@ -19,12 +19,12 @@
    <children>
       <HBox>
          <children>
-            <SVGPath content="M18 22.082v-1.649c2.203-1.241 4-4.337 4-7.432 0-4.971 0-9-6-9s-6 4.029-6 9c0 3.096 1.797 6.191 4 7.432v1.649c-6.784 0.555-12 3.888-12 7.918h28c0-4.030-5.216-7.364-12-7.918z" />
-            <Label fx:id="title" text="Edit Member" />
+            <SVGPath content="M18 22.082v-1.649c2.203-1.241 4-4.337 4-7.432 0-4.971 0-9-6-9s-6 4.029-6 9c0 3.096 1.797 6.191 4 7.432v1.649c-6.784 0.555-12 3.888-12 7.918h28c0-4.030-5.216-7.364-12-7.918z" styleClass="text1" />
+            <Label fx:id="title" styleClass="text1" text="Edit Member" />
          </children>
          <styleClass>
             <String fx:value="LoginTitlePane" />
-            <String fx:value="back2" />
+            <String fx:value="back3" />
             <String fx:value="Space10" />
          </styleClass>
       </HBox>
@@ -64,8 +64,16 @@
             </HBox>
             <HBox styleClass="Space10">
                <children>
-                  <Button mnemonicParsing="false" onAction="#close" styleClass="back3" text="CLOSE" />
-                  <Button mnemonicParsing="false" onAction="#save" styleClass="back3" text="SAVE" />
+                  <Button mnemonicParsing="false" onAction="#close" text="CLOSE">
+                     <styleClass>
+                        <String fx:value="back3" />
+                        <String fx:value="text1" />
+                     </styleClass></Button>
+                  <Button mnemonicParsing="false" onAction="#save" text="SAVE">
+                     <styleClass>
+                        <String fx:value="back3" />
+                        <String fx:value="text1" />
+                     </styleClass></Button>
                </children>
             </HBox>
          </children>
