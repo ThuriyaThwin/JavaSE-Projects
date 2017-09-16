@@ -1,0 +1,100 @@
+.LoginView {
+	-fx-pref-width: 480px;
+}
+
+.LoginTitlePane {
+	-fx-alignment: center;
+	-fx-padding: 20px;	
+}
+
+.LoginTitlePane Label {
+	-fx-font-size: 24px;
+}
+
+.loginForm {
+	-fx-padding: 40 80 40 80;
+	-fx-spacing: 20;
+}
+
+.loginForm PasswordField,
+.loginForm TextField {
+	-fx-alignment: center;
+}
+
+.AlignLeft {
+	-fx-alignment: center-left ;
+}
+
+.loginForm Button {
+	-fx-pref-width: 155px;
+}
+
+.AlignCenter {
+	-fx-alignment: center;
+}
+
+.Space10 {
+	-fx-spacing: 10;
+}
+
+.Padding10 {
+	-fx-padding: 10;
+}
+
+.MainView {
+	-fx-pref-width: 1180px;
+	-fx-pref-height: 720px;
+}
+
+.LeftView {
+	-fx-pref-width: 280px;
+}
+
+.ContentView {
+	-fx-pref-width: 900px;
+	-fx-pref-height: 520px;
+}
+
+.BrandLogo {
+	-fx-padding: 20px;
+}
+
+.BrandLogo Label {
+	-fx-font-size: 64px;
+	-fx-font-family: Arial;
+	-fx-font-weight: bold;
+}
+
+.MenuWrapper {
+	-fx-padding: 20;
+	-fx-spacing: 10;
+}
+
+.MenuWrapper HBox {
+	-fx-pref-width: 240px;
+	-fx-pref-height: 60px;
+	-fx-alignment: center-left ;
+	-fx-spacing: 10;
+	-fx-padding: 10;	
+}
+
+.MenuWrapper HBox Label {
+	-fx-font-size: 18px;
+}
+
+.TitleView {
+	-fx-pref-height: 114px;
+	-fx-alignment: center-left;
+	-fx-padding: 0 0.0 0.0 20;
+}
+
+.TitleView Label {
+	-fx-font-size: 36px;
+}
+
+.MessageView {
+	-fx-pref-height: 46px;
+	-fx-alignment: center-left;
+	-fx-padding: 0 0.0 0.0 20;
+}
+

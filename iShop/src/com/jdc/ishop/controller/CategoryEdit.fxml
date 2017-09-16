@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.String?>
+<?import java.net.URL?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.CheckBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.shape.SVGPath?>
+
+<VBox styleClass="LoginView" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.jdc.ishop.controller.CategoryEdit">
+   <stylesheets>
+      <URL value="@color.css" />
+      <URL value="@layout.css" />
+   </stylesheets>
+   <children>
+      <HBox>
+         <children>
+            <SVGPath content="M6 0v32l10-10 10 10v-32z" />
+            <Label fx:id="title" text="Add Category" />
+         </children>
+         <styleClass>
+            <String fx:value="LoginTitlePane" />
+            <String fx:value="Space10" />
+            <String fx:value="back3" />
+         </styleClass>
+      </HBox>
+      <VBox styleClass="loginForm">
+         <children>
+            <VBox>
+               <children>
+                  <Label text="Category Name" />
+                  <TextField fx:id="name" styleClass="AlignLeft" />
+               </children>
+            </VBox>
+            <CheckBox fx:id="deleteFlag" mnemonicParsing="false" text="Sole Out" />
+            <HBox styleClass="Space10">
+               <children>
+                  <Button mnemonicParsing="false" onAction="#close" text="CLOSE" />
+                  <Button layoutX="10.0" layoutY="10.0" mnemonicParsing="false" onAction="#save" text="SAVE" />
+               </children>
+            </HBox>
+         </children>
+      </VBox>
+   </children>
+</VBox>

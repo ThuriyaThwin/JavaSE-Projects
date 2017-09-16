@@ -1,0 +1,31 @@
+.back1 {
+	-fx-background-color: #e0f7fa;	
+}
+
+.back2 {
+	-fx-background-color: #80deea;	
+}
+
+.back3 {
+	-fx-background-color: #00bcd4;	
+}
+
+.back4 {
+	-fx-background-color: #006064;	
+}
+
+.text1 {
+	-fx-text-fill: #e0f7fa;
+}
+
+.text2 {
+	-fx-text-fill: #80deea;	
+}
+
+.text3 {
+	-fx-text-fill: #00bcd4;	
+}
+
+.text4 {
+	-fx-text-fill: #006064;	
+}
