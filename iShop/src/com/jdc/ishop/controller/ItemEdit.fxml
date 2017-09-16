@@ -32,31 +32,39 @@
          <children>
             <VBox>
                <children>
-                  <Label text="Category" />
+                  <Label styleClass="text4" text="Category" />
                   <HBox VBox.vgrow="ALWAYS">
                      <children>
-                        <ComboBox fx:id="category" prefHeight="27.0" prefWidth="320.0" HBox.hgrow="ALWAYS" />
+                        <ComboBox fx:id="category" prefHeight="27.0" prefWidth="320.0" styleClass="back2" HBox.hgrow="ALWAYS" />
                      </children>
                   </HBox>
                </children>
             </VBox>
             <VBox layoutX="90.0" layoutY="50.0">
                <children>
-                  <Label text="Item Name" />
-                  <TextField fx:id="name" />
+                  <Label styleClass="text4" text="Item Name" />
+                  <TextField fx:id="name">
+                     <styleClass>
+                        <String fx:value="back2" />
+                        <String fx:value="AlignLeft" />
+                     </styleClass></TextField>
                </children>
             </VBox>
             <VBox layoutX="90.0" layoutY="114.0">
                <children>
-                  <Label text="Price" />
-                  <TextField fx:id="price" />
+                  <Label styleClass="text4" text="Price" />
+                  <TextField fx:id="price">
+                     <styleClass>
+                        <String fx:value="back2" />
+                        <String fx:value="AlignLeft" />
+                     </styleClass></TextField>
                </children>
             </VBox>
-            <CheckBox fx:id="isSoldOut" mnemonicParsing="false" text="Sold Out" />
+            <CheckBox fx:id="isSoldOut" mnemonicParsing="false" styleClass="text4" text="Sold Out" />
             <HBox styleClass="Space10">
                <children>
-                  <Button mnemonicParsing="false" onAction="#save" text="CLOSE" />
-                  <Button layoutX="10.0" layoutY="10.0" mnemonicParsing="false" onAction="#save" text="SAVE" />
+                  <Button mnemonicParsing="false" onAction="#save" styleClass="back3" text="CLOSE" />
+                  <Button layoutX="10.0" layoutY="10.0" mnemonicParsing="false" onAction="#save" styleClass="back3" text="SAVE" />
                </children>
             </HBox>
          </children>

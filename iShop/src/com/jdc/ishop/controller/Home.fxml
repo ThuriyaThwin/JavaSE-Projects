@@ -14,7 +14,7 @@
 <?import javafx.scene.shape.SVGPath?>
 <?import javafx.scene.text.Font?>
 
-<VBox spacing="20.0" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1">
+<VBox spacing="20.0" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.jdc.ishop.controller.Home">
    <stylesheets>
       <URL value="@color.css" />
       <URL value="@layout.css" />
@@ -22,7 +22,7 @@
    <children>
       <HBox prefHeight="312.0" prefWidth="900.0">
          <children>
-            <BarChart prefHeight="312.0" prefWidth="600.0" HBox.hgrow="ALWAYS">
+            <BarChart fx:id="chart" prefHeight="312.0" prefWidth="600.0" HBox.hgrow="ALWAYS">
               <xAxis>
                 <CategoryAxis side="BOTTOM" />
               </xAxis>
@@ -34,9 +34,9 @@
       </HBox>
       <HBox spacing="10.0">
          <children>
-            <DatePicker promptText="Date From" />
-            <DatePicker promptText="Date To" />
-            <Button mnemonicParsing="false" prefHeight="27.0" prefWidth="136.0" text="RESET" />
+            <DatePicker fx:id="dateFrom" promptText="Date From" styleClass="back2" />
+            <DatePicker fx:id="dateTo" promptText="Date To" styleClass="back2" />
+            <Button mnemonicParsing="false" onAction="#reset" prefHeight="27.0" prefWidth="136.0" styleClass="back3" text="RESET" />
          </children>
          <padding>
             <Insets left="45.0" />
@@ -55,7 +55,7 @@
                         </SVGPath>
                         <HBox alignment="BOTTOM_RIGHT" HBox.hgrow="ALWAYS">
                            <children>
-                              <Label text="23" textFill="#fcfafa">
+                              <Label fx:id="members" text="23" textFill="#fcfafa">
                                  <font>
                                     <Font size="50.0" />
                                  </font>
@@ -85,7 +85,7 @@
                         </SVGPath>
                         <HBox alignment="BOTTOM_RIGHT" HBox.hgrow="ALWAYS">
                            <children>
-                              <Label text="23" textFill="#fcfafa">
+                              <Label fx:id="categories" text="23" textFill="#fcfafa">
                                  <font>
                                     <Font size="50.0" />
                                  </font>
@@ -118,7 +118,7 @@
                         </SVGPath>
                         <HBox alignment="BOTTOM_RIGHT" HBox.hgrow="ALWAYS">
                            <children>
-                              <Label text="23" textFill="#fcfafa">
+                              <Label fx:id="items" text="23" textFill="#fcfafa">
                                  <font>
                                     <Font size="50.0" />
                                  </font>

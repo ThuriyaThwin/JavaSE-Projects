@@ -31,15 +31,19 @@
          <children>
             <VBox>
                <children>
-                  <Label text="Category Name" />
-                  <TextField fx:id="name" styleClass="AlignLeft" />
+                  <Label styleClass="text4" text="Category Name" />
+                  <TextField fx:id="name">
+                     <styleClass>
+                        <String fx:value="AlignLeft" />
+                        <String fx:value="back2" />
+                     </styleClass></TextField>
                </children>
             </VBox>
-            <CheckBox fx:id="deleteFlag" mnemonicParsing="false" text="Sole Out" />
+            <CheckBox fx:id="deleteFlag" mnemonicParsing="false" styleClass="text4" text="Sole Out" />
             <HBox styleClass="Space10">
                <children>
-                  <Button mnemonicParsing="false" onAction="#close" text="CLOSE" />
-                  <Button layoutX="10.0" layoutY="10.0" mnemonicParsing="false" onAction="#save" text="SAVE" />
+                  <Button mnemonicParsing="false" onAction="#close" styleClass="back3" text="CLOSE" />
+                  <Button layoutX="10.0" layoutY="10.0" mnemonicParsing="false" onAction="#save" styleClass="back3" text="SAVE" />
                </children>
             </HBox>
          </children>

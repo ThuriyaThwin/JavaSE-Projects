@@ -9,8 +9,7 @@
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.VBox?>
 
-
-<VBox styleClass="ContentView" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/8.0.111" fx:controller="com.jdc.ishop.controller.CategoryList">
+<VBox styleClass="ContentView" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.jdc.ishop.controller.CategoryList">
    <stylesheets>
       <URL value="@color.css" />
       <URL value="@layout.css" />
@@ -18,9 +17,9 @@
    <children>
       <HBox>
          <children>
-            <TextField fx:id="schName" prefHeight="27.0" prefWidth="236.0" />
-            <Button mnemonicParsing="false" onAction="#clear" text="CLEAR" />
-            <Button mnemonicParsing="false" onAction="#addNew" text="ADD NEW" />
+            <TextField fx:id="schName" prefHeight="27.0" prefWidth="236.0" styleClass="back2" />
+            <Button mnemonicParsing="false" onAction="#clear" styleClass="back3" text="CLEAR" />
+            <Button mnemonicParsing="false" onAction="#addNew" styleClass="back3" text="ADD NEW" />
          </children>
          <styleClass>
             <String fx:value="Space10" />

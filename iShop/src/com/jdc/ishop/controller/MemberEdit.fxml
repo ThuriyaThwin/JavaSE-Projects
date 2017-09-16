@@ -11,8 +11,7 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.shape.SVGPath?>
 
-
-<VBox styleClass="LoginView" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/8.0.111" fx:controller="com.jdc.ishop.controller.MemberEdit">
+<VBox styleClass="LoginView" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.jdc.ishop.controller.MemberEdit">
    <stylesheets>
       <URL value="@color.css" />
       <URL value="@layout.css" />
@@ -33,32 +32,40 @@
          <children>
             <VBox>
                <children>
-                  <Label text="Member Name" />
-                  <TextField fx:id="name" styleClass="AlignLeft" />
+                  <Label styleClass="text4" text="Member Name" />
+                  <TextField fx:id="name">
+                     <styleClass>
+                        <String fx:value="AlignLeft" />
+                        <String fx:value="back2" />
+                     </styleClass></TextField>
                </children>
             </VBox>
             <VBox layoutX="90.0" layoutY="50.0">
                <children>
-                  <Label text="Login ID" />
-                  <TextField fx:id="loginId" styleClass="AlignLeft" />
+                  <Label styleClass="text4" text="Login ID" />
+                  <TextField fx:id="loginId">
+                     <styleClass>
+                        <String fx:value="AlignLeft" />
+                        <String fx:value="back2" />
+                     </styleClass></TextField>
                </children>
             </VBox>
             <VBox layoutX="90.0" layoutY="114.0">
                <children>
-                  <Label text="Password" />
-                  <PasswordField fx:id="password" />
+                  <Label styleClass="text4" text="Password" />
+                  <PasswordField fx:id="password" styleClass="back2" />
                </children>
             </VBox>
             <HBox styleClass="Space10">
                <children>
-                  <CheckBox fx:id="isAdmin" mnemonicParsing="false" text="Admin User" />
-                  <CheckBox fx:id="isDelete" mnemonicParsing="false" text="Delete" />
+                  <CheckBox fx:id="isAdmin" mnemonicParsing="false" styleClass="text4" text="Admin User" />
+                  <CheckBox fx:id="isDelete" mnemonicParsing="false" styleClass="text4" text="Delete" />
                </children>
             </HBox>
             <HBox styleClass="Space10">
                <children>
-                  <Button mnemonicParsing="false" onAction="#close" text="CLOSE" />
-                  <Button mnemonicParsing="false" onAction="#save" text="SAVE" />
+                  <Button mnemonicParsing="false" onAction="#close" styleClass="back3" text="CLOSE" />
+                  <Button mnemonicParsing="false" onAction="#save" styleClass="back3" text="SAVE" />
                </children>
             </HBox>
          </children>

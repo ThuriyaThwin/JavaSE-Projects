@@ -18,10 +18,10 @@
    <children>
       <HBox>
          <children>
-            <ComboBox fx:id="schRole" prefWidth="150.0" promptText="Search Role" />
-            <TextField fx:id="schName" promptText="Search Name" />
-            <Button mnemonicParsing="false" onAction="#clear" text="CLEAR" />
-            <Button mnemonicParsing="false" onAction="#addNew" text="ADD NEW" />
+            <ComboBox fx:id="schRole" prefWidth="150.0" promptText="Search Role" styleClass="back2" />
+            <TextField fx:id="schName" promptText="Search Name" styleClass="back2" />
+            <Button mnemonicParsing="false" onAction="#clear" styleClass="back3" text="CLEAR" />
+            <Button mnemonicParsing="false" onAction="#addNew" styleClass="back3" text="ADD NEW" />
          </children>
          <styleClass>
             <String fx:value="Space10" />
