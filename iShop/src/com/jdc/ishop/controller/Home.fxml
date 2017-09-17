@@ -14,7 +14,7 @@
 <?import javafx.scene.shape.SVGPath?>
 <?import javafx.scene.text.Font?>
 
-<VBox spacing="20.0" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.jdc.ishop.controller.Home">
+<VBox spacing="20.0" styleClass="ContentView" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.jdc.ishop.controller.Home">
    <stylesheets>
       <URL value="@color.css" />
       <URL value="@layout.css" />
@@ -147,8 +147,4 @@
          </padding>
       </HBox>
    </children>
-   <styleClass>
-      <String fx:value="ContentView" />
-      <String fx:value="back1" />
-   </styleClass>
 </VBox>

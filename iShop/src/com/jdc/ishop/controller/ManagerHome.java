@@ -15,9 +15,12 @@ import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.Node;
 import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.scene.control.Label;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.StackPane;
+import javafx.stage.Stage;
+import javafx.stage.StageStyle;
 import javafx.util.Duration;
 
 public class ManagerHome implements Initializable {
@@ -61,7 +64,21 @@ public class ManagerHome implements Initializable {
     	loadView("Sale Reports", "SaleReport.fxml");
     }
 
-	@Override
+    @FXML
+    void showPos(MouseEvent event) {
+    	
+    	try {
+        	Stage stage = new Stage(StageStyle.UNDECORATED);
+        	stage.setScene(new Scene(FXMLLoader.load(getClass().getResource("SaleHome.fxml"))));
+        	stage.show();
+        	
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		
+    }
+
+    @Override
 	public void initialize(URL location, ResourceBundle resources) {
 		// show home view
 		loadView("Admin Home", "Home.fxml");

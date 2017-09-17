@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.String?>
+<?import java.net.URL?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+
+
+<VBox xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/8.0.111">
+   <stylesheets>
+      <URL value="@color.css" />
+      <URL value="@layout.css" />
+   </stylesheets>
+   <children>
+      <HBox>
+         <children>
+            <ComboBox prefHeight="27.0" prefWidth="203.0" promptText="Category" />
+            <DatePicker promptText="Date From" />
+            <DatePicker promptText="Date To" />
+         </children>
+         <styleClass>
+            <String fx:value="Space10" />
+            <String fx:value="AlignLeft" />
+         </styleClass>
+      </HBox>
+      <TableView prefHeight="200.0" prefWidth="200.0" VBox.vgrow="ALWAYS">
+        <columns>
+          <TableColumn prefWidth="114.0" text="Invoice Number" />
+          <TableColumn prefWidth="160.99996948242188" text="Date" />
+            <TableColumn prefWidth="125.0" text="Time" />
+            <TableColumn prefWidth="144.0" text="Sale Person" />
+            <TableColumn prefWidth="143.0" text="Status" />
+            <TableColumn prefWidth="104.0" text="Quentity" />
+            <TableColumn prefWidth="136.0" text="Sub Total" />
+            <TableColumn prefWidth="95.0" text="Tax" />
+            <TableColumn prefWidth="115.0" text="Total" />
+        </columns>
+      </TableView>
+   </children>
+   <styleClass>
+      <String fx:value="posContext" />
+      <String fx:value="Space20" />
+   </styleClass>
+</VBox>
