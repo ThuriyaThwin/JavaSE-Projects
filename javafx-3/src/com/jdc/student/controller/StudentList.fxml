@@ -1,8 +1,52 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import java.lang.String?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.VBox?>
+<?import javafx.scene.control.cell.PropertyValueFactory?>
 
-<VBox xmlns:fx="http://javafx.com/fxml/1">
-	<!-- TODO Add Nodes -->
+<VBox stylesheets="@application.css" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.jdc.student.controller.StudentList">
+	<children>
+		<HBox alignment="CENTER_LEFT" styleClass="spacing10">
+			<children>
+				<Label text="Name" />
+				<TextField fx:id="name" prefHeight="27.0" prefWidth="192.0" />
+				<Label text="Phone" />
+				<TextField fx:id="phone" prefHeight="27.0" prefWidth="203.0" />
+			</children>
+		</HBox>
+		<TableView fx:id="table" prefHeight="200.0" prefWidth="200.0" VBox.vgrow="ALWAYS">
+			<columns>
+				<TableColumn prefWidth="70.0" text="ID" >
+					<cellValueFactory>
+						<PropertyValueFactory property="id" />
+					</cellValueFactory>
+				</TableColumn>
+				<TableColumn prefWidth="239.0" text="Name" >
+					<cellValueFactory>
+						<PropertyValueFactory property="name" />
+					</cellValueFactory>
+				</TableColumn>
+				<TableColumn prefWidth="194.0" text="Phone" >
+					<cellValueFactory>
+						<PropertyValueFactory property="phone" />
+					</cellValueFactory>
+				</TableColumn>
+				<TableColumn prefWidth="355.0" text="Email Address" >
+					<cellValueFactory>
+						<PropertyValueFactory property="email" />
+					</cellValueFactory>
+				</TableColumn>
+			</columns>
+		</TableView>
+	</children>
+	<styleClass>
+		<String fx:value="ContentPane" />
+		<String fx:value="Padding20" />
+		<String fx:value="spacing10" />
+	</styleClass>
 </VBox>
-

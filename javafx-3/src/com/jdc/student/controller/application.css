@@ -38,7 +38,6 @@ TextField, PasswordField, TextArea, DatePicker, .combo-box .list-cell  {
 }
 
 
-
 .table-view{
    -fx-background-color: transparent;
 }
@@ -136,6 +135,10 @@ Button {
 .MenuWrapper {
 	-fx-spacing: 10px;
 	-fx-padding: 20px;
+}
+
+.spacing10 {
+	-fx-spacing: 10;
 }
 
 .MenuWrapper Label {

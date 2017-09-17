@@ -41,7 +41,7 @@ public class ClassList implements Initializable {
 	
 	private void search() {
 		table.getItems().clear();
-		table.getItems().addAll(model.find(courseCombo.getValue(), startDate.getValue(), 0));
+		table.getItems().addAll(model.find(courseCombo.getValue(), startDate.getValue()));
 	}
 
 }

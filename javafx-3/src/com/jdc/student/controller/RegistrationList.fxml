@@ -1,8 +1,57 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import java.lang.String?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
 <?import javafx.scene.layout.VBox?>
+<?import javafx.scene.control.cell.PropertyValueFactory?>
 
-<VBox xmlns:fx="http://javafx.com/fxml/1">
-	<!-- TODO Add Nodes -->
+<VBox stylesheets="@application.css" xmlns="http://javafx.com/javafx/8.0.111"
+	xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.jdc.student.controller.RegistrationList">
+	<children>
+		<TableView fx:id="table" prefHeight="200.0" prefWidth="200.0"
+			VBox.vgrow="ALWAYS">
+			<columns>
+				<TableColumn prefWidth="75.0" text="ID" >
+					<cellValueFactory>
+						<PropertyValueFactory property="id" />
+					</cellValueFactory>
+				</TableColumn>
+				<TableColumn prefWidth="185.0" text="Course Name" >
+					<cellValueFactory>
+						<PropertyValueFactory property="courseName" />
+					</cellValueFactory>
+				</TableColumn>
+				<TableColumn prefWidth="121.0" text="Start Date" >
+					<cellValueFactory>
+						<PropertyValueFactory property="startDate" />
+					</cellValueFactory>
+				</TableColumn>
+				<TableColumn prefWidth="155.0" text="Student Name" >
+					<cellValueFactory>
+						<PropertyValueFactory property="studentName" />
+					</cellValueFactory>
+				</TableColumn>
+				<TableColumn prefWidth="126.0" text="Phone" >
+					<cellValueFactory>
+						<PropertyValueFactory property="studentPhone" />
+					</cellValueFactory>
+				</TableColumn>
+				<TableColumn prefWidth="103.0" text="Fees" >
+					<cellValueFactory>
+						<PropertyValueFactory property="fees" />
+					</cellValueFactory>
+				</TableColumn>
+				<TableColumn prefWidth="94.0" text="Paid" >
+					<cellValueFactory>
+						<PropertyValueFactory property="paid" />
+					</cellValueFactory>
+				</TableColumn>
+			</columns>
+		</TableView>
+	</children>
+	<styleClass>
+		<String fx:value="ContentPane" />
+		<String fx:value="Padding20" />
+	</styleClass>
 </VBox>
-

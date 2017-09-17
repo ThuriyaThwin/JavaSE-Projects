@@ -38,7 +38,7 @@ public class Class {
 	}
 
 	public String getDays() {
-		return days.substring(0, days.length() - 2);
+		return days;
 	}
 
 	public void setDays(String days) {

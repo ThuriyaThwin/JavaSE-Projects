@@ -91,14 +91,14 @@ public class ClassModel {
 	}
 
 	public List<ClassVO> find() {
-		return find(null, null, 0);
+		return find(null, null);
 	}
 
 	public List<ClassVO> find(Course course) {
-		return find(course, null, 0);
+		return find(course, null);
 	}
 
-	public List<ClassVO> find(Course course, LocalDate dateFrom, int fees) {
+	public List<ClassVO> find(Course course, LocalDate dateFrom) {
 		StringBuilder sb = new StringBuilder("select * from class where 1 = 1 ");
 		List<Object> params = new ArrayList<>();
 		List<ClassVO> result = new ArrayList<>();
@@ -111,10 +111,6 @@ public class ClassModel {
 		if(null != dateFrom) {
 			sb.append("and startDate >= ? ");
 			params.add(Date.valueOf(dateFrom));
-		}
-		
-		if(fees > 0) {
-			// TODO
 		}
 		
 		try(Connection conn = ConnectionManager.getConnection();

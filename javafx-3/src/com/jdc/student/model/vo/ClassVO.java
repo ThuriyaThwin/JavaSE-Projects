@@ -45,5 +45,8 @@ public class ClassVO {
 		return String.format("%s - %s", classData.getStartTime(), classData.getEndTime());
 	}
 	
-	
+	@Override
+	public String toString() {
+		return String.format("%s - %s", getCourseName(), getStartDate());
+	}
 }
