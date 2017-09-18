@@ -8,14 +8,16 @@ import com.jdc.ishop.model.service.impl.MemberServiceImpl;
 
 public interface MemberService {
 
+	static MemberService getInstance() {
+		return new MemberServiceImpl();
+	}
+
 	Member login(String login, String pass);
 
 	List<Member> find(Role role, String name);
 
 	void save(Member t);
 
-	static MemberService getInstance() {
-		return new MemberServiceImpl();
-	}
+	long findCount();
 
 }

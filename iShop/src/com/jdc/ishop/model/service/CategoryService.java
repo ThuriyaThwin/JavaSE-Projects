@@ -7,13 +7,15 @@ import com.jdc.ishop.model.service.impl.CategoryServiceImpl;
 
 public interface CategoryService {
 
+	static CategoryService getInstance() {
+		return new CategoryServiceImpl();
+	}
+
 	void save(Category cat);
 
 	List<Category> find(String name);
 	List<Category> find(boolean delete);
 
-	static CategoryService getInstance() {
-		return new CategoryServiceImpl();
-	}
+	long findCount();
 
 }

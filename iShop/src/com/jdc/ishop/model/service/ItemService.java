@@ -8,12 +8,14 @@ import com.jdc.ishop.model.service.impl.ItemServiceImpl;
 
 public interface ItemService {
 
+	static ItemService getInstance() {
+		return new ItemServiceImpl();
+	}
+
 	void save(Item t);
 
 	List<Item> find(Category category, String priceFrom, String priceTo, String name);
 
-	static ItemService getInstance() {
-		return new ItemServiceImpl();
-	}
+	long findCount();
 
 }

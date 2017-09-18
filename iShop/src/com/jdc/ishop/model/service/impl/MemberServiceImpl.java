@@ -186,4 +186,23 @@ public class MemberServiceImpl implements MemberService {
 		
 		return member;
 	}
+
+	@Override
+	public long findCount() {
+		String sql = "select count(*) from member where del_flag = 0";
+		
+		try(Connection conn = DatabaseManager.getConnection(); 
+				PreparedStatement stmt = conn.prepareStatement(sql)) {
+
+			ResultSet rs = stmt.executeQuery();
+			
+			while(rs.next()) {
+				return rs.getLong(1);
+			}
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+		
+		return 0;
+	}
 }
