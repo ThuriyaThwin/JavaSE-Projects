@@ -6,6 +6,7 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Timestamp;
 import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
 import java.util.LinkedHashMap;
 import java.util.List;
@@ -128,7 +129,11 @@ public class OrderServiceImpl implements OrderService {
 		Map<String, Integer> map = new LinkedHashMap<>();
 		
 		String sql = "select c.name category, sum(s.quentity) quentity from sale_item s "
-				+ "inner join invoice iv on s.invoice_id ";
+				+ "inner join invoice iv on s.invoice_id = iv.id "
+				+ "inner join item it on s.item_id = it.id "
+				+ "inner join category c on it.category_id = c.id "
+				+ "where c.id = ? and iv.del_flag = 0 and iv.invoice_date >= ? and iv.invoice_date < ? "
+				+ "group by c.id";
 		
 		try(Connection conn = DatabaseManager.getConnection(); 
 				PreparedStatement stmt = conn.prepareStatement(sql)) {
@@ -144,7 +149,8 @@ public class OrderServiceImpl implements OrderService {
 				ResultSet rs = stmt.executeQuery();
 				
 				while(rs.next()) {
-					
+					Long count = rs.getLong(2);
+					map.put(target.format(DateTimeFormatter.ofPattern("yyyy-MM-dd")), count.intValue());
 				}
 				
 				target = target.plusDays(1);

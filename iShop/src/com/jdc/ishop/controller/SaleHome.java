@@ -4,6 +4,8 @@ import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
 
+import com.jdc.ishop.utils.Security;
+
 import javafx.animation.TranslateTransition;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -11,6 +13,7 @@ import javafx.fxml.Initializable;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.control.Label;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.StackPane;
@@ -28,6 +31,8 @@ public class SaleHome implements Initializable {
     private HBox report;
     @FXML
     private HBox controleBox;
+    @FXML
+    private Label memberName;
 
     @FXML
     void close(MouseEvent event) {
@@ -95,6 +100,8 @@ public class SaleHome implements Initializable {
 	public void initialize(URL location, ResourceBundle resources) {
 		controleBox.getChildren().remove(pos);
 		controleBox.getChildren().remove(report);
+		
+		memberName.setText(Security.getLoginUser().getName());
 		
 		showPos(null);
 	}
