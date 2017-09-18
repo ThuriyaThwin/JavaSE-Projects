@@ -48,7 +48,12 @@ public class MemberEdit {
 
     @FXML
     void save(ActionEvent event) {
-    	// get view Handler
+    	// get view Data
+    	if(null == item) {
+    		item = new Member();
+    	}
+    	
+    	// TODO get view data
     	
     	// save
     	saveHandler.accept(item);

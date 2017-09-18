@@ -1,11 +1,14 @@
 package com.jdc.ishop.controller;
 
 import java.net.URL;
+import java.util.List;
 import java.util.ResourceBundle;
 import java.util.function.Consumer;
 
 import com.jdc.ishop.model.entity.Category;
 import com.jdc.ishop.model.entity.Item;
+import com.jdc.ishop.model.service.CategoryService;
+import com.jdc.ishop.model.service.ItemService;
 
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -30,6 +33,9 @@ public class ItemList implements Initializable, Consumer<Item>{
 
     @FXML
     private TableView<Item> table;
+    
+    private ItemService service;
+    private CategoryService catService;
 
     @FXML
     void addNew(ActionEvent event) {
@@ -46,14 +52,33 @@ public class ItemList implements Initializable, Consumer<Item>{
 
 	@Override
 	public void accept(Item t) {
-		// TODO Auto-generated method stub
+		service.save(t);
 		
+		search();
+	}
+
+	private void search() {
+		List<Item> list = service.find(schCategory.getValue(), priceFrom.getText(), priceTo.getText(), schName.getText());
+		table.getItems().clear();
+		table.getItems().addAll(list);
 	}
 
 	@Override
 	public void initialize(URL location, ResourceBundle resources) {
-		// TODO Auto-generated method stub
 		
+		service = ItemService.getInstance();
+		catService = CategoryService.getInstance();
+		
+		// add category data
+		schCategory.getItems().addAll(catService.find(false));
+		
+		// add search listener
+		schCategory.valueProperty().addListener((a,b,c) -> search());
+		priceFrom.textProperty().addListener((a,b,c) -> search());
+		priceTo.textProperty().addListener((a,b,c) -> search());
+		schName.textProperty().addListener((a,b,c) -> search());
+		
+		search();
 	}
 
 }

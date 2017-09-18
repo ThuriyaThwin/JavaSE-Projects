@@ -10,9 +10,12 @@ import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.Node;
 import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.StackPane;
+import javafx.stage.Stage;
+import javafx.stage.StageStyle;
 import javafx.util.Duration;
 
 public class SaleHome implements Initializable {
@@ -94,5 +97,16 @@ public class SaleHome implements Initializable {
 		controleBox.getChildren().remove(report);
 		
 		showPos(null);
+	}
+
+	public static void showView() {
+		try {
+			Parent root = FXMLLoader.load(SaleHome.class.getResource("SaleHome.fxml"));
+			Stage stage = new Stage(StageStyle.UNDECORATED);
+			stage.setScene(new Scene(root));
+			stage.show();
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
 	}
 }

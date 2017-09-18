@@ -9,45 +9,72 @@
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.VBox?>
+<?import javafx.scene.control.cell.PropertyValueFactory?>
 
-<VBox styleClass="ContentView" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.jdc.ishop.controller.MemberList">
-   <stylesheets>
-      <URL value="@color.css" />
-      <URL value="@layout.css" />
-   </stylesheets>
-   <children>
-      <HBox>
-         <children>
-            <ComboBox fx:id="schRole" prefWidth="150.0" promptText="Search Role" styleClass="back2" />
-            <TextField fx:id="schName" promptText="Search Name" styleClass="back2" />
-            <Button mnemonicParsing="false" onAction="#clear" text="CLEAR">
-               <styleClass>
-                  <String fx:value="back3" />
-                  <String fx:value="text1" />
-               </styleClass></Button>
-            <Button mnemonicParsing="false" onAction="#addNew" text="ADD NEW">
-               <styleClass>
-                  <String fx:value="back3" />
-                  <String fx:value="text1" />
-               </styleClass></Button>
-         </children>
-         <styleClass>
-            <String fx:value="Space10" />
-            <String fx:value="Padding10" />
-         </styleClass>
-      </HBox>
-      <VBox styleClass="Padding10" VBox.vgrow="ALWAYS">
-         <children>
-            <TableView fx:id="table" prefHeight="200.0" prefWidth="200.0" VBox.vgrow="ALWAYS">
-              <columns>
-                <TableColumn prefWidth="150.0" text="Role" />
-                <TableColumn prefWidth="144.0" text="Login ID" />
-                  <TableColumn prefWidth="200.0" text="Name" />
-                  <TableColumn prefWidth="162.0" text="Phone" />
-                  <TableColumn prefWidth="218.0" text="Email" />
-              </columns>
-            </TableView>
-         </children>
-      </VBox>
-   </children>
+<VBox styleClass="ContentView" xmlns="http://javafx.com/javafx/8.0.111"
+	xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.jdc.ishop.controller.MemberList">
+	<stylesheets>
+		<URL value="@color.css" />
+		<URL value="@layout.css" />
+	</stylesheets>
+	<children>
+		<HBox>
+			<children>
+				<ComboBox fx:id="schRole" prefWidth="150.0" promptText="Search Role"
+					styleClass="back2" />
+				<TextField fx:id="schName" promptText="Search Name"
+					styleClass="back2" />
+				<Button mnemonicParsing="false" onAction="#clear" text="CLEAR">
+					<styleClass>
+						<String fx:value="back3" />
+						<String fx:value="text1" />
+					</styleClass>
+				</Button>
+				<Button mnemonicParsing="false" onAction="#addNew" text="ADD NEW">
+					<styleClass>
+						<String fx:value="back3" />
+						<String fx:value="text1" />
+					</styleClass>
+				</Button>
+			</children>
+			<styleClass>
+				<String fx:value="Space10" />
+				<String fx:value="Padding10" />
+			</styleClass>
+		</HBox>
+		<VBox styleClass="Padding10" VBox.vgrow="ALWAYS">
+			<children>
+				<TableView fx:id="table" prefHeight="200.0" prefWidth="200.0"
+					VBox.vgrow="ALWAYS">
+					<columns>
+						<TableColumn prefWidth="150.0" text="Role" >
+							<cellValueFactory>
+								<PropertyValueFactory property="role" />
+							</cellValueFactory>
+						</TableColumn>
+						<TableColumn prefWidth="144.0" text="Login ID" >
+							<cellValueFactory>
+								<PropertyValueFactory property="login" />
+							</cellValueFactory>
+						</TableColumn>
+						<TableColumn prefWidth="200.0" text="Name" >
+							<cellValueFactory>
+								<PropertyValueFactory property="name" />
+							</cellValueFactory>
+						</TableColumn>
+						<TableColumn prefWidth="162.0" text="Phone" >
+							<cellValueFactory>
+								<PropertyValueFactory property="phone" />
+							</cellValueFactory>
+						</TableColumn>
+						<TableColumn prefWidth="218.0" text="Email" >
+							<cellValueFactory>
+								<PropertyValueFactory property="email" />
+							</cellValueFactory>
+						</TableColumn>
+					</columns>
+				</TableView>
+			</children>
+		</VBox>
+	</children>
 </VBox>

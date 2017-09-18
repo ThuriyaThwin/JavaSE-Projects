@@ -81,7 +81,7 @@ public class ManagerHome implements Initializable {
     @Override
 	public void initialize(URL location, ResourceBundle resources) {
 		// show home view
-		loadView("Admin Home", "Home.fxml");
+    	showHome(null);
 	}
 
 	Node oldView = null;
@@ -144,6 +144,17 @@ public class ManagerHome implements Initializable {
 
 	public void clearMessage() {
 		message.setText("");
+	}
+
+	public static void showView() {
+		try {
+			Parent root = FXMLLoader.load(ManagerHome.class.getResource("ManagerHome.fxml"));
+			Stage stage = new Stage(StageStyle.UNDECORATED);
+			stage.setScene(new Scene(root));
+			stage.show();
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
 	}
 
 }

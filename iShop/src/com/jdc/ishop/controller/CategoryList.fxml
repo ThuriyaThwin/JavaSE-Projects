@@ -9,43 +9,68 @@
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.VBox?>
 
-<VBox styleClass="ContentView" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.jdc.ishop.controller.CategoryList">
-   <stylesheets>
-      <URL value="@color.css" />
-      <URL value="@layout.css" />
-   </stylesheets>
-   <children>
-      <HBox>
-         <children>
-            <TextField fx:id="schName" prefHeight="27.0" prefWidth="236.0" promptText="Category Name" styleClass="back2" />
-            <Button mnemonicParsing="false" onAction="#clear" text="CLEAR">
-               <styleClass>
-                  <String fx:value="back3" />
-                  <String fx:value="text1" />
-               </styleClass></Button>
-            <Button mnemonicParsing="false" onAction="#addNew" text="ADD NEW">
-               <styleClass>
-                  <String fx:value="back3" />
-                  <String fx:value="text1" />
-               </styleClass></Button>
-         </children>
-         <styleClass>
-            <String fx:value="Space10" />
-            <String fx:value="Padding10" />
-         </styleClass>
-      </HBox>
-      <VBox styleClass="Padding10" VBox.vgrow="ALWAYS">
-         <children>
-            <TableView fx:id="table" prefHeight="200.0" prefWidth="200.0" VBox.vgrow="ALWAYS">
-              <columns>
-                <TableColumn prefWidth="75.0" text="ID" />
-                <TableColumn prefWidth="325.0" text="Category Name" />
-                  <TableColumn prefWidth="103.0" text="Status" />
-                  <TableColumn prefWidth="157.0" text="Creation" />
-                  <TableColumn prefWidth="207.0" text="Create User" />
-              </columns>
-            </TableView>
-         </children>
-      </VBox>
-   </children>
+<VBox styleClass="ContentView" xmlns="http://javafx.com/javafx/8.0.111"
+	xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.jdc.ishop.controller.CategoryList">
+	<stylesheets>
+		<URL value="@color.css" />
+		<URL value="@layout.css" />
+	</stylesheets>
+	<children>
+		<HBox>
+			<children>
+				<TextField fx:id="schName" prefHeight="27.0" prefWidth="236.0"
+					promptText="Category Name" styleClass="back2" />
+				<Button mnemonicParsing="false" onAction="#clear" text="CLEAR">
+					<styleClass>
+						<String fx:value="back3" />
+						<String fx:value="text1" />
+					</styleClass>
+				</Button>
+				<Button mnemonicParsing="false" onAction="#addNew" text="ADD NEW">
+					<styleClass>
+						<String fx:value="back3" />
+						<String fx:value="text1" />
+					</styleClass>
+				</Button>
+			</children>
+			<styleClass>
+				<String fx:value="Space10" />
+				<String fx:value="Padding10" />
+			</styleClass>
+		</HBox>
+		<VBox styleClass="Padding10" VBox.vgrow="ALWAYS">
+			<children>
+				<TableView fx:id="table" prefHeight="200.0" prefWidth="200.0"
+					VBox.vgrow="ALWAYS">
+					<columns>
+						<TableColumn prefWidth="75.0" text="ID" >
+							<cellValueFactory>
+								<PropertyValueFactory property="id" />
+							</cellValueFactory>
+						</TableColumn>
+						<TableColumn prefWidth="325.0" text="Category Name" >
+							<cellValueFactory>
+								<PropertyValueFactory property="name" />
+							</cellValueFactory>
+						</TableColumn>
+						<TableColumn prefWidth="103.0" text="Status" >
+							<cellValueFactory>
+								<PropertyValueFactory property="status" />
+							</cellValueFactory>
+						</TableColumn>
+						<TableColumn prefWidth="157.0" text="Creation" >
+							<cellValueFactory>
+								<PropertyValueFactory property="creationStr" />
+							</cellValueFactory>
+						</TableColumn>
+						<TableColumn prefWidth="207.0" text="Create User" >
+							<cellValueFactory>
+								<PropertyValueFactory property="createUserName" />
+							</cellValueFactory>
+						</TableColumn>
+					</columns>
+				</TableView>
+			</children>
+		</VBox>
+	</children>
 </VBox>

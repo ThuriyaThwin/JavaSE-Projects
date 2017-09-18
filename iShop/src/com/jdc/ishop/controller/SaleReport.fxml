@@ -38,13 +38,14 @@
          <children>
             <TableView onSort="#table" prefHeight="200.0" prefWidth="200.0" VBox.vgrow="ALWAYS">
               <columns>
-                <TableColumn prefWidth="89.0" text="Order ID" />
-                <TableColumn prefWidth="153.0" text="Sale Person" />
-                  <TableColumn prefWidth="166.0" text="Category" />
-                  <TableColumn prefWidth="176.0" text="Item" />
-                  <TableColumn prefWidth="84.0" text="Unit Price" />
-                  <TableColumn prefWidth="83.0" text="Count" />
-                  <TableColumn prefWidth="127.0" text="Total" />
+                <TableColumn prefWidth="71.0" text="Order ID" />
+                <TableColumn prefWidth="116.0" text="Date" />
+                  <TableColumn prefWidth="135.0" text="Category" />
+                  <TableColumn prefWidth="143.0" text="Item" />
+                  <TableColumn prefWidth="109.0" text="Unit Price" />
+                  <TableColumn prefWidth="67.0" text="Count" />
+                  <TableColumn prefWidth="94.0" text="Total" />
+                  <TableColumn prefWidth="130.0" text="Employee" />
               </columns>
             </TableView>
          </children>
