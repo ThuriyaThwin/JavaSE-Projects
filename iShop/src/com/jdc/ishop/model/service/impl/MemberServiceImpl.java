@@ -105,6 +105,9 @@ public class MemberServiceImpl implements MemberService {
 	}
 
 	private void update(Member t) {
+		
+		check(t);
+		
 		String sql = "update member set name = ?, password = ?, phone = ?, email = ?, role = ?, del_flag = ? where login = ?";
 
 		try(Connection conn = DatabaseManager.getConnection(); 
@@ -124,7 +127,32 @@ public class MemberServiceImpl implements MemberService {
 		}
 	}
 
+	private void check(Member t) {
+		// login id
+		if(t.getLogin() == null || t.getLogin().isEmpty()) {
+			throw new IShopException("Please enter Member Name.");
+		}
+
+		// name
+		if(t.getName() == null || t.getName().isEmpty()) {
+			throw new IShopException("Please enter Member Name.");
+		}
+		
+		// password
+		if(t.getPassword() == null || t.getPassword().isEmpty()) {
+			throw new IShopException("Please enter Member Password.");
+		}
+		
+		// phone
+		if(t.getPhone() == null || t.getPhone().isEmpty()) {
+			throw new IShopException("Please enter Member Name.");
+		}
+	}
+
 	private void create(Member t) {
+		
+		check(t);
+
 		String sql = "insert into member values (?, ?, ?, ?, ?, ?, ?)";
 
 		try(Connection conn = DatabaseManager.getConnection(); 

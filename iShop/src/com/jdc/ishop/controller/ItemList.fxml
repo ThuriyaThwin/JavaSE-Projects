@@ -7,11 +7,11 @@
 <?import javafx.scene.control.TableColumn?>
 <?import javafx.scene.control.TableView?>
 <?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.cell.PropertyValueFactory?>
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.VBox?>
 
-<VBox styleClass="ContentView" xmlns="http://javafx.com/javafx/8.0.111"
-	xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.jdc.ishop.controller.ItemList">
+<VBox styleClass="ContentView" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.jdc.ishop.controller.ItemList">
 	<stylesheets>
 		<URL value="@color.css" />
 		<URL value="@layout.css" />
@@ -19,29 +19,25 @@
 	<children>
 		<HBox>
 			<children>
-				<ComboBox fx:id="schCategory" prefHeight="27.0" prefWidth="183.0"
-					promptText="Category">
+				<ComboBox fx:id="schCategory" prefHeight="27.0" prefWidth="183.0" promptText="Category">
 					<styleClass>
 						<String fx:value="back2" />
 						<String fx:value="text1" />
 					</styleClass>
 				</ComboBox>
-				<TextField fx:id="priceFrom" prefHeight="27.0" prefWidth="140.0"
-					promptText="Price From">
+				<TextField fx:id="priceFrom" prefHeight="27.0" prefWidth="140.0" promptText="Price From">
 					<styleClass>
 						<String fx:value="back2" />
 						<String fx:value="text4" />
 					</styleClass>
 				</TextField>
-				<TextField fx:id="priceTo" layoutX="193.0" layoutY="10.0"
-					prefHeight="27.0" prefWidth="140.0" promptText="Price To">
+				<TextField fx:id="priceTo" layoutX="193.0" layoutY="10.0" prefHeight="27.0" prefWidth="140.0" promptText="Price To">
 					<styleClass>
 						<String fx:value="back2" />
 						<String fx:value="text4" />
 					</styleClass>
 				</TextField>
-				<TextField fx:id="schName" layoutX="400.0" layoutY="10.0"
-					prefHeight="27.0" prefWidth="163.0" promptText="Name" HBox.hgrow="ALWAYS">
+				<TextField fx:id="schName" layoutX="400.0" layoutY="10.0" prefHeight="27.0" prefWidth="163.0" promptText="Name" HBox.hgrow="ALWAYS">
 					<styleClass>
 						<String fx:value="back2" />
 						<String fx:value="text4" />
@@ -67,40 +63,39 @@
 		</HBox>
 		<VBox styleClass="Padding10" VBox.vgrow="ALWAYS">
 			<children>
-				<TableView fx:id="table" prefHeight="200.0" prefWidth="200.0"
-					VBox.vgrow="ALWAYS">
+				<TableView fx:id="table" prefHeight="200.0" prefWidth="200.0" VBox.vgrow="ALWAYS">
 					<columns>
-						<TableColumn prefWidth="75.0" text="ID" >
+						<TableColumn prefWidth="75.0" text="ID">
 							<cellValueFactory>
 								<PropertyValueFactory property="id" />
 							</cellValueFactory>
 						</TableColumn>
-						<TableColumn prefWidth="179.0" text="Category" >
+						<TableColumn prefWidth="179.0" text="Category">
 							<cellValueFactory>
 								<PropertyValueFactory property="categoryName" />
 							</cellValueFactory>
 						</TableColumn>
-						<TableColumn prefWidth="172.0" text="Item Name" >
+						<TableColumn prefWidth="172.0" text="Item Name">
 							<cellValueFactory>
 								<PropertyValueFactory property="name" />
 							</cellValueFactory>
 						</TableColumn>
-						<TableColumn prefWidth="128.0" text="Price" >
+						<TableColumn prefWidth="101.0" text="Price">
 							<cellValueFactory>
 								<PropertyValueFactory property="price" />
 							</cellValueFactory>
 						</TableColumn>
-						<TableColumn prefWidth="85.0" text="Status" >
+						<TableColumn prefWidth="72.0" text="Status">
 							<cellValueFactory>
 								<PropertyValueFactory property="status" />
 							</cellValueFactory>
 						</TableColumn>
-						<TableColumn prefWidth="112.0" text="Creation" >
+						<TableColumn prefWidth="141.0" text="Creation">
 							<cellValueFactory>
 								<PropertyValueFactory property="creationStr" />
 							</cellValueFactory>
 						</TableColumn>
-						<TableColumn prefWidth="126.0" text="Create User">
+						<TableColumn prefWidth="127.0" text="Create User">
 							<cellValueFactory>
 								<PropertyValueFactory property="createUserName" />
 							</cellValueFactory>

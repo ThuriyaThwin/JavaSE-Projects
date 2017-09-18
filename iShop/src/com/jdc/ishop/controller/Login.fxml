@@ -6,6 +6,7 @@
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.PasswordField?>
 <?import javafx.scene.control.TextField?>
+<?import javafx.scene.effect.DropShadow?>
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.VBox?>
 
@@ -17,12 +18,15 @@
    <children>
       <HBox>
          <children>
-            <Label styleClass="text1" text="iShop Login" />
+            <Label styleClass="text4" text="iShop Login" />
          </children>
          <styleClass>
             <String fx:value="LoginTitlePane" />
-            <String fx:value="back4" />
+            <String fx:value="back1" />
          </styleClass>
+         <effect>
+            <DropShadow />
+         </effect>
       </HBox>
       <VBox>
          <children>
@@ -31,8 +35,8 @@
                <children>
                   <TextField fx:id="loginID" promptText="Login ID">
                      <styleClass>
-                        <String fx:value="back3" />
-                        <String fx:value="text1" />
+                        <String fx:value="back2" />
+                        <String fx:value="text4" />
                      </styleClass></TextField>
                </children>
             </VBox>
@@ -40,8 +44,8 @@
                <children>
                   <PasswordField fx:id="password" promptText="Password">
                      <styleClass>
-                        <String fx:value="back3" />
-                        <String fx:value="text1" />
+                        <String fx:value="back2" />
+                        <String fx:value="text4" />
                      </styleClass></PasswordField>
                </children>
             </VBox>
@@ -49,14 +53,20 @@
                <children>
                   <Button mnemonicParsing="false" onAction="#close" text="CLOSE">
                      <styleClass>
-                        <String fx:value="back3" />
-                        <String fx:value="text1" />
-                     </styleClass></Button>
+                        <String fx:value="back1" />
+                        <String fx:value="text4" />
+                     </styleClass>
+                     <effect>
+                        <DropShadow />
+                     </effect></Button>
                   <Button mnemonicParsing="false" onAction="#login" text="LOGIN">
                      <styleClass>
-                        <String fx:value="back3" />
-                        <String fx:value="text1" />
-                     </styleClass></Button>
+                        <String fx:value="back1" />
+                        <String fx:value="text4" />
+                     </styleClass>
+                     <effect>
+                        <DropShadow />
+                     </effect></Button>
                </children>
                <styleClass>
                   <String fx:value="AlignCenter" />

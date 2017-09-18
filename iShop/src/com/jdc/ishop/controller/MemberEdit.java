@@ -4,6 +4,8 @@ import java.util.function.Consumer;
 
 import com.jdc.ishop.IShopException;
 import com.jdc.ishop.model.entity.Member;
+import com.jdc.ishop.model.entity.Member.Role;
+import com.jdc.ishop.utils.MessageHandler;
 
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -28,6 +30,10 @@ public class MemberEdit {
 
     @FXML
     private PasswordField password;
+    @FXML
+    private TextField phone;
+    @FXML
+    private TextField email;
 
     @FXML
     private CheckBox isAdmin;
@@ -48,18 +54,30 @@ public class MemberEdit {
 
     @FXML
     void save(ActionEvent event) {
-    	// get view Data
-    	if(null == item) {
-    		item = new Member();
-    	}
     	
-    	// TODO get view data
-    	
-    	// save
-    	saveHandler.accept(item);
-    	
-    	// close
-    	title.getScene().getWindow().hide();
+    	try {
+        	// get view Data
+        	if(null == item) {
+        		item = new Member();
+        		item.setLogin(loginId.getText());
+        	}
+        	
+        	// get view data
+        	item.setName(name.getText());
+        	item.setPhone(phone.getText());
+        	item.setPassword(password.getText());
+        	item.setEmail(email.getText());
+        	item.setRole(isAdmin.isSelected() ? Role.Manager : Role.Sale);
+        	
+        	// save
+        	saveHandler.accept(item);
+        	
+        	// close
+        	title.getScene().getWindow().hide();
+        	
+		} catch (IShopException e) {
+			MessageHandler.getManagerHandler().alert(e);
+		}
     	
     }
 
@@ -71,7 +89,7 @@ public class MemberEdit {
 			Parent view = loader.load();
 			MemberEdit edit = loader.getController();
 			edit.title.setText(null == item ? "Add New Member" : "Edit Member");
-			edit.item = item;
+			edit.setItem(item);
 			edit.saveHandler = saveHandler;
 			
 			Stage stage = new Stage();
@@ -84,5 +102,19 @@ public class MemberEdit {
 			throw new IShopException("Please contact to Dev Team.");
 		}
 		
+	}
+
+	private void setItem(Member item) {
+		this.item = item;
+		if(null != item) {
+			loginId.setEditable(false);
+			loginId.setText(item.getLogin());
+			name.setText(item.getName());
+			password.setText(item.getPassword());
+			phone.setText(item.getPhone());
+			email.setText(item.getEmail());
+			isAdmin.setSelected(item.getRole() == Role.Manager);
+			isDelete.setSelected(item.isDelete());
+		}
 	}
 }

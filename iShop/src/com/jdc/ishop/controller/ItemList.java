@@ -14,6 +14,8 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.ComboBox;
+import javafx.scene.control.ContextMenu;
+import javafx.scene.control.MenuItem;
 import javafx.scene.control.TableView;
 import javafx.scene.control.TextField;
 
@@ -68,6 +70,13 @@ public class ItemList implements Initializable, Consumer<Item>{
 		
 		service = ItemService.getInstance();
 		catService = CategoryService.getInstance();
+		
+		MenuItem edit = new MenuItem("Edit");
+		edit.setOnAction(e -> {
+			Item item = table.getSelectionModel().getSelectedItem();
+			ItemEdit.showView(item, this);
+		});
+		table.setContextMenu(new ContextMenu(edit));
 		
 		// add category data
 		schCategory.getItems().addAll(catService.find(false));

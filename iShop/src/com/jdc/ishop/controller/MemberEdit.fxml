@@ -7,6 +7,7 @@
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.PasswordField?>
 <?import javafx.scene.control.TextField?>
+<?import javafx.scene.effect.DropShadow?>
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.shape.SVGPath?>
@@ -19,14 +20,17 @@
    <children>
       <HBox>
          <children>
-            <SVGPath content="M18 22.082v-1.649c2.203-1.241 4-4.337 4-7.432 0-4.971 0-9-6-9s-6 4.029-6 9c0 3.096 1.797 6.191 4 7.432v1.649c-6.784 0.555-12 3.888-12 7.918h28c0-4.030-5.216-7.364-12-7.918z" styleClass="text1" />
-            <Label fx:id="title" styleClass="text1" text="Edit Member" />
+            <SVGPath content="M18 22.082v-1.649c2.203-1.241 4-4.337 4-7.432 0-4.971 0-9-6-9s-6 4.029-6 9c0 3.096 1.797 6.191 4 7.432v1.649c-6.784 0.555-12 3.888-12 7.918h28c0-4.030-5.216-7.364-12-7.918z" styleClass="text4" />
+            <Label fx:id="title" styleClass="text4" text="Edit Member" />
          </children>
          <styleClass>
             <String fx:value="LoginTitlePane" />
-            <String fx:value="back3" />
+            <String fx:value="back1" />
             <String fx:value="Space10" />
          </styleClass>
+         <effect>
+            <DropShadow />
+         </effect>
       </HBox>
       <VBox styleClass="loginForm">
          <children>
@@ -53,7 +57,33 @@
             <VBox layoutX="90.0" layoutY="114.0">
                <children>
                   <Label styleClass="text4" text="Password" />
-                  <PasswordField fx:id="password" styleClass="back2" />
+                  <PasswordField fx:id="password">
+                     <styleClass>
+                        <String fx:value="back2" />
+                        <String fx:value="AlignLeft" />
+                     </styleClass></PasswordField>
+               </children>
+            </VBox>
+            <VBox layoutX="90.0" layoutY="94.0">
+               <children>
+                  <Label styleClass="text4" text="Phone" />
+                  <TextField fx:id="phone">
+                     <styleClass>
+                        <String fx:value="AlignLeft" />
+                        <String fx:value="back2" />
+                     </styleClass>
+                  </TextField>
+               </children>
+            </VBox>
+            <VBox layoutX="90.0" layoutY="307.0">
+               <children>
+                  <Label styleClass="text4" text="Email Address" />
+                  <TextField fx:id="email">
+                     <styleClass>
+                        <String fx:value="AlignLeft" />
+                        <String fx:value="back2" />
+                     </styleClass>
+                  </TextField>
                </children>
             </VBox>
             <HBox styleClass="Space10">

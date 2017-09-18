@@ -6,6 +6,7 @@
 <?import javafx.scene.control.CheckBox?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.TextField?>
+<?import javafx.scene.effect.DropShadow?>
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.shape.SVGPath?>
@@ -18,14 +19,17 @@
    <children>
       <HBox>
          <children>
-            <SVGPath content="M6 0v32l10-10 10 10v-32z" styleClass="text1" />
-            <Label fx:id="title" styleClass="text1" text="Add Category" />
+            <SVGPath content="M6 0v32l10-10 10 10v-32z" styleClass="text4" />
+            <Label fx:id="title" styleClass="text4" text="Add Category" />
          </children>
          <styleClass>
             <String fx:value="LoginTitlePane" />
             <String fx:value="Space10" />
-            <String fx:value="back3" />
+            <String fx:value="back1" />
          </styleClass>
+         <effect>
+            <DropShadow />
+         </effect>
       </HBox>
       <VBox styleClass="loginForm">
          <children>
@@ -45,14 +49,20 @@
                <children>
                   <Button mnemonicParsing="false" onAction="#close" text="CLOSE">
                      <styleClass>
-                        <String fx:value="back3" />
-                        <String fx:value="text1" />
-                     </styleClass></Button>
+                        <String fx:value="back1" />
+                        <String fx:value="text4" />
+                     </styleClass>
+                     <effect>
+                        <DropShadow />
+                     </effect></Button>
                   <Button layoutX="10.0" layoutY="10.0" mnemonicParsing="false" onAction="#save" text="SAVE">
                      <styleClass>
-                        <String fx:value="back3" />
-                        <String fx:value="text1" />
-                     </styleClass></Button>
+                        <String fx:value="back1" />
+                        <String fx:value="text4" />
+                     </styleClass>
+                     <effect>
+                        <DropShadow />
+                     </effect></Button>
                </children>
             </HBox>
          </children>

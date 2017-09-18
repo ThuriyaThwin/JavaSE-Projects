@@ -11,6 +11,8 @@ import com.jdc.ishop.model.service.CategoryService;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
+import javafx.scene.control.ContextMenu;
+import javafx.scene.control.MenuItem;
 import javafx.scene.control.TableView;
 import javafx.scene.control.TextField;
 
@@ -40,6 +42,14 @@ public class CategoryList implements Initializable, Consumer<Category>{
 		service = CategoryService.getInstance();
 		
 		schName.textProperty().addListener((a,b,c) -> search());
+		
+		MenuItem edit = new MenuItem("Edit");
+		edit.setOnAction(e -> {
+			Category c = table.getSelectionModel().getSelectedItem();
+			CategoryEdit.showView(c, this);
+		});
+		table.setContextMenu(new ContextMenu(edit));
+		
 		search();
 	}
 

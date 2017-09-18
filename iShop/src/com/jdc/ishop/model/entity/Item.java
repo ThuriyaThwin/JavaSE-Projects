@@ -13,7 +13,7 @@ public class Item {
 
 	private String barcode;
 
-	private String price;
+	private int price;
 
 	private boolean delete;
 
@@ -55,11 +55,11 @@ public class Item {
 		this.barcode = barcode;
 	}
 
-	public String getPrice() {
+	public int getPrice() {
 		return price;
 	}
 
-	public void setPrice(String price) {
+	public void setPrice(int price) {
 		this.price = price;
 	}
 

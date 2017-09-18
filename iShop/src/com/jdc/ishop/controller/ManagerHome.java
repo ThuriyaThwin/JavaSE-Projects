@@ -4,6 +4,7 @@ import java.net.URL;
 import java.util.ResourceBundle;
 
 import com.jdc.ishop.IShopException;
+import com.jdc.ishop.utils.ManagerMessage;
 
 import javafx.animation.FadeTransition;
 import javafx.animation.ParallelTransition;
@@ -82,6 +83,8 @@ public class ManagerHome implements Initializable {
 	public void initialize(URL location, ResourceBundle resources) {
 		// show home view
     	showHome(null);
+    	
+    	ManagerMessage.init(message);
 	}
 
 	Node oldView = null;
