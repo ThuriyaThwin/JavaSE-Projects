@@ -181,3 +181,13 @@
 .fs24 {
 	-fx-font-size: 24px;
 }
+
+.item {
+	-fx-pref-width: 220px;
+	-fx-padding: 10;
+	-fx-spacing: 10;
+}
+
+.item .category {
+	-fx-font-size: 24px;
+}

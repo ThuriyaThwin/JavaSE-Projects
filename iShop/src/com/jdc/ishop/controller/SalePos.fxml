@@ -11,12 +11,13 @@
 <?import javafx.scene.layout.GridPane?>
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.StackPane?>
 <?import javafx.scene.layout.TilePane?>
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.shape.Line?>
 <?import javafx.scene.shape.SVGPath?>
 
-<VBox styleClass="posContext" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1">
+<VBox styleClass="posContext" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.jdc.ishop.controller.SalePos">
    <stylesheets>
       <URL value="@color.css" />
       <URL value="@layout.css" />
@@ -33,7 +34,7 @@
                               <HBox alignment="BOTTOM_LEFT" prefHeight="32.0" spacing="5.0">
                                  <children>
                                     <SVGPath content="M0 4h4v20h-4zM6 4h2v20h-2zM10 4h2v20h-2zM16 4h2v20h-2zM24 4h2v20h-2zM30 4h2v20h-2zM20 4h1v20h-1zM14 4h1v20h-1zM27 4h1v20h-1zM0 26h2v2h-2zM6 26h2v2h-2zM10 26h2v2h-2zM20 26h2v2h-2zM30 26h2v2h-2zM24 26h4v2h-4zM14 26h4v2h-4z" />
-                                    <TextField promptText="Bar Code Number" styleClass="back1" />
+                                    <TextField fx:id="barcode" promptText="Bar Code Number" styleClass="back1" />
                                  </children>
                               </HBox>
                               <Line endX="100.0" startX="-100.0" />
@@ -44,7 +45,7 @@
                               <HBox alignment="BOTTOM_LEFT" spacing="5.0">
                                  <children>
                                     <SVGPath content="M24.11 10c0.566-0.402 1.11-0.851 1.608-1.348 1.044-1.044 1.742-2.328 1.966-3.616 0.246-1.412-0.115-2.723-0.988-3.597-0.697-0.697-1.641-1.065-2.73-1.065-1.551 0-3.185 0.744-4.483 2.043-2.077 2.077-3.288 4.945-3.94 6.991-0.482-2.056-1.444-4.833-3.313-6.702-1.003-1.003-2.285-1.518-3.495-1.518-0.989 0-1.931 0.344-2.633 1.046-1.562 1.562-1.351 4.306 0.471 6.128 0.65 0.65 1.409 1.189 2.21 1.638h-6.782v8h2v14h24v-14h2v-8h-5.89zM21.073 4.007c0.866-0.866 1.948-1.384 2.892-1.384 0.334 0 0.803 0.070 1.139 0.406 0.813 0.813 0.357 2.697-0.977 4.031-1.373 1.373-3.221 2.318-4.826 2.939h-1.584c0.58-1.798 1.627-4.264 3.356-5.993zM7.31 5.028c-0.022-0.285-0.002-0.82 0.381-1.203 0.32-0.32 0.743-0.387 1.042-0.387v0c0.664 0 1.358 0.313 1.904 0.859 1.059 1.058 1.93 2.743 2.521 4.871 0.016 0.057 0.031 0.115 0.047 0.171-0.057-0.015-0.114-0.031-0.171-0.047-2.128-0.591-3.813-1.462-4.871-2.521-0.495-0.495-0.805-1.13-0.853-1.743zM14 30h-8v-13h8v13zM14 16h-10v-4h10v4zM26 30h-8v-13h8v13zM28 16h-10v-4h10v4z" />
-                                    <TextField promptText="Item" styleClass="back1" />
+                                    <TextField fx:id="item" promptText="Item" styleClass="back1" />
                                  </children>
                               </HBox>
                               <Line endX="100.0" startX="-100.0" />
@@ -55,7 +56,7 @@
                               <HBox alignment="BOTTOM_LEFT" spacing="5.0">
                                  <children>
                                     <SVGPath content="M27.5,17h-12c-0.8,0-2,0.5-2.6,1.1L-1.9,32.9c-0.6,0.6-0.6,1.5,0,2.1l12.9,12.9c0.6,0.6,1.5,0.6,2.1,0l14.9-14.9c0.6-0.6,1.1-1.7,1.1-2.6v-12C29,17.7,28.3,17,27.5,17z M20,29c-1.7,0-3-1.3-3-3s1.3-3,3-3c1.7,0,3,1.3,3,3S21.7,29,20,29z M-7,34l17-17H7.5c-0.8,0-2,0.5-2.6,1.1L-9.9,32.9c-0.6,0.6-0.6,1.5,0,2.1L2.9,47.9c0.6,0.6,1.5,0.6,2.1,0L6,47L-7,34L-7,34z" />
-                                    <TextField promptText="Category" styleClass="back1" />
+                                    <TextField fx:id="category" promptText="Category" styleClass="back1" />
                                  </children>
                               </HBox>
                               <Line endX="100.0" startX="-100.0" />
@@ -70,15 +71,41 @@
                   </HBox>
                   <ScrollPane hbarPolicy="NEVER" VBox.vgrow="ALWAYS">
                      <content>
-                        <TilePane hgap="20.0" prefHeight="520.0" prefWidth="700.0" vgap="20.0">
+                        <TilePane fx:id="itemBox" hgap="20.0" prefHeight="520.0" prefWidth="720.0" vgap="20.0">
                            <padding>
                               <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
                            </padding>
+                           <children>
+                              <VBox>
+                                 <children>
+                                    <Label styleClass="category" text="Drinks" />
+                                    <HBox>
+                                       <children>
+                                          <VBox HBox.hgrow="ALWAYS">
+                                             <children>
+                                                <Label text="Cocala Small" />
+                                                <Label text="300 MMK" />
+                                             </children>
+                                          </VBox>
+                                          <HBox>
+                                             <children>
+                                                <SVGPath content="M31 12h-11v-11c0-0.552-0.448-1-1-1h-6c-0.552 0-1 0.448-1 1v11h-11c-0.552 0-1 0.448-1 1v6c0 0.552 0.448 1 1 1h11v11c0 0.552 0.448 1 1 1h6c0.552 0 1-0.448 1-1v-11h11c0.552 0 1-0.448 1-1v-6c0-0.552-0.448-1-1-1z" scaleX="0.8" scaleY="0.8" />
+                                             </children>
+                                          </HBox>
+                                       </children>
+                                    </HBox>
+                                 </children>
+                                 <styleClass>
+                                    <String fx:value="item" />
+                                    <String fx:value="back2" />
+                                 </styleClass>
+                              </VBox>
+                           </children>
                         </TilePane>
                      </content>
                   </ScrollPane>
                </children></VBox>
-            <VBox layoutX="10.0" layoutY="10.0" prefHeight="200.0" prefWidth="100.0">
+            <VBox prefHeight="200.0" prefWidth="100.0">
                <styleClass>
                   <String fx:value="posCart" />
                   <String fx:value="back1" />
@@ -107,7 +134,11 @@
                      </styleClass>
                   </HBox>
                   <Line endX="380.0" styleClass="text2" />
-                  <VBox prefHeight="200.0" prefWidth="100.0" VBox.vgrow="ALWAYS" />
+                  <StackPane VBox.vgrow="ALWAYS">
+                     <children>
+                        <VBox prefHeight="200.0" prefWidth="100.0" />
+                     </children>
+                  </StackPane>
                   <Line endX="380.0" layoutX="11.0" layoutY="61.0" styleClass="text2" />
                   <HBox styleClass="Padding10">
                      <children>
@@ -137,7 +168,7 @@
                         <VBox layoutX="20.0" layoutY="20.0">
                            <children>
                               <SVGPath content="M12.8,22.2C9.9,19,5.7,17,1,17c-8.8,0-16,7.2-16,16h3c0-7.2,5.8-13,13-13c3.8,0,7.3,1.7,9.7,4.3L6,29h11V18L12.8,22.2L12.8,22.2z M14,33c0,7.2-5.8,13-13,13c-3.8,0-7.3-1.7-9.7-4.3L-4,37h-11v11l4.2-4.2C-7.9,47-3.7,49,1,49c8.8,0,16-7.2,16-16H14z" styleClass="text1" />
-                              <Label styleClass="text1" text="Clear" />
+                              <Label styleClass="text1" text="New Cart" />
                            </children>
                            <styleClass>
                               <String fx:value="back3" />

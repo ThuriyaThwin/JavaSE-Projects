@@ -2,15 +2,16 @@
 
 <?import java.lang.String?>
 <?import java.net.URL?>
+<?import javafx.scene.control.Button?>
 <?import javafx.scene.control.ComboBox?>
 <?import javafx.scene.control.DatePicker?>
 <?import javafx.scene.control.TableColumn?>
 <?import javafx.scene.control.TableView?>
+<?import javafx.scene.effect.DropShadow?>
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.VBox?>
 
-
-<VBox xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/8.0.111">
+<VBox xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.jdc.ishop.controller.SalePosReport">
    <stylesheets>
       <URL value="@color.css" />
       <URL value="@layout.css" />
@@ -18,16 +19,25 @@
    <children>
       <HBox>
          <children>
-            <ComboBox prefHeight="27.0" prefWidth="203.0" promptText="Category" />
-            <DatePicker promptText="Date From" />
-            <DatePicker promptText="Date To" />
+            <ComboBox fx:id="schCategory" prefHeight="27.0" prefWidth="203.0" promptText="Category" />
+            <DatePicker fx:id="schDateFron" promptText="Date From" />
+            <DatePicker fx:id="schDateTo" promptText="Date To" />
+            <Button mnemonicParsing="false" onAction="#clear" prefHeight="27.0" prefWidth="101.0" text="CLEAR">
+               <effect>
+                  <DropShadow />
+               </effect>
+               <styleClass>
+                  <String fx:value="back1" />
+                  <String fx:value="text4" />
+               </styleClass>
+            </Button>
          </children>
          <styleClass>
             <String fx:value="Space10" />
             <String fx:value="AlignLeft" />
          </styleClass>
       </HBox>
-      <TableView prefHeight="200.0" prefWidth="200.0" VBox.vgrow="ALWAYS">
+      <TableView fx:id="table" prefHeight="200.0" prefWidth="200.0" VBox.vgrow="ALWAYS">
         <columns>
           <TableColumn prefWidth="114.0" text="Invoice Number" />
           <TableColumn prefWidth="160.99996948242188" text="Date" />
