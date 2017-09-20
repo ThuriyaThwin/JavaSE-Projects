@@ -21,7 +21,7 @@ public class ItemServiceImpl implements ItemService {
 	private static final String SELECT = "select i.id id, i.name name, i.price price, "
 			+ "i.category_id categoryId, c.name categoryName, i.barcode barcode, "
 			+ "i.del_flag deleteFlag, i.creation creation, i.create_user createUser "
-			+ "from item i inner join category c on i.category_id = c.id where 1 = 1 ";
+			+ "from item i inner join category c on i.category_id = c.id where i.del_flag = 0 ";
 
 	@Override
 	public void save(Item t) {
@@ -180,4 +180,62 @@ public class ItemServiceImpl implements ItemService {
 		return 0;
 	}
 
+	@Override
+	public List<Item> find(String barcode, String item, String category) {
+		List<Item> list = new ArrayList<>();
+		StringBuilder sb = new StringBuilder(SELECT);
+		List<Object> params = new ArrayList<>();
+
+		if(!barcode.isEmpty()) {
+			sb.append("and i.barcode like ? ");
+			params.add(barcode.concat("%"));
+		}
+		
+		if(!item.isEmpty()) {
+			if(isNumber(item)) {
+				sb.append("and i.id = ? ");
+				params.add(Integer.parseInt(item));
+			} else {
+				sb.append("and i.name like ? ");
+				params.add(item.concat("%"));
+			}
+		}
+
+		if(!category.isEmpty()) {
+			if(isNumber(category)) {
+				sb.append("and c.id = ? ");
+				params.add(Integer.parseInt(category));
+			} else {
+				sb.append("and c.name like ? ");
+				params.add(category.concat("%"));
+			}
+		}
+
+		try (Connection conn = DatabaseManager.getConnection();
+				PreparedStatement stmt = conn.prepareStatement(sb.toString())) {
+
+			for (int i = 0; i < params.size(); i++) {
+				stmt.setObject(i + 1, params.get(i));
+			}
+
+			ResultSet rs = stmt.executeQuery();
+
+			while (rs.next()) {
+				list.add(getObject(rs));
+			}
+
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+		return list;
+	}
+
+	private boolean isNumber(String str) {
+		try {
+			Integer.parseInt(str);
+			return true;
+		} catch (Exception e) {
+			return false;
+		}
+	}
 }

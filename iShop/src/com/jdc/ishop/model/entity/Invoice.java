@@ -1,6 +1,7 @@
 package com.jdc.ishop.model.entity;
 
 import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
 
 public class Invoice {
 
@@ -105,6 +106,18 @@ public class Invoice {
 
 	public void setModifiedUser(String modifiedUser) {
 		this.modifiedUser = modifiedUser;
+	}
+	
+	public String getStatus() {
+		return delete ? "Delete" : "Valid";
+	}
+	
+	public String getDate() {
+		return invoiceDate.format(DateTimeFormatter.ofPattern("yyyy-MM-dd"));
+	}
+	
+	public String getTime() {
+		return invoiceDate.format(DateTimeFormatter.ofPattern("HH:mm"));
 	}
 
 }

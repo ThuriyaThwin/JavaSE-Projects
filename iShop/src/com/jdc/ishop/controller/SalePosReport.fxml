@@ -10,49 +10,90 @@
 <?import javafx.scene.effect.DropShadow?>
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.VBox?>
+<?import javafx.scene.control.cell.PropertyValueFactory?>
 
-<VBox xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.jdc.ishop.controller.SalePosReport">
-   <stylesheets>
-      <URL value="@color.css" />
-      <URL value="@layout.css" />
-   </stylesheets>
-   <children>
-      <HBox>
-         <children>
-            <ComboBox fx:id="schCategory" prefHeight="27.0" prefWidth="203.0" promptText="Category" />
-            <DatePicker fx:id="schDateFron" promptText="Date From" />
-            <DatePicker fx:id="schDateTo" promptText="Date To" />
-            <Button mnemonicParsing="false" onAction="#clear" prefHeight="27.0" prefWidth="101.0" text="CLEAR">
-               <effect>
-                  <DropShadow />
-               </effect>
-               <styleClass>
-                  <String fx:value="back1" />
-                  <String fx:value="text4" />
-               </styleClass>
-            </Button>
-         </children>
-         <styleClass>
-            <String fx:value="Space10" />
-            <String fx:value="AlignLeft" />
-         </styleClass>
-      </HBox>
-      <TableView fx:id="table" prefHeight="200.0" prefWidth="200.0" VBox.vgrow="ALWAYS">
-        <columns>
-          <TableColumn prefWidth="114.0" text="Invoice Number" />
-          <TableColumn prefWidth="160.99996948242188" text="Date" />
-            <TableColumn prefWidth="125.0" text="Time" />
-            <TableColumn prefWidth="144.0" text="Sale Person" />
-            <TableColumn prefWidth="143.0" text="Status" />
-            <TableColumn prefWidth="104.0" text="Quentity" />
-            <TableColumn prefWidth="136.0" text="Sub Total" />
-            <TableColumn prefWidth="95.0" text="Tax" />
-            <TableColumn prefWidth="115.0" text="Total" />
-        </columns>
-      </TableView>
-   </children>
-   <styleClass>
-      <String fx:value="posContext" />
-      <String fx:value="Space20" />
-   </styleClass>
+<VBox xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1"
+	fx:controller="com.jdc.ishop.controller.SalePosReport">
+	<stylesheets>
+		<URL value="@color.css" />
+		<URL value="@layout.css" />
+	</stylesheets>
+	<children>
+		<HBox>
+			<children>
+				<ComboBox fx:id="schCategory" prefHeight="27.0" prefWidth="203.0"
+					promptText="Category" />
+				<DatePicker fx:id="schDateFron" promptText="Date From" />
+				<DatePicker fx:id="schDateTo" promptText="Date To" />
+				<Button mnemonicParsing="false" onAction="#clear" prefHeight="27.0"
+					prefWidth="101.0" text="CLEAR">
+					<effect>
+						<DropShadow />
+					</effect>
+					<styleClass>
+						<String fx:value="back1" />
+						<String fx:value="text4" />
+					</styleClass>
+				</Button>
+			</children>
+			<styleClass>
+				<String fx:value="Space10" />
+				<String fx:value="AlignLeft" />
+			</styleClass>
+		</HBox>
+		<TableView fx:id="table" prefHeight="200.0" prefWidth="200.0"
+			VBox.vgrow="ALWAYS">
+			<columns>
+				<TableColumn prefWidth="114.0" text="Invoice Number" >
+					<cellValueFactory>
+						<PropertyValueFactory property="id" />
+					</cellValueFactory>
+				</TableColumn>
+				<TableColumn prefWidth="160.99996948242188" text="Date" >
+					<cellValueFactory>
+						<PropertyValueFactory property="date" />
+					</cellValueFactory>
+				</TableColumn>
+				<TableColumn prefWidth="125.0" text="Time" >
+					<cellValueFactory>
+						<PropertyValueFactory property="time" />
+					</cellValueFactory>
+				</TableColumn>
+				<TableColumn prefWidth="144.0" text="Sale Person" >
+					<cellValueFactory>
+						<PropertyValueFactory property="saleEmployeeName" />
+					</cellValueFactory>
+				</TableColumn>
+				<TableColumn prefWidth="143.0" text="Status" >
+					<cellValueFactory>
+						<PropertyValueFactory property="status" />
+					</cellValueFactory>
+				</TableColumn>
+				<TableColumn prefWidth="104.0" text="Quentity" >
+					<cellValueFactory>
+						<PropertyValueFactory property="count" />
+					</cellValueFactory>
+				</TableColumn>
+				<TableColumn prefWidth="136.0" text="Sub Total" >
+					<cellValueFactory>
+						<PropertyValueFactory property="subTotal" />
+					</cellValueFactory>
+				</TableColumn>
+				<TableColumn prefWidth="95.0" text="Tax" >
+					<cellValueFactory>
+						<PropertyValueFactory property="tax" />
+					</cellValueFactory>
+				</TableColumn>
+				<TableColumn prefWidth="115.0" text="Total" >
+					<cellValueFactory>
+						<PropertyValueFactory property="total" />
+					</cellValueFactory>
+				</TableColumn>
+			</columns>
+		</TableView>
+	</children>
+	<styleClass>
+		<String fx:value="posContext" />
+		<String fx:value="Space20" />
+	</styleClass>
 </VBox>

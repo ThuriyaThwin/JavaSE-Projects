@@ -4,6 +4,7 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.sql.Statement;
 import java.sql.Timestamp;
 import java.time.LocalDate;
 import java.util.ArrayList;
@@ -12,12 +13,14 @@ import java.util.List;
 import com.jdc.ishop.IShopException;
 import com.jdc.ishop.model.entity.Category;
 import com.jdc.ishop.model.entity.Invoice;
+import com.jdc.ishop.model.entity.SaleOrder;
 import com.jdc.ishop.model.service.InvoiceService;
+import com.jdc.ishop.model.service.OrderService;
 import com.jdc.ishop.utils.DatabaseManager;
 
 public class InvoiceServiceImpl implements InvoiceService {
 	
-	private static final String SELECT = "select iv.id id, iv.invoice_date invoiceDate, "
+	private static final String SELECT = "select distinct iv.id id, iv.invoice_date invoiceDate, "
 			+ "iv.sale_employee saleEmployee, iv.quentity quentity, iv.sub_total subTotal, "
 			+ "iv.total total, iv.tax tax, iv.total total, iv.del_flag delFlag, "
 			+ "iv.modfied_user modUser, m.name saleEmployeeName "
@@ -27,6 +30,7 @@ public class InvoiceServiceImpl implements InvoiceService {
 			+ "inner join item it on si.item_id = it.id "
 			+ "where iv.del_flag = 0 ";
 
+	
 	@Override
 	public List<Invoice> find(String login, Category category, LocalDate dateFrom, LocalDate dateTo) {
 		
@@ -90,6 +94,52 @@ public class InvoiceServiceImpl implements InvoiceService {
 		i.setTax(rs.getInt("tax"));
 		i.setTotal(rs.getInt("total"));
 		return i;
+	}
+
+	@Override
+	public int create(Invoice invoice, List<SaleOrder> orders) {
+		
+		int id = create(invoice);
+		
+		OrderService service = OrderService.getInstance();
+		
+		for(SaleOrder s : orders) {
+			s.setInvoiceId(id);
+			service.create(s);
+		}
+		
+		
+		return id;
+	}
+	
+	private int create(Invoice s) {
+		String sql = "insert into invoice (invoice_date, sale_employee, quentity, sub_total, tax, total, modfied_user) "
+				+ "values (?, ?, ?, ?, ?, ?, ?)";
+		
+		try(Connection conn = DatabaseManager.getConnection(); 
+				PreparedStatement stmt = conn.prepareStatement(sql, Statement.RETURN_GENERATED_KEYS)) {
+			
+			stmt.setTimestamp(1, Timestamp.valueOf(s.getInvoiceDate()));
+			stmt.setString(2, s.getSaleEmployee());
+			stmt.setInt(3, s.getCount());
+			stmt.setInt(4, s.getSubTotal());
+			stmt.setInt(5, s.getTax());
+			stmt.setInt(6, s.getTotal());
+			stmt.setString(7, s.getModifiedUser());
+			
+			stmt.executeUpdate();
+			
+			ResultSet rs = stmt.getGeneratedKeys();
+			
+			while(rs.next()) {
+				return rs.getInt(1);
+			}
+			
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+
+		return 0;
 	}
 
 

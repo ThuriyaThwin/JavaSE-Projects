@@ -18,4 +18,6 @@ public interface OrderService {
 
 	Map<String, Map<String, Integer>> findData(LocalDate value, LocalDate value2);
 
+	void create(SaleOrder s);
+
 }

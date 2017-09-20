@@ -10,6 +10,7 @@
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.VBox?>
+<?import javafx.scene.control.cell.PropertyValueFactory?>
 
 <VBox styleClass="ContentView" xmlns="http://javafx.com/javafx/8.0.111"
 	xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.jdc.ishop.controller.SaleReport">
@@ -43,14 +44,46 @@
 				<TableView fx:id="table" prefHeight="200.0" prefWidth="200.0"
 					VBox.vgrow="ALWAYS">
 					<columns>
-						<TableColumn prefWidth="71.0" text="Order ID" />
-						<TableColumn prefWidth="116.0" text="Date" />
-						<TableColumn prefWidth="135.0" text="Category" />
-						<TableColumn prefWidth="143.0" text="Item" />
-						<TableColumn prefWidth="109.0" text="Unit Price" />
-						<TableColumn prefWidth="67.0" text="Count" />
-						<TableColumn prefWidth="94.0" text="Total" />
-						<TableColumn prefWidth="130.0" text="Employee" />
+						<TableColumn prefWidth="71.0" text="Order ID" >
+							<cellValueFactory>
+								<PropertyValueFactory property="id" />
+							</cellValueFactory>
+						</TableColumn>
+						<TableColumn prefWidth="116.0" text="Date" >
+							<cellValueFactory>
+								<PropertyValueFactory property="saleDate" />
+							</cellValueFactory>
+						</TableColumn>
+						<TableColumn prefWidth="135.0" text="Category" >
+							<cellValueFactory>
+								<PropertyValueFactory property="category" />
+							</cellValueFactory>
+						</TableColumn>
+						<TableColumn prefWidth="143.0" text="Item" >
+							<cellValueFactory>
+								<PropertyValueFactory property="itemName" />
+							</cellValueFactory>
+						</TableColumn>
+						<TableColumn prefWidth="109.0" text="Unit Price" >
+							<cellValueFactory>
+								<PropertyValueFactory property="price" />
+							</cellValueFactory>
+						</TableColumn>
+						<TableColumn prefWidth="67.0" text="Count" >
+							<cellValueFactory>
+								<PropertyValueFactory property="count" />
+							</cellValueFactory>
+						</TableColumn>
+						<TableColumn prefWidth="94.0" text="Total" >
+							<cellValueFactory>
+								<PropertyValueFactory property="total" />
+							</cellValueFactory>
+						</TableColumn>
+						<TableColumn prefWidth="130.0" text="Employee" >
+							<cellValueFactory>
+								<PropertyValueFactory property="employeeName" />
+							</cellValueFactory>
+						</TableColumn>
 					</columns>
 				</TableView>
 			</children>

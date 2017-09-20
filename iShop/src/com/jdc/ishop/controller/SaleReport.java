@@ -37,6 +37,7 @@ public class SaleReport implements Initializable{
 
     @FXML
     void clear(ActionEvent event) {
+    	schCategory.setValue(null);
     	schDateFrom.setValue(LocalDate.now().withDayOfMonth(1));
     	schDateTo.setValue(null);
     	schEmployee.clear();

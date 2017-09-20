@@ -191,3 +191,12 @@
 .item .category {
 	-fx-font-size: 24px;
 }
+
+.shopping-cart {
+	-fx-padding: 10;
+	-fx-spacing: 10;
+}
+
+.order-item{
+	-fx-spacing: 6;
+}

@@ -120,8 +120,6 @@ public class OrderServiceImpl implements OrderService {
 		for (Category category : list) {
 			map.put(category.getName(), findData(category, dateFrom, dateTo));
 		}
-		
-
 		return map;
 	}
 	
@@ -140,28 +138,54 @@ public class OrderServiceImpl implements OrderService {
 			
 			LocalDate target = dateFrom;
 			
-			
-			do {
+			while(target.compareTo(dateTo) <= 0) {
 				stmt.setInt(1, category.getId());
 				stmt.setTimestamp(2, Timestamp.valueOf(target.atStartOfDay()));
 				stmt.setTimestamp(3, Timestamp.valueOf(target.plusDays(1).atStartOfDay()));
 				
 				ResultSet rs = stmt.executeQuery();
 				
+				String key = target.format(DateTimeFormatter.ofPattern("yyyy-MM-dd"));
+				int value = 0;
+				
 				while(rs.next()) {
 					Long count = rs.getLong(2);
-					map.put(target.format(DateTimeFormatter.ofPattern("yyyy-MM-dd")), count.intValue());
+					value = count.intValue();
 				}
+				
+				map.put(key, value);
 				
 				target = target.plusDays(1);
 				
-			} while(target.compareTo(dateTo) < 0);
+			} 
 			
 		} catch (SQLException e) {
 			e.printStackTrace();
 		}
 
 		return map;
+	}
+
+	@Override
+	public void create(SaleOrder s) {
+		
+		String sql = "insert into sale_item (invoice_id, item_id, unit_price, quentity, total) "
+				+ "values (?, ?, ?, ?, ?)";
+		
+		try(Connection conn = DatabaseManager.getConnection(); 
+				PreparedStatement stmt = conn.prepareStatement(sql)) {
+
+			stmt.setInt(1, s.getInvoiceId());
+			stmt.setInt(2, s.getItemId());
+			stmt.setInt(3, s.getPrice());
+			stmt.setInt(4, s.getCount());
+			stmt.setInt(5, s.getTotal());
+			
+			stmt.executeUpdate();
+			
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
 	}
 
 }

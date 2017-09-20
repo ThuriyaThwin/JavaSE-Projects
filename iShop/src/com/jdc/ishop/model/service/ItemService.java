@@ -18,4 +18,6 @@ public interface ItemService {
 
 	long findCount();
 
+	List<Item> find(String text, String text2, String text3);
+
 }

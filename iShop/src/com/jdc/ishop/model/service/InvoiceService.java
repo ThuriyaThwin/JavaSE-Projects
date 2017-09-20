@@ -5,6 +5,7 @@ import java.util.List;
 
 import com.jdc.ishop.model.entity.Category;
 import com.jdc.ishop.model.entity.Invoice;
+import com.jdc.ishop.model.entity.SaleOrder;
 import com.jdc.ishop.model.service.impl.InvoiceServiceImpl;
 
 public interface InvoiceService {
@@ -14,5 +15,7 @@ public interface InvoiceService {
 	}
 
 	List<Invoice> find(String login, Category category, LocalDate dateFrom, LocalDate dateTo);
+
+	int create(Invoice invoice, List<SaleOrder> orders);
 
 }
