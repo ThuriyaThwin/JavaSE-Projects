@@ -75,32 +75,6 @@
                            <padding>
                               <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
                            </padding>
-                           <children>
-                              <VBox>
-                                 <children>
-                                    <Label styleClass="category" text="Drinks" />
-                                    <HBox>
-                                       <children>
-                                          <VBox HBox.hgrow="ALWAYS">
-                                             <children>
-                                                <Label text="Cocala Small" />
-                                                <Label text="300 MMK" />
-                                             </children>
-                                          </VBox>
-                                          <HBox>
-                                             <children>
-                                                <SVGPath content="M31 12h-11v-11c0-0.552-0.448-1-1-1h-6c-0.552 0-1 0.448-1 1v11h-11c-0.552 0-1 0.448-1 1v6c0 0.552 0.448 1 1 1h11v11c0 0.552 0.448 1 1 1h6c0.552 0 1-0.448 1-1v-11h11c0.552 0 1-0.448 1-1v-6c0-0.552-0.448-1-1-1z" scaleX="0.8" scaleY="0.8" />
-                                             </children>
-                                          </HBox>
-                                       </children>
-                                    </HBox>
-                                 </children>
-                                 <styleClass>
-                                    <String fx:value="item" />
-                                    <String fx:value="back2" />
-                                 </styleClass>
-                              </VBox>
-                           </children>
                         </TilePane>
                      </content>
                   </ScrollPane>
@@ -130,7 +104,11 @@
                      </styleClass>
                   </HBox>
                   <Line endX="380.0" styleClass="text2" />
-                  <StackPane fx:id="cargo" VBox.vgrow="ALWAYS" />
+                  <ScrollPane styleClass="Padding10" VBox.vgrow="ALWAYS">
+                     <content>
+                        <StackPane fx:id="cargo" />
+                     </content>
+                  </ScrollPane>
                   <Line endX="380.0" layoutX="11.0" layoutY="61.0" styleClass="text2" />
                   <HBox styleClass="Padding10">
                      <children>

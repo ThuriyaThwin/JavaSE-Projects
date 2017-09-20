@@ -38,26 +38,32 @@ public class SaleItem extends VBox {
 		name = new Label(order.getItemName());
 		getChildren().add(name);
 		
-		VBox box1 = new VBox();
-		box1.getChildren().add(new Label("Price"));
+		HBox box1 = new HBox();
+		box1.setSpacing(10);
 		unitPrice = new Label(df.format(order.getPrice()));
+		unitPrice.setPrefWidth(60);
+		unitPrice.setAlignment(Pos.BASELINE_RIGHT);
+		box1.getChildren().add(new Label("Price"));
 		box1.getChildren().add(unitPrice);
 		
-		VBox box2 = new VBox();
-		box2.setAlignment(Pos.BOTTOM_RIGHT);
+		HBox box2 = new HBox();
+		box2.setSpacing(10);
 		box2.getChildren().add(new Label("Count"));
-		box2.setPrefWidth(100);
+		
 		count = new Label("1");
+		count.setPrefWidth(40);
+		count.setAlignment(Pos.BASELINE_RIGHT);
+
 		box2.getChildren().add(count);
 
-		VBox box3 = new VBox();
-		box3.setAlignment(Pos.BOTTOM_RIGHT);
+		HBox box3 = new HBox();
+		box3.setAlignment(Pos.BASELINE_RIGHT);
 		total = new Label(df.format(order.getPrice()));
 		box3.getChildren().add(total);
 		HBox.setHgrow(box3, Priority.ALWAYS);
 		
 		HBox box = new HBox();
-		box.getStyleClass().add("Space10");
+		box.getStyleClass().add("Space20");
 		box.getChildren().addAll(box1, box2, box3);
 		getChildren().add(box);
 		

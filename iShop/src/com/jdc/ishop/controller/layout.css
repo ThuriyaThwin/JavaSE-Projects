@@ -199,4 +199,5 @@
 
 .order-item{
 	-fx-spacing: 6;
+	-fx-pref-width: 340px;
 }
