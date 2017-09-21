@@ -16,6 +16,6 @@ public interface InvoiceService {
 
 	List<Invoice> find(String login, Category category, LocalDate dateFrom, LocalDate dateTo);
 
-	int create(Invoice invoice, List<SaleOrder> orders);
+	void create(Invoice invoice, List<SaleOrder> orders);
 
 }

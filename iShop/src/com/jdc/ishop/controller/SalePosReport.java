@@ -10,7 +10,7 @@ import com.jdc.ishop.model.entity.Category;
 import com.jdc.ishop.model.entity.Invoice;
 import com.jdc.ishop.model.service.CategoryService;
 import com.jdc.ishop.model.service.InvoiceService;
-import com.jdc.ishop.utils.ManagerMessage;
+import com.jdc.ishop.utils.PosMessage;
 import com.jdc.ishop.utils.Security;
 
 import javafx.event.ActionEvent;
@@ -68,7 +68,7 @@ public class SalePosReport implements Initializable {
 			table.getItems().addAll(list);
 			
 		} catch (IShopException e) {
-			ManagerMessage.getInstance().alert(e);
+			PosMessage.getInstance().showMessage(e);
 		}
 	}
 

@@ -1,9 +1,9 @@
 package com.jdc.ishop.controller;
 
-import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
 
+import com.jdc.ishop.utils.PosMessage;
 import com.jdc.ishop.utils.Security;
 
 import javafx.animation.TranslateTransition;
@@ -29,10 +29,14 @@ public class SaleHome implements Initializable {
     private HBox pos;
     @FXML
     private HBox report;
+    
     @FXML
     private HBox controleBox;
     @FXML
     private Label memberName;
+
+    private Parent posView;
+    private Parent reportView;
 
     @FXML
     void close(MouseEvent event) {
@@ -46,7 +50,7 @@ public class SaleHome implements Initializable {
     		controleBox.getChildren().remove(report);
     		controleBox.getChildren().add(1, pos);
         	
-       		loadView("SalePosReport.fxml");
+       		loadView(reportView);
        	 
     	} catch (Exception e) {
 			e.printStackTrace();
@@ -60,7 +64,7 @@ public class SaleHome implements Initializable {
     		controleBox.getChildren().remove(pos);
     		controleBox.getChildren().add(1, report);
     		
-    		loadView("SalePos.fxml");
+    		loadView(posView);
         	
 		} catch (Exception e) {
 			e.printStackTrace();
@@ -70,13 +74,12 @@ public class SaleHome implements Initializable {
     
     private Node oldView;
     
-    private void loadView(String viewName) throws IOException {
+    private void loadView(Parent view)  {
     	
     	if(!contentView.getChildren().isEmpty()) {
     		oldView = contentView.getChildren().get(0);
     	}
     	
-    	Parent view = FXMLLoader.load(getClass().getResource(viewName));
     	view.setLayoutY(638);
     	contentView.getChildren().add(view);
     	
@@ -98,12 +101,22 @@ public class SaleHome implements Initializable {
 
 	@Override
 	public void initialize(URL location, ResourceBundle resources) {
-		controleBox.getChildren().remove(pos);
-		controleBox.getChildren().remove(report);
 		
-		memberName.setText(Security.getLoginUser().getName());
-		
-		showPos(null);
+		try {
+			controleBox.getChildren().remove(pos);
+			controleBox.getChildren().remove(report);
+			
+			posView = FXMLLoader.load(getClass().getResource("SalePos.fxml"));
+			reportView = FXMLLoader.load(getClass().getResource("SalePosReport.fxml"));
+			
+			memberName.setText(Security.getLoginUser().getName());
+			
+			PosMessage.init(contentView);
+			
+			showPos(null);
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
 	}
 
 	public static void showView() {

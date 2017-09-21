@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.String?>
+<?import java.net.URL?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.effect.DropShadow?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+
+<VBox xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.jdc.ishop.utils.PosMessageView">
+   <stylesheets>
+      <URL value="@../controller/color.css" />
+      <URL value="@../controller/layout.css" />
+   </stylesheets>
+   <children>
+      <HBox>
+         <children>
+            <Label styleClass="fs24" text="iShop Message" />
+         </children>
+         <styleClass>
+            <String fx:value="AlignCenter" />
+            <String fx:value="posMessageTitle" />
+            <String fx:value="back2" />
+         </styleClass>
+         <effect>
+            <DropShadow />
+         </effect>
+      </HBox>
+      <VBox fx:id="box" prefHeight="200.0" prefWidth="100.0" VBox.vgrow="ALWAYS">
+         <styleClass>
+            <String fx:value="AlignCenter" />
+            <String fx:value="Space10" />
+         </styleClass>
+      </VBox>
+   </children>
+   <styleClass>
+      <String fx:value="posMessageView" />
+      <String fx:value="back2" />
+   </styleClass>
+</VBox>

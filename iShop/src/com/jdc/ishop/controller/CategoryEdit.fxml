@@ -40,7 +40,6 @@
                      <styleClass>
                         <String fx:value="AlignLeft" />
                         <String fx:value="back2" />
-                        <String fx:value="text1" />
                      </styleClass></TextField>
                </children>
             </VBox>

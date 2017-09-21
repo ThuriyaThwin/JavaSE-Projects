@@ -155,11 +155,13 @@
 }
 
 .totalPrice {
-	-fx-spacing: 5;
+	-fx-spacing: 10;
 }
 
 .totalPrice Label {
 	-fx-font-size: 18px;
+	-fx-pref-width: 24px;
+	-fx-alignment: center;
 }
 
 .posButton {
@@ -201,3 +203,13 @@
 	-fx-spacing: 6;
 	-fx-pref-width: 340px;
 }
+
+.posMessageView {
+	-fx-pref-width: 1180px;
+	-fx-pref-height: 300px;
+}
+
+.posMessageTitle {
+	-fx-padding: 20;
+}
+

@@ -14,6 +14,8 @@ import com.jdc.ishop.model.entity.SaleOrder;
 import com.jdc.ishop.model.service.InvoiceService;
 import com.jdc.ishop.model.service.ItemService;
 import com.jdc.ishop.utils.ItemView;
+import com.jdc.ishop.utils.PosMessage;
+import com.jdc.ishop.utils.PrintListener;
 import com.jdc.ishop.utils.Security;
 import com.jdc.ishop.utils.ShoppingCart;
 
@@ -22,10 +24,11 @@ import javafx.fxml.Initializable;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import javafx.scene.input.MouseEvent;
+import javafx.scene.layout.HBox;
 import javafx.scene.layout.StackPane;
 import javafx.scene.layout.TilePane;
 
-public class SalePos implements Initializable, Consumer<Item>{
+public class SalePos implements Initializable, PrintListener ,Consumer<Item>{
 
     @FXML
     private TextField barcode;
@@ -50,6 +53,9 @@ public class SalePos implements Initializable, Consumer<Item>{
     @FXML
     private Label total;
     
+    @FXML
+    private HBox queue;
+    
     private List<ShoppingCart> carts;
     private int index;
 
@@ -63,9 +69,11 @@ public class SalePos implements Initializable, Consumer<Item>{
     	
 		cargo.getChildren().clear();
 		cargo.getChildren().add(carts.get(index));
+		
+		initQueue();
     }
 
-    @FXML
+	@FXML
     void deleteCart(MouseEvent event) {
     	carts.remove(index);
     	index = carts.size() - 1;
@@ -75,6 +83,7 @@ public class SalePos implements Initializable, Consumer<Item>{
     	} else {
     		cargo.getChildren().clear();
     		cargo.getChildren().add(carts.get(index));
+    		initQueue();
     	}
     }
 
@@ -92,7 +101,8 @@ public class SalePos implements Initializable, Consumer<Item>{
     	
     	invoiceService.create(invoice, orders);
     	
-    	// TODO show total amount to view
+    	// show total amount to view
+    	PosMessage.getInstance().showResult(invoice, this);
     }
     
     private ItemService itemService;
@@ -113,12 +123,22 @@ public class SalePos implements Initializable, Consumer<Item>{
 		item.textProperty().addListener((a,b,c) -> search());
 		category.textProperty().addListener((a,b,c) -> search());
 		
+		initQueue();
+		
 		search();
 	}
 
 	@Override
 	public void accept(Item t) {
 		carts.get(index).addItem(t);
+	}
+
+	@Override
+	public void print(Invoice invoice) {
+		// TODO Auto-generated method stub
+		
+		// delete cart
+		deleteCart(null);
 	}
 
 	private void search() {
@@ -128,6 +148,28 @@ public class SalePos implements Initializable, Consumer<Item>{
 		itemBox.getChildren().addAll(items.stream().map(a -> new ItemView(a, SalePos.this)).collect(Collectors.toList()));
 	
 	}
-	
+
+	private void initQueue() {
+    	queue.getChildren().clear();
+    	
+    	for (int i = 0; i < carts.size(); i++) {
+			Label lab = new Label(String.valueOf(i + 1));
+			lab.setOnMouseClicked(event -> {
+				Label source = (Label) event.getSource();
+				index = Integer.parseInt(source.getText()) - 1;
+				cargo.getChildren().clear();
+				cargo.getChildren().add(carts.get(index));
+				initQueue();
+			});
+			
+			if(i == index) {
+				lab.getStyleClass().add("back4");
+				lab.getStyleClass().add("text1");
+			}
+			
+			queue.getChildren().add(lab);
+		}
+	}
+
 
 }

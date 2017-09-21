@@ -97,22 +97,20 @@ public class InvoiceServiceImpl implements InvoiceService {
 	}
 
 	@Override
-	public int create(Invoice invoice, List<SaleOrder> orders) {
+	public void create(Invoice invoice, List<SaleOrder> orders) {
 		
-		int id = create(invoice);
+		create(invoice);
 		
 		OrderService service = OrderService.getInstance();
 		
 		for(SaleOrder s : orders) {
-			s.setInvoiceId(id);
+			s.setInvoiceId(invoice.getId());
 			service.create(s);
 		}
 		
-		
-		return id;
 	}
 	
-	private int create(Invoice s) {
+	private void create(Invoice s) {
 		String sql = "insert into invoice (invoice_date, sale_employee, quentity, sub_total, tax, total, modfied_user) "
 				+ "values (?, ?, ?, ?, ?, ?, ?)";
 		
@@ -132,14 +130,13 @@ public class InvoiceServiceImpl implements InvoiceService {
 			ResultSet rs = stmt.getGeneratedKeys();
 			
 			while(rs.next()) {
-				return rs.getInt(1);
+				s.setId(rs.getInt(1));
 			}
 			
 		} catch (SQLException e) {
 			e.printStackTrace();
 		}
 
-		return 0;
 	}
 
 
