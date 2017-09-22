@@ -58,7 +58,7 @@ public class SalePosReport implements Initializable {
 		search();
 	}
 
-	private void search() {
+	public void search() {
 		
 		try {
 			

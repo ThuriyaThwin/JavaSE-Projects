@@ -34,6 +34,8 @@ public class SaleHome implements Initializable {
     private HBox controleBox;
     @FXML
     private Label memberName;
+    
+    private SalePosReport controller;
 
     private Parent posView;
     private Parent reportView;
@@ -51,6 +53,8 @@ public class SaleHome implements Initializable {
     		controleBox.getChildren().add(1, pos);
         	
        		loadView(reportView);
+       		
+       		controller.search();
        	 
     	} catch (Exception e) {
 			e.printStackTrace();
@@ -107,7 +111,9 @@ public class SaleHome implements Initializable {
 			controleBox.getChildren().remove(report);
 			
 			posView = FXMLLoader.load(getClass().getResource("SalePos.fxml"));
-			reportView = FXMLLoader.load(getClass().getResource("SalePosReport.fxml"));
+			FXMLLoader loader = new FXMLLoader(getClass().getResource("SalePosReport.fxml"));
+			reportView = loader.load();
+			controller = loader.getController();
 			
 			memberName.setText(Security.getLoginUser().getName());
 			
