@@ -88,7 +88,11 @@ public class ShoppingCart extends VBox  {
 				.map(a -> a.getOrder())
 				.collect(Collectors.toList());
 	}
-	
-	
+
+	public void setTotalValues() {
+		subTotal.setText(String.valueOf(subTotalProperty.intValue()));
+		tax.setText(String.valueOf(taxProperty.intValue()));
+		total.setText(String.valueOf(totalProperty.intValue()));
+	}
 
 }

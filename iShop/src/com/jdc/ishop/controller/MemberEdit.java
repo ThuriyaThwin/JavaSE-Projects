@@ -68,7 +68,7 @@ public class MemberEdit {
         	item.setPassword(password.getText());
         	item.setEmail(email.getText());
         	item.setRole(isAdmin.isSelected() ? Role.Manager : Role.Sale);
-        	
+        	item.setDelete(isDelete.isSelected());
         	// save
         	saveHandler.accept(item);
         	

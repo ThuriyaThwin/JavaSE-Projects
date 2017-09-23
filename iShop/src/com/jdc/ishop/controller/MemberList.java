@@ -20,27 +20,27 @@ import javafx.scene.control.TextField;
 
 public class MemberList implements Initializable, Consumer<Member> {
 
-    @FXML
-    private ComboBox<Role> schRole;
+	@FXML
+	private ComboBox<Role> schRole;
 
-    @FXML
-    private TextField schName;
+	@FXML
+	private TextField schName;
 
-    @FXML
-    private TableView<Member> table;
-    
-    private MemberService service;
+	@FXML
+	private TableView<Member> table;
 
-    @FXML
-    void addNew(ActionEvent event) {
-    	MemberEdit.showView(null, this);
-    }
+	private MemberService service;
 
-    @FXML
-    void clear(ActionEvent event) {
-    	schRole.setValue(null);
-    	schName.clear();
-    }
+	@FXML
+	void addNew(ActionEvent event) {
+		MemberEdit.showView(null, this);
+	}
+
+	@FXML
+	void clear(ActionEvent event) {
+		schRole.setValue(null);
+		schName.clear();
+	}
 
 	@Override
 	public void accept(Member t) {
@@ -50,22 +50,22 @@ public class MemberList implements Initializable, Consumer<Member> {
 
 	@Override
 	public void initialize(URL location, ResourceBundle resources) {
-		
+
 		service = MemberService.getInstance();
-		
+
 		schRole.getItems().addAll(Role.values());
-		
-		schRole.valueProperty().addListener((a,b,c) -> search());
-		schName.textProperty().addListener((a,b,c) -> search());
-		
-		MenuItem edit = new MenuItem("edit");
+
+		schRole.valueProperty().addListener((a, b, c) -> search());
+		schName.textProperty().addListener((a, b, c) -> search());
+
+		MenuItem edit = new MenuItem("Edit");
 		edit.setOnAction(event -> MemberEdit.showView(table.getSelectionModel().getSelectedItem(), MemberList.this));
-		
+
 		table.setContextMenu(new ContextMenu(edit));
-		
+
 		search();
 	}
-	
+
 	private void search() {
 		List<Member> list = service.find(schRole.getValue(), schName.getText());
 		table.getItems().clear();
