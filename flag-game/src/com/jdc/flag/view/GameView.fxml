@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.String?>
+<?import java.net.URL?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.TilePane?>
+<?import javafx.scene.layout.VBox?>
+
+
+<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.jdc.flag.view.GameView">
+   <stylesheets>
+      <URL value="@color.css" />
+      <URL value="@layout.css" />
+   </stylesheets>
+   <styleClass>
+      <String fx:value="GameView" />
+      <String fx:value="Padding20" />
+      <String fx:value="space10" />
+      <String fx:value="AlCenter" />
+   </styleClass>
+   <children>
+      <VBox VBox.vgrow="ALWAYS">
+         <children>
+            <ImageView fx:id="flag" fitWidth="300.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../game/fi.png" />
+               </image>
+            </ImageView>
+            <Label styleClass="Fs24" text="Please choose correct one!" />
+         </children>
+         <styleClass>
+            <String fx:value="AlCenter" />
+            <String fx:value="space20" />
+         </styleClass>
+      </VBox>
+      <TilePane fx:id="questions" hgap="20.0" styleClass="QuestionPane" vgap="20.0" />
+   </children>
+</VBox>

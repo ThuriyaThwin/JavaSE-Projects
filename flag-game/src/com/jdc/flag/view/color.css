@@ -1,0 +1,35 @@
+.back1 {
+	-fx-background-color: #ffebee;
+}
+
+.back2 {
+	-fx-background-color: #ef9a9a;
+}
+
+.back3 {
+	-fx-background-color: #f44336;
+}
+
+.back4 {
+	-fx-background-color: #b71c1c;
+}
+
+.text1 {
+	-fx-text-fill: #ffebee;
+	-fx-fill: #ffebee;
+}
+
+.text2 {
+	-fx-text-fill: #ef9a9a;
+	-fx-fill: #ef9a9a;
+}
+
+.text3 {
+	-fx-text-fill: #f44336;
+	-fx-fill: #f44336;
+}
+
+.text4 {
+	-fx-text-fill: #b71c1c;
+	-fx-fill: #b71c1c;
+}

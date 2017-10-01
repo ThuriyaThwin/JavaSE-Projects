@@ -1,0 +1,59 @@
+.loginView {
+	-fx-pref-width: 620px;
+}
+
+.loginIconBox {
+	-fx-pref-height: 380px;
+	-fx-pref-width: 280px;
+	-fx-alignment: center;
+	-fx-spacing: 20;
+}
+
+.Fs24 {
+	-fx-font-size: 24px;
+}
+
+.loginForm {
+	-fx-padding: 40;
+	-fx-alignment: center;
+	-fx-spacing: 30;
+}
+
+.space10 {
+	-fx-spacing: 10;
+}
+
+.space20 {
+	-fx-spacing: 20;
+}
+
+.GameFrame {
+	-fx-pref-width: 840px;
+	-fx-pref-height: 480px;
+}
+
+.GameView {
+	-fx-pref-width: 560px;
+}
+
+.ButtonBar {
+	-fx-padding: 20;
+	-fx-spacing: 10;
+	-fx-alignment: center;
+}
+
+.ButtonBar Button {
+	-fx-pref-width: 160px;
+}
+
+.Padding20 {
+	-fx-padding: 20;
+}
+
+.AlCenter {
+	-fx-alignment: center;
+}
+
+.QuestionPane {
+	-fx-pref-height: 100px;
+}

@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXPasswordField?>
+<?import com.jfoenix.controls.JFXRippler?>
+<?import com.jfoenix.controls.JFXTextField?>
+<?import java.lang.String?>
+<?import java.net.URL?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.shape.SVGPath?>
+
+<HBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.jdc.flag.view.SignUp">
+   <stylesheets>
+      <URL value="@color.css" />
+      <URL value="@layout.css" />
+   </stylesheets>
+   <children>
+      <VBox>
+         <children>
+            <JFXRippler>
+               <children>
+                  <SVGPath content="M48.3-24.1l0.2-7.6C34.6-38.7,19-42.9,2-42.9s-34.6,4.2-48.5,11.2l0.2,7.6L1,6.9C1,6.9,48.3-24.1,48.3-24.1z M1-27.8c9.7,0,17.9,3.1,17.9,3.1L1-12.7l-17.9-12C-16.9-24.7-8.7-27.8,1-27.8z M11.8,73.1V36.6l2.4-31.3L1,13.9l-12.9-8.7l2.8,31.3v36.5H11.8z M-17.8,1.9L-53-21.6l-0.2-9.1H-74l3.1,44.4l25.2,18h30.8C-14.9,31.6-17.8,1.9-17.8,1.9z M-57.8,3.9l33.3,15.7l0.6,5.1l-33-14.9C-56.9,9.7-57.8,3.9-57.8,3.9z M-59.2-12.1l33,15.9l0.8,5.6L-58.6-5.9C-58.6-5.9-59.2-12.1-59.2-12.1z M-59.7,86.4L-35.1,99V50.1l-14.5-9v-5.6l-14.3-9.8C-63.9,25.7-59.7,86.4-59.7,86.4z M-14.3,78.3V41.9L-30.3,50v52.9l7.2,4.5l9.8-23.9h28.5l9.8,23.9l7.5-4.5V50l-15.9-8.1v36.4L-14.3,78.3L-14.3,78.3z M-8.5,89.1l-7.3,20.4h33.6l-7.3-20.4H-8.5z M16.9,31.6h30.8l25.2-18L76-30.8H55.2L55-21.6L19.7,1.9C19.7,1.9,16.9,31.6,16.9,31.6z M58.9,9.7L25.6,25.3l0.9-5.8L59.8,3.9L58.9,9.7z M60.6-5.9L27.3,9.7l0.8-5.9l33-15.9L60.6-5.9z M65.9,25.7l-14.3,9.8v5.6l-14.3,9V99l24.4-12.6C61.7,86.4,65.9,25.7,65.9,25.7z" styleClass="text1" />
+               </children>
+            </JFXRippler>
+            <Label text="Flag Game">
+               <styleClass>
+                  <String fx:value="text1" />
+                  <String fx:value="Fs24" />
+               </styleClass>
+            </Label>
+         </children>
+         <styleClass>
+            <String fx:value="back4" />
+            <String fx:value="loginIconBox" />
+         </styleClass>
+      </VBox>
+      <VBox styleClass="loginForm" HBox.hgrow="ALWAYS">
+         <children>
+            <HBox>
+               <children>
+                  <Label styleClass="Fs24" text="Player Sign Up" />
+               </children>
+            </HBox>
+            <JFXTextField fx:id="player" labelFloat="true" promptText="Player Name" />
+            <JFXPasswordField fx:id="password" labelFloat="true" promptText="Password" />
+            <HBox styleClass="space10">
+               <children>
+                  <JFXButton onAction="#login" text="Login" />
+                  <JFXButton layoutX="10.0" layoutY="10.0" onAction="#signup" text="Sign Up" />
+               </children>
+            </HBox>
+         </children>
+      </VBox>
+   </children>
+   <styleClass>
+      <String fx:value="loginView" />
+      <String fx:value="back1" />
+   </styleClass>
+</HBox>
