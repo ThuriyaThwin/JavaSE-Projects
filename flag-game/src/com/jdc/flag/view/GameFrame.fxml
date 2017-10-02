@@ -67,7 +67,7 @@
                <children>
                   <Button mnemonicParsing="false" onAction="#start" styleClass="back2" text="Start" />
                   <Button layoutX="10.0" layoutY="10.0" mnemonicParsing="false" onAction="#save" styleClass="back2" text="Save" />
-                  <Button layoutX="69.0" layoutY="10.0" mnemonicParsing="false" onAction="#exit" styleClass="back2" text="Setting" />
+                  <Button layoutX="69.0" layoutY="10.0" mnemonicParsing="false" onAction="#setting" styleClass="back2" text="Setting" />
                   <Button layoutX="380.0" layoutY="30.0" mnemonicParsing="false" onAction="#exit" styleClass="back2" text="Exit" />
                </children>
             </HBox>

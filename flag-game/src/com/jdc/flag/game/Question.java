@@ -24,5 +24,5 @@ public class Question implements Serializable {
 	public void setNames(List<String> names) {
 		this.names = names;
 	}
-
+	
 }

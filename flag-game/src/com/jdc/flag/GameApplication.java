@@ -1,5 +1,6 @@
 package com.jdc.flag;
 
+import com.jdc.flag.game.Player;
 import com.jdc.flag.view.GameFrame;
 import com.jdc.flag.view.Login;
 import com.jdc.flag.view.SignUp;
@@ -38,9 +39,12 @@ public class GameApplication extends Application {
 		STAGE.setScene(new Scene(view));
 	}
 	
-	public static void showGameView() {
-		HBox view = GameFrame.getView();
+	public static void showGameView(Player player) {
+		STAGE.hide();
+		STAGE = new Stage(StageStyle.UNDECORATED);
+		HBox view = GameFrame.getView(player);
 		STAGE.setScene(new Scene(view));
+		STAGE.show();
 	}
 
 }

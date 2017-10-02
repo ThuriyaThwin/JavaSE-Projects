@@ -8,7 +8,6 @@
 <?import javafx.scene.layout.TilePane?>
 <?import javafx.scene.layout.VBox?>
 
-
 <VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.jdc.flag.view.GameView">
    <stylesheets>
       <URL value="@color.css" />
@@ -25,7 +24,7 @@
          <children>
             <ImageView fx:id="flag" fitWidth="300.0" pickOnBounds="true" preserveRatio="true">
                <image>
-                  <Image url="@../game/fi.png" />
+                  <Image url="@../../../../../flags/mm.png" />
                </image>
             </ImageView>
             <Label styleClass="Fs24" text="Please choose correct one!" />
