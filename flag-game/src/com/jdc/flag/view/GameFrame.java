@@ -14,15 +14,18 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
+import javafx.geometry.Pos;
 import javafx.scene.Parent;
 import javafx.scene.control.Label;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.StackPane;
+import javafx.scene.layout.VBox;
 
 public class GameFrame implements Initializable, GameController{
 	
-	private static GameFrame controller;
-
+	private static final String OK = "";
+	private static final String NG = "";
+	
     @FXML
     private Label player;
 
@@ -87,7 +90,7 @@ public class GameFrame implements Initializable, GameController{
 	}
 
 	public void start() {
-    	Parent view = GameView.getView(currentGame);
+    	Parent view = GameView.getView(this);
     	contentView.getChildren().clear();
     	contentView.getChildren().add(view);
     }
@@ -106,7 +109,53 @@ public class GameFrame implements Initializable, GameController{
     	contentView.getChildren().add(view);
     }
 
-    public static HBox getView(Player player) {
+	@Override
+	public void initialize(URL location, ResourceBundle resources) {
+		home(null);
+	}
+	
+	@Override
+	public Player getCurrentPlayer() {
+		return currentPlayer;
+	}
+
+	@Override
+	public FlagGame getCurrentGame() {
+		return currentGame;
+	}
+
+	@Override
+	public void checkAnswer(String answer) {
+		
+		VBox box = new VBox();
+		box.setAlignment(Pos.CENTER);
+		box.setSpacing(20);
+		
+		if(currentGame.check(answer)) {
+			
+		} else {
+			
+		}
+		
+		contentView.getChildren().clear();
+		contentView.getChildren().add(box);
+	}
+	
+	@Override
+	public void showResult() {
+		VBox box = new VBox();
+		box.setAlignment(Pos.CENTER);
+		box.setSpacing(20);
+		
+		// Show results by result
+		
+		// Buttons (Finish || Next)
+		
+		contentView.getChildren().clear();
+		contentView.getChildren().add(box);
+	}
+
+	public static HBox getView(Player player) {
 		try {
 			FXMLLoader loader = new FXMLLoader(Login.class.getResource("GameFrame.fxml"));
 			HBox box = loader.load();
@@ -121,24 +170,9 @@ public class GameFrame implements Initializable, GameController{
 	}
 
 	private void setPlayer(Player currentPlayer) {
-
 		this.currentPlayer = currentPlayer;
 		player.setText(currentPlayer.getPlayer());
 	}
 
-	@Override
-	public void initialize(URL location, ResourceBundle resources) {
-		controller = this;
-		home(null);
-	}
-	
-	public static GameFrame getController() {
-		return controller;
-	}
 
-	@Override
-	public Player getCurrentPlayer() {
-		return currentPlayer;
-	}
-	
 }

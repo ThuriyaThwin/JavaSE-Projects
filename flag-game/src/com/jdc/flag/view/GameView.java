@@ -3,7 +3,7 @@ package com.jdc.flag.view;
 import java.io.File;
 import java.io.FileInputStream;
 
-import com.jdc.flag.game.FlagGame;
+import com.jdc.flag.game.GameController;
 import com.jdc.flag.game.Question;
 import com.jfoenix.controls.JFXButton;
 
@@ -23,9 +23,9 @@ public class GameView {
     @FXML
     private TilePane questions;
     
-    private FlagGame game;
+    private GameController gameController;
 
-	public static Parent getView(FlagGame currentGame) {
+	public static Parent getView(GameController gameController) {
 		
 		try {
 			
@@ -33,7 +33,7 @@ public class GameView {
 			Parent view = loader.load();
 			
 			GameView controller = loader.getController();
-			controller.game = currentGame;
+			controller.gameController = gameController;
 			
 			controller.loadNewQuestion();
 			
@@ -49,7 +49,7 @@ public class GameView {
 	private void loadNewQuestion() {
 		
 		try {
-			Question q = game.next();
+			Question q = gameController.getCurrentGame().next();
 			
 			if(null != q) {
 				// new question
@@ -63,7 +63,7 @@ public class GameView {
 				}
 			} else {
 				// no question
-				
+				gameController.showResult();
 			}
 			
 		} catch (Exception e) {
@@ -75,15 +75,7 @@ public class GameView {
 	private void answer(ActionEvent e) {
 		
 		JFXButton btn = (JFXButton) e.getSource();
-		String answer = btn.getText();
-		
-		if(game.check(answer)) {
-			// right
-			
-		} else {
-			// wrong
-			
-		}
+		gameController.checkAnswer(btn.getText());
 		
 	}
 
