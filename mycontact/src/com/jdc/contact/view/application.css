@@ -1,0 +1,41 @@
+.MainView {
+	-fx-pref-width: 980px;
+	-fx-pref-height: 680px;
+	-fx-background-color: rgb(234,234,234);	
+}
+
+.Title {
+	-fx-alignment: center-left ;
+	-fx-background-color: rgb(94,94,94);
+	-fx-padding: 10;
+}
+
+.Title Label {
+	-fx-text-fill: rgb(254,255,255);
+	-fx-font-size: 24px;
+}
+
+.SearchBox {
+	-fx-padding: 10;
+	-fx-spacing: 10;
+}
+
+.SubView {
+	-fx-pref-width: 580px;
+	-fx-background-color: rgb(234,234,234);	
+}
+
+.ButtonBox {
+	-fx-alignment: center-left ;
+	-fx-spacing: 5;
+}
+
+.ButtonBox Button {
+	-fx-pref-width: 120px;
+	-fx-background-color: rgb(145,145,145);
+	-fx-text-fill: rgb(254,255,255);
+}
+
+.FormBox {
+	-fx-padding: 0 40 0 0;
+}

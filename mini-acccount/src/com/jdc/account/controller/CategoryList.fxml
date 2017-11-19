@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.control.cell.PropertyValueFactory?>
+
+
+<VBox prefHeight="300.0" prefWidth="400.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/8.0.111" fx:controller="com.jdc.account.controller.CategoryList">
+   <children>
+      <TableView fx:id="table" prefHeight="200.0" prefWidth="200.0" VBox.vgrow="ALWAYS">
+        <columns>
+          <TableColumn prefWidth="75.0" text="ID" >
+          	<cellValueFactory>
+          		<PropertyValueFactory property="id" />
+          	</cellValueFactory>
+          </TableColumn>
+          <TableColumn prefWidth="317.0" text="Name" >
+          	<cellValueFactory>
+          		<PropertyValueFactory property="name" />
+          	</cellValueFactory>
+          </TableColumn>
+        </columns>
+      </TableView>
+   </children>
+</VBox>
