@@ -1,0 +1,304 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+
+<VBox prefWidth="800.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/9">
+   <children>
+      <VBox alignment="CENTER_RIGHT" style="-fx-background-color: black;">
+         <children>
+            <Label text="0" textFill="#f8f5f5" />
+            <Label layoutX="802.0" layoutY="10.0" text="0" textFill="#f8f5f5">
+               <font>
+                  <Font size="53.0" />
+               </font>
+            </Label>
+         </children>
+      </VBox>
+      <VBox>
+         <children>
+            <GridPane>
+              <columnConstraints>
+                  <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" maxWidth="80.0" minWidth="80.0" prefWidth="100.0" />
+                  <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" maxWidth="80.0" minWidth="80.0" prefWidth="100.0" />
+                  <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" maxWidth="80.0" minWidth="80.0" prefWidth="100.0" />
+                <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" maxWidth="80.0" minWidth="80.0" prefWidth="100.0" />
+                  <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" maxWidth="80.0" minWidth="80.0" prefWidth="100.0" />
+                  <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" maxWidth="80.0" minWidth="80.0" prefWidth="100.0" />
+                  <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" maxWidth="80.0" minWidth="80.0" prefWidth="100.0" />
+                  <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" maxWidth="80.0" minWidth="80.0" prefWidth="100.0" />
+                <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" maxWidth="80.0" minWidth="80.0" prefWidth="100.0" />
+                  <ColumnConstraints hgrow="SOMETIMES" maxWidth="80.0" minWidth="80.0" prefWidth="100.0" />
+              </columnConstraints>
+              <rowConstraints>
+                  <RowConstraints maxHeight="70.0" minHeight="70.0" prefHeight="70.0" valignment="CENTER" vgrow="SOMETIMES" />
+                  <RowConstraints maxHeight="70.0" minHeight="70.0" prefHeight="70.0" valignment="CENTER" vgrow="SOMETIMES" />
+                <RowConstraints maxHeight="70.0" minHeight="70.0" prefHeight="70.0" valignment="CENTER" vgrow="SOMETIMES" />
+                <RowConstraints maxHeight="70.0" minHeight="70.0" prefHeight="70.0" valignment="CENTER" vgrow="SOMETIMES" />
+                <RowConstraints maxHeight="70.0" minHeight="70.0" prefHeight="70.0" valignment="CENTER" vgrow="SOMETIMES" />
+              </rowConstraints>
+               <children>
+                  <Button mnemonicParsing="false" prefHeight="68.0" prefWidth="78.0" style="-fx-background-color: silver;" text="(">
+                     <font>
+                        <Font size="20.0" />
+                     </font>
+                  </Button>
+                  <Button mnemonicParsing="false" prefHeight="68.0" prefWidth="78.0" style="-fx-background-color: silver;" text="2ⁿᵈ" GridPane.rowIndex="1">
+                     <font>
+                        <Font name="Arial" size="20.0" />
+                     </font>
+                  </Button>
+                  <Button mnemonicParsing="false" prefHeight="68.0" prefWidth="78.0" style="-fx-background-color: silver;" text="⅟x" GridPane.rowIndex="2">
+                     <font>
+                        <Font size="20.0" />
+                     </font>
+                  </Button>
+                  <Button mnemonicParsing="false" prefHeight="68.0" prefWidth="78.0" style="-fx-background-color: silver;" text="x!" GridPane.rowIndex="3">
+                     <font>
+                        <Font size="20.0" />
+                     </font>
+                  </Button>
+                  <Button mnemonicParsing="false" prefHeight="68.0" prefWidth="78.0" style="-fx-background-color: silver;" text="Rad" GridPane.rowIndex="4">
+                     <font>
+                        <Font size="20.0" />
+                     </font>
+                  </Button>
+                  <Button mnemonicParsing="false" prefHeight="68.0" prefWidth="78.0" style="-fx-background-color: silver;" text=")" GridPane.columnIndex="1">
+                     <font>
+                        <Font size="20.0" />
+                     </font>
+                  </Button>
+                  <Button mnemonicParsing="false" prefHeight="68.0" prefWidth="78.0" style="-fx-background-color: silver;" text="x²" GridPane.columnIndex="1" GridPane.rowIndex="1">
+                     <font>
+                        <Font size="20.0" />
+                     </font>
+                  </Button>
+                  <Button mnemonicParsing="false" prefHeight="68.0" prefWidth="78.0" style="-fx-background-color: silver;" text="2√x" GridPane.columnIndex="1" GridPane.rowIndex="2">
+                     <font>
+                        <Font size="20.0" />
+                     </font>
+                  </Button>
+                  <Button mnemonicParsing="false" prefHeight="68.0" prefWidth="78.0" style="-fx-background-color: silver;" text="sin" GridPane.columnIndex="1" GridPane.rowIndex="3">
+                     <font>
+                        <Font size="20.0" />
+                     </font>
+                  </Button>
+                  <Button mnemonicParsing="false" prefHeight="68.0" prefWidth="78.0" style="-fx-background-color: silver;" text="sinh" GridPane.columnIndex="1" GridPane.rowIndex="4">
+                     <font>
+                        <Font size="20.0" />
+                     </font>
+                  </Button>
+                  <Button mnemonicParsing="false" prefHeight="68.0" prefWidth="78.0" style="-fx-background-color: silver;" text="mc" GridPane.columnIndex="2">
+                     <font>
+                        <Font size="20.0" />
+                     </font>
+                  </Button>
+                  <Button mnemonicParsing="false" prefHeight="68.0" prefWidth="78.0" style="-fx-background-color: silver;" text="x³" GridPane.columnIndex="2" GridPane.rowIndex="1">
+                     <font>
+                        <Font size="20.0" />
+                     </font>
+                  </Button>
+                  <Button mnemonicParsing="false" prefHeight="68.0" prefWidth="78.0" style="-fx-background-color: silver;" text="3√x" GridPane.columnIndex="2" GridPane.rowIndex="2">
+                     <font>
+                        <Font size="20.0" />
+                     </font>
+                  </Button>
+                  <Button mnemonicParsing="false" prefHeight="68.0" prefWidth="78.0" style="-fx-background-color: silver;" text="cos" GridPane.columnIndex="2" GridPane.rowIndex="3">
+                     <font>
+                        <Font size="20.0" />
+                     </font>
+                  </Button>
+                  <Button mnemonicParsing="false" prefHeight="68.0" prefWidth="78.0" style="-fx-background-color: silver;" text="cosh" GridPane.columnIndex="2" GridPane.rowIndex="4">
+                     <font>
+                        <Font size="20.0" />
+                     </font>
+                  </Button>
+                  <Button mnemonicParsing="false" prefHeight="68.0" prefWidth="78.0" style="-fx-background-color: silver;" text="m+" GridPane.columnIndex="3">
+                     <font>
+                        <Font size="20.0" />
+                     </font>
+                  </Button>
+                  <Button mnemonicParsing="false" prefHeight="68.0" prefWidth="78.0" style="-fx-background-color: silver;" text="xʸ" GridPane.columnIndex="3" GridPane.rowIndex="1">
+                     <font>
+                        <Font size="20.0" />
+                     </font>
+                  </Button>
+                  <Button mnemonicParsing="false" prefHeight="68.0" prefWidth="78.0" style="-fx-background-color: silver;" text="y√x" GridPane.columnIndex="3" GridPane.rowIndex="2">
+                     <font>
+                        <Font size="20.0" />
+                     </font>
+                  </Button>
+                  <Button mnemonicParsing="false" prefHeight="68.0" prefWidth="78.0" style="-fx-background-color: silver;" text="tan" GridPane.columnIndex="3" GridPane.rowIndex="3">
+                     <font>
+                        <Font size="20.0" />
+                     </font>
+                  </Button>
+                  <Button mnemonicParsing="false" prefHeight="68.0" prefWidth="78.0" style="-fx-background-color: silver;" text="tanh" GridPane.columnIndex="3" GridPane.rowIndex="4">
+                     <font>
+                        <Font size="20.0" />
+                     </font>
+                  </Button>
+                  <Button mnemonicParsing="false" prefHeight="68.0" prefWidth="78.0" style="-fx-background-color: silver;" text="m-" GridPane.columnIndex="4">
+                     <font>
+                        <Font size="20.0" />
+                     </font>
+                  </Button>
+                  <Button mnemonicParsing="false" prefHeight="68.0" prefWidth="78.0" style="-fx-background-color: silver;" text="eˣ" GridPane.columnIndex="4" GridPane.rowIndex="1">
+                     <font>
+                        <Font size="20.0" />
+                     </font>
+                  </Button>
+                  <Button mnemonicParsing="false" prefHeight="68.0" prefWidth="78.0" style="-fx-background-color: silver;" text="In" GridPane.columnIndex="4" GridPane.rowIndex="2">
+                     <font>
+                        <Font size="20.0" />
+                     </font>
+                  </Button>
+                  <Button mnemonicParsing="false" prefHeight="68.0" prefWidth="78.0" style="-fx-background-color: silver;" text="e" GridPane.columnIndex="4" GridPane.rowIndex="3">
+                     <font>
+                        <Font size="20.0" />
+                     </font>
+                  </Button>
+                  <Button mnemonicParsing="false" prefHeight="68.0" prefWidth="78.0" style="-fx-background-color: silver;" text="Π" GridPane.columnIndex="4" GridPane.rowIndex="4">
+                     <font>
+                        <Font size="20.0" />
+                     </font>
+                  </Button>
+                  <Button mnemonicParsing="false" prefHeight="68.0" prefWidth="78.0" style="-fx-background-color: silver;" text="mr" GridPane.columnIndex="5">
+                     <font>
+                        <Font size="20.0" />
+                     </font>
+                  </Button>
+                  <Button mnemonicParsing="false" prefHeight="68.0" prefWidth="78.0" style="-fx-background-color: silver;" text="10ⁿ" GridPane.columnIndex="5" GridPane.rowIndex="1">
+                     <font>
+                        <Font size="20.0" />
+                     </font>
+                  </Button>
+                  <Button mnemonicParsing="false" prefHeight="68.0" prefWidth="78.0" style="-fx-background-color: silver;" text="log₁₀" GridPane.columnIndex="5" GridPane.rowIndex="2">
+                     <font>
+                        <Font size="20.0" />
+                     </font>
+                  </Button>
+                  <Button mnemonicParsing="false" prefHeight="68.0" prefWidth="78.0" style="-fx-background-color: silver;" text="EE" GridPane.columnIndex="5" GridPane.rowIndex="3">
+                     <font>
+                        <Font size="20.0" />
+                     </font>
+                  </Button>
+                  <Button mnemonicParsing="false" prefHeight="68.0" prefWidth="78.0" style="-fx-background-color: silver;" text="Rand" GridPane.columnIndex="5" GridPane.rowIndex="4">
+                     <font>
+                        <Font size="20.0" />
+                     </font>
+                  </Button>
+                  <Button mnemonicParsing="false" prefHeight="68.0" prefWidth="78.0" style="-fx-background-color: #6b7068#6b7068;" text="C" textFill="#fcfafa" GridPane.columnIndex="6">
+                     <font>
+                        <Font size="20.0" />
+                     </font>
+                  </Button>
+                  <Button mnemonicParsing="false" prefHeight="68.0" prefWidth="78.0" style="-fx-background-color: grey;" text="7" textFill="#fff9f9" GridPane.columnIndex="6" GridPane.rowIndex="1">
+                     <font>
+                        <Font size="20.0" />
+                     </font>
+                  </Button>
+                  <Button mnemonicParsing="false" prefHeight="68.0" prefWidth="78.0" style="-fx-background-color: grey;" text="4" textFill="#fff9f9" GridPane.columnIndex="6" GridPane.rowIndex="2">
+                     <font>
+                        <Font size="20.0" />
+                     </font>
+                  </Button>
+                  <Button mnemonicParsing="false" prefHeight="68.0" prefWidth="78.0" style="-fx-background-color: grey;" text="1" textFill="#fff9f9" GridPane.columnIndex="6" GridPane.rowIndex="3">
+                     <font>
+                        <Font size="20.0" />
+                     </font>
+                  </Button>
+                  <Button mnemonicParsing="false" prefHeight="68.0" prefWidth="78.0" style="-fx-background-color: grey;" text="." textFill="#fff9f9" GridPane.columnIndex="8" GridPane.rowIndex="4">
+                     <font>
+                        <Font size="20.0" />
+                     </font>
+                  </Button>
+                  <Button mnemonicParsing="false" prefHeight="68.0" prefWidth="78.0" style="-fx-background-color: #6b7068#6b7068;" text="+/-" textFill="#fcfafa" GridPane.columnIndex="7">
+                     <font>
+                        <Font size="20.0" />
+                     </font>
+                  </Button>
+                  <Button mnemonicParsing="false" prefHeight="68.0" prefWidth="78.0" style="-fx-background-color: grey;" text="8" textFill="#fff9f9" GridPane.columnIndex="7" GridPane.rowIndex="1">
+                     <font>
+                        <Font size="20.0" />
+                     </font>
+                  </Button>
+                  <Button mnemonicParsing="false" prefHeight="68.0" prefWidth="78.0" style="-fx-background-color: grey;" text="5" textFill="#fff9f9" GridPane.columnIndex="7" GridPane.rowIndex="2">
+                     <font>
+                        <Font size="20.0" />
+                     </font>
+                  </Button>
+                  <Button mnemonicParsing="false" prefHeight="68.0" prefWidth="78.0" style="-fx-background-color: grey;" text="2" textFill="#fff9f9" GridPane.columnIndex="7" GridPane.rowIndex="3">
+                     <font>
+                        <Font size="20.0" />
+                     </font>
+                  </Button>
+                  <Button mnemonicParsing="false" prefHeight="68.0" prefWidth="158.0" style="-fx-background-color: grey;" text="0" textFill="#fff9f9" GridPane.columnIndex="6" GridPane.columnSpan="2" GridPane.rowIndex="4">
+                     <font>
+                        <Font size="20.0" />
+                     </font>
+                  </Button>
+                  <Button mnemonicParsing="false" prefHeight="68.0" prefWidth="78.0" style="-fx-background-color: #6b7068#6b7068;" text="\%" textFill="#fcfafa" GridPane.columnIndex="8">
+                     <font>
+                        <Font size="20.0" />
+                     </font>
+                  </Button>
+                  <Button mnemonicParsing="false" prefHeight="68.0" prefWidth="78.0" style="-fx-background-color: grey;" text="9" textFill="#fff9f9" GridPane.columnIndex="8" GridPane.rowIndex="1">
+                     <font>
+                        <Font size="20.0" />
+                     </font>
+                  </Button>
+                  <Button mnemonicParsing="false" prefHeight="68.0" prefWidth="78.0" style="-fx-background-color: grey;" text="6" textFill="#fff9f9" GridPane.columnIndex="8" GridPane.rowIndex="2">
+                     <font>
+                        <Font size="20.0" />
+                     </font>
+                  </Button>
+                  <Button mnemonicParsing="false" prefHeight="68.0" prefWidth="78.0" style="-fx-background-color: grey;" text="3" textFill="#fff9f9" GridPane.columnIndex="8" GridPane.rowIndex="3">
+                     <font>
+                        <Font size="20.0" />
+                     </font>
+                  </Button>
+                  <Button mnemonicParsing="false" prefHeight="68.0" prefWidth="78.0" style="-fx-background-color: orange;" text="=" GridPane.columnIndex="9" GridPane.rowIndex="4">
+                     <font>
+                        <Font size="20.0" />
+                     </font>
+                  </Button>
+                  <Button mnemonicParsing="false" prefHeight="68.0" prefWidth="78.0" style="-fx-background-color: orange;" text="÷" GridPane.columnIndex="9">
+                     <font>
+                        <Font size="20.0" />
+                     </font>
+                  </Button>
+                  <Button mnemonicParsing="false" prefHeight="68.0" prefWidth="78.0" style="-fx-background-color: orange;" text="×" GridPane.columnIndex="9" GridPane.rowIndex="1">
+                     <font>
+                        <Font size="20.0" />
+                     </font>
+                  </Button>
+                  <Button mnemonicParsing="false" prefHeight="68.0" prefWidth="78.0" style="-fx-background-color: orange;" text="-" GridPane.columnIndex="9" GridPane.rowIndex="2">
+                     <font>
+                        <Font size="20.0" />
+                     </font>
+                     <GridPane.margin>
+                        <Insets />
+                     </GridPane.margin>
+                  </Button>
+                  <Button mnemonicParsing="false" prefHeight="68.0" prefWidth="78.0" style="-fx-background-color: orange;" text="+" GridPane.columnIndex="9" GridPane.rowIndex="3">
+                     <font>
+                        <Font size="20.0" />
+                     </font>
+                  </Button>
+               </children>
+            </GridPane>
+         </children>
+         <VBox.margin>
+            <Insets bottom="2.0" top="2.0" />
+         </VBox.margin>
+      </VBox>
+   </children>
+</VBox>
