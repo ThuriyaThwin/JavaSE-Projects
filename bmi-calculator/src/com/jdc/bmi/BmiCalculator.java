@@ -33,6 +33,9 @@ public class BmiCalculator implements Initializable{
     @FXML
     private Label result;
 
+    @FXML
+    private Label resultData;
+
     public void showResult() {
     	
     		double mass = getDoubleValue(kg.getText());
