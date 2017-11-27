@@ -4,7 +4,7 @@ public enum Calculator {
 	
 	Instance;
 	
-	public String getResult(double mass, double height) {
+	public BmiResult getResult(double mass, double height) {
 		double result = mass/(height * height);
 		
 		String str = null;
@@ -26,6 +26,6 @@ public enum Calculator {
 			str = "Obese Class III";
 		}
 		
-		return String.format("%s : %s", result, str);
+		return new BmiResult(result, str);
 	}
 }

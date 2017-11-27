@@ -41,8 +41,9 @@ public class BmiCalculator implements Initializable{
     		double mass = getDoubleValue(kg.getText());
     		double height = getDoubleValue(meter.getText());
     		
-    		String strResult = Calculator.Instance.getResult(mass, height);
-    		result.setText(strResult);
+    		BmiResult bmi = Calculator.Instance.getResult(mass, height);
+    		result.setText(bmi.getResultString());
+    		resultData.setText(bmi.getResultValue().toString());
 
     }
 
@@ -52,6 +53,9 @@ public class BmiCalculator implements Initializable{
 
 			@Override
 			public void changed(ObservableValue<? extends String> observable, String oldValue, String newValue) {
+				// clear result
+				clearResult();
+
 				setKilogram();
 			}
 		});
@@ -62,6 +66,10 @@ public class BmiCalculator implements Initializable{
 			public void changed(ObservableValue<? extends String> observable, String oldValue, String newValue) {
 				
 				try {
+					
+					// clear result
+					clearResult();
+					
 					// get feet value
 					Double feetDouble = getDoubleValue(feet.getText());
 					
@@ -91,15 +99,20 @@ public class BmiCalculator implements Initializable{
 		
 	}
 
-	protected Double getDoubleValue(String text) {
+	private Double getDoubleValue(String text) {
 		
 		if(null != text && !text.isEmpty())
 			return Double.valueOf(text);
 		
 		return 0d;
 	}
+	
+	private void clearResult() {
+		result.setText("");
+		resultData.setText("");
+	}
 
-	protected void setKilogram() {
+	private void setKilogram() {
 		
 		try {
 			// get lbs value
