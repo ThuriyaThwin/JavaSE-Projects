@@ -5,7 +5,8 @@ import java.util.ResourceBundle;
 
 import com.jdc.contact.model.Contact;
 import com.jdc.contact.model.Contact.Group;
-import com.jdc.contact.model.ContactStorage;
+import com.jdc.contact.model.ContactRepo;
+import com.jdc.contact.model.ContactRepoMemory;
 
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -36,7 +37,7 @@ public class ContactEdit implements Initializable{
     private TextArea address;
     
     private ContactReloader reloader;
-    private ContactStorage storage;
+    private ContactRepo storage;
 
     public void close() {
     		email.getScene().getWindow().hide();
@@ -89,7 +90,7 @@ public class ContactEdit implements Initializable{
 
 	@Override
 	public void initialize(URL location, ResourceBundle resources) {
-		storage = ContactStorage.getInstance();
+		storage = ContactRepoMemory.getInstance();
 		group.getItems().addAll(Group.values());
 	}
 

@@ -1,34 +1,41 @@
 package com.jdc.contact.model;
 
-import java.util.ArrayList;
 import java.util.List;
 import java.util.function.Predicate;
 import java.util.stream.Collectors;
 
 import com.jdc.contact.model.Contact.Group;
 
-public class ContactStorage {
-	
-	private static ContactStorage instance;
-	
-	public static ContactStorage getInstance() {
+public abstract class ContactRepo {
+
+	private static ContactRepo instance;
+
+	public static ContactRepo getInstance() {
 		
 		if(null == instance) {
-			instance = new ContactStorage();
+			instance = new ContactRepoObject();
 		}
 		return instance;
 	}
-	
-	private List<Contact> list;
-	
-	private ContactStorage() {
-		list = new ArrayList<>();
+
+	protected List<Contact> list;
+
+	public ContactRepo() {
+		super();
 	}
-	
+
 	public void add(Contact c) {
+		
+		if(list.size() > 0) {
+			Contact last = list.get(list.size() -1);
+			c.setId(last.getId() + 1);
+		} else {
+			c.setId(1);
+		}
+		
 		list.add(c);
 	}
-	
+
 	public List<Contact> getAll() {
 		return list;
 	}
@@ -43,7 +50,7 @@ public class ContactStorage {
 		if(null != name && !name.isEmpty()) {
 			pred = pred.and(a -> a.getName().startsWith(name));
 		}
-
+	
 		if(null != phone && !phone.isEmpty()) {
 			pred = pred.and(a -> a.getPhone().startsWith(phone));
 		}

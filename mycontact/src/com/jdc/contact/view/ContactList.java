@@ -5,8 +5,9 @@ import java.util.List;
 import java.util.ResourceBundle;
 
 import com.jdc.contact.model.Contact;
-import com.jdc.contact.model.ContactStorage;
+import com.jdc.contact.model.ContactRepoMemory;
 import com.jdc.contact.model.Contact.Group;
+import com.jdc.contact.model.ContactRepo;
 
 import javafx.beans.value.ChangeListener;
 import javafx.beans.value.ObservableValue;
@@ -30,7 +31,7 @@ public class ContactList implements Initializable, ContactReloader{
     @FXML
     private TableView<Contact> table;
     
-    private ContactStorage storage;
+    private ContactRepo storage;
 
     public void addContact() {
     		ContactEdit.show(this);
@@ -44,7 +45,7 @@ public class ContactList implements Initializable, ContactReloader{
 
 	@Override
 	public void initialize(URL location, ResourceBundle resources) {
-		storage = ContactStorage.getInstance();
+		storage = ContactRepoMemory.getInstance();
 		groups.getItems().addAll(Group.values());
 		
 		groups.valueProperty().addListener(new ChangeListener<Group>() {
