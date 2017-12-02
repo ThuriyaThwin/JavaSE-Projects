@@ -12,6 +12,7 @@ import javafx.scene.control.MenuBar;
 import javafx.scene.control.SeparatorMenuItem;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.StackPane;
+import javafx.scene.shape.SVGPath;
 
 public class AdminHome implements Initializable{
 
@@ -55,6 +56,42 @@ public class AdminHome implements Initializable{
 						}
 						
 					}
+				});
+			});
+		
+		buttonBar.getChildren().stream().filter(a -> a.getStyleClass().contains("icon"))
+			.map(a -> (HBox)a)
+			.forEach(node -> {
+				
+				// on mouse click
+				node.setOnMouseClicked(a -> {
+					// TODO
+				});
+				
+				// on mouse up
+				node.setOnMouseEntered(a -> {
+					
+					node.getStyleClass().remove("back1");
+					node.getStyleClass().add("back3");
+					
+					node.getChildren().stream().map(n -> (SVGPath)n)
+						.forEach(s -> {
+							s.getStyleClass().remove("text4");
+							s.getStyleClass().add("text1");
+						});
+				});
+				
+				// on mouse down
+				node.setOnMouseExited(a -> {
+					node.getStyleClass().remove("back3");
+					node.getStyleClass().add("back1");
+					
+					node.getChildren().stream().map(n -> (SVGPath)n)
+						.forEach(s -> {
+							s.getStyleClass().remove("text1");
+							s.getStyleClass().add("text4");
+						});
+					
 				});
 			});
 		
