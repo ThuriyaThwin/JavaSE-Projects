@@ -1,0 +1,26 @@
+.loginForm {
+	-fx-pref-width: 580px;
+	-fx-pref-height: 380px;
+}
+
+.form {
+	-fx-padding: 40 60 60 60;
+	-fx-spacing: 20;
+}
+
+.formGroup {
+	-fx-spacing: 5;
+}
+
+.formGroup Button{
+	-fx-pref-width: 160px;
+}
+
+.loginTitleView {
+	-fx-padding: 20;
+	-fx-spacing: 10;
+}
+
+.loginTitleView Label{
+	-fx-font-size: 30px;
+}
