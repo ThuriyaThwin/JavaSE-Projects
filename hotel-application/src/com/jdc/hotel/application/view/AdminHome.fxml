@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.String?>
+<?import java.net.URL?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Menu?>
+<?import javafx.scene.control.MenuBar?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.SeparatorMenuItem?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.shape.SVGPath?>
+
+
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" styleClass="AdminHomeView" xmlns="http://javafx.com/javafx/9" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.jdc.hotel.application.view.AdminHome">
+   <top>
+      <VBox BorderPane.alignment="CENTER">
+         <children>
+            <MenuBar fx:id="menuBar">
+              <menus>
+                <Menu mnemonicParsing="false" text="File">
+                     <items>
+                    <MenuItem mnemonicParsing="false" text="Close" />
+                     </items>
+                </Menu>
+                <Menu mnemonicParsing="false" text="Transaction">
+                  <items>
+                    <MenuItem mnemonicParsing="false" text="Reservations" />
+                        <MenuItem mnemonicParsing="false" text="Registrations" />
+                  </items>
+                </Menu>
+                  <Menu mnemonicParsing="false" text="Management">
+                    <items>
+                      <MenuItem mnemonicParsing="false" text="Room Types" />
+                        <MenuItem mnemonicParsing="false" text="Rooms" />
+                        <SeparatorMenuItem mnemonicParsing="false" />
+                        <MenuItem mnemonicParsing="false" text="Room Service Items" />
+                        <MenuItem mnemonicParsing="false" text="Laundry Items" />
+                        <SeparatorMenuItem mnemonicParsing="false" />
+                        <MenuItem mnemonicParsing="false" text="Users" />
+                        <MenuItem mnemonicParsing="false" text="Master Data Management" />
+                    </items>
+                  </Menu>
+                <Menu mnemonicParsing="false" text="Help">
+                  <items>
+                    <MenuItem mnemonicParsing="false" text="Change Password" />
+                  </items>
+                </Menu>
+              </menus>
+            </MenuBar>
+            <HBox fx:id="buttonBar" prefHeight="100.0" prefWidth="200.0">
+               <styleClass>
+                  <String fx:value="iconBar" />
+                  <String fx:value="back3" />
+               </styleClass>
+               <children>
+                  <HBox prefHeight="100.0" prefWidth="200.0">
+                     <children>
+                        <SVGPath content="M32 19l-6-6v-9h-4v5l-6-6-16 16v1h4v10h10v-6h4v6h10v-10h4zM32 19l-6-6v-9h-4v5l-6-6-16 16v1h4v10h10v-6h4v6h10v-10h4z" styleClass="text4" />
+                     </children>
+                     <styleClass>
+                        <String fx:value="back1" />
+                        <String fx:value="icon" />
+                     </styleClass>
+                  </HBox>
+                  <HBox layoutX="20.0" layoutY="20.0" prefHeight="100.0" prefWidth="200.0">
+                     <children>
+                        <SVGPath content="M20 8v-8h-14l-6 6v18h12v8h20v-24h-12zM6 2.828v3.172h-3.172l3.172-3.172zM2 22v-14h6v-6h10v6l-6 6v8h-10zM18 10.828v3.172h-3.172l3.172-3.172zM30 30h-16v-14h6v-6h10v20zM20 8v-8h-14l-6 6v18h12v8h20v-24h-12zM6 2.828v3.172h-3.172l3.172-3.172zM2 22v-14h6v-6h10v6l-6 6v8h-10zM18 10.828v3.172h-3.172l3.172-3.172zM30 30h-16v-14h6v-6h10v20z" styleClass="text4" />
+                     </children>
+                     <styleClass>
+                        <String fx:value="back1" />
+                        <String fx:value="icon" />
+                     </styleClass>
+                  </HBox>
+                  <HBox layoutX="105.0" layoutY="20.0" prefHeight="100.0" prefWidth="200.0">
+                     <children>
+                        <SVGPath content="M22 4h-4v-2c0-1.1-0.9-2-2-2h-4c-1.1 0-2 0.9-2 2v2h-4v4h16v-4zM16 4h-4v-1.996c0.001-0.001 0.002-0.002 0.004-0.004h3.993c0.001 0.001 0.003 0.002 0.004 0.004v1.996zM26 10v-5c0-0.55-0.45-1-1-1h-2v2h1v4h-6l-6 6v8h-8v-18h1v-2h-2c-0.55 0-1 0.45-1 1v20c0 0.55 0.45 1 1 1h9v6h20v-22h-6zM18 12.828v3.172h-3.172l3.172-3.172zM30 30h-16v-12h6v-6h10v18zM22 4h-4v-2c0-1.1-0.9-2-2-2h-4c-1.1 0-2 0.9-2 2v2h-4v4h16v-4zM16 4h-4v-1.996c0.001-0.001 0.002-0.002 0.004-0.004h3.993c0.001 0.001 0.003 0.002 0.004 0.004v1.996zM26 10v-5c0-0.55-0.45-1-1-1h-2v2h1v4h-6l-6 6v8h-8v-18h1v-2h-2c-0.55 0-1 0.45-1 1v20c0 0.55 0.45 1 1 1h9v6h20v-22h-6zM18 12.828v3.172h-3.172l3.172-3.172zM30 30h-16v-12h6v-6h10v18z" styleClass="text4" />
+                     </children>
+                     <styleClass>
+                        <String fx:value="back1" />
+                        <String fx:value="icon" />
+                     </styleClass>
+                  </HBox>
+                  <HBox layoutX="190.0" layoutY="20.0" prefHeight="100.0" prefWidth="200.0">
+                     <children>
+                        <SVGPath content="M22 4h-4v-2c0-1.1-0.9-2-2-2h-4c-1.1 0-2 0.9-2 2v2h-4v4h16v-4zM16 4h-4v-1.996c0.001-0.001 0.002-0.002 0.004-0.004h3.993c0.001 0.001 0.003 0.002 0.004 0.004v1.996zM26 10v-5c0-0.55-0.45-1-1-1h-2v2h1v4h-6l-6 6v8h-8v-18h1v-2h-2c-0.55 0-1 0.45-1 1v20c0 0.55 0.45 1 1 1h9v6h20v-22h-6zM18 12.828v3.172h-3.172l3.172-3.172zM30 30h-16v-12h6v-6h10v18zM22 4h-4v-2c0-1.1-0.9-2-2-2h-4c-1.1 0-2 0.9-2 2v2h-4v4h16v-4zM16 4h-4v-1.996c0.001-0.001 0.002-0.002 0.004-0.004h3.993c0.001 0.001 0.003 0.002 0.004 0.004v1.996zM26 10v-5c0-0.55-0.45-1-1-1h-2v2h1v4h-6l-6 6v8h-8v-18h1v-2h-2c-0.55 0-1 0.45-1 1v20c0 0.55 0.45 1 1 1h9v6h20v-22h-6zM18 12.828v3.172h-3.172l3.172-3.172zM30 30h-16v-12h6v-6h10v18z" styleClass="text4" />
+                     </children>
+                     <styleClass>
+                        <String fx:value="back1" />
+                        <String fx:value="icon" />
+                     </styleClass>
+                  </HBox>
+                  <HBox layoutX="275.0" layoutY="20.0" prefHeight="100.0" prefWidth="200.0">
+                     <children>
+                        <SVGPath content="M22 4h-4v-2c0-1.1-0.9-2-2-2h-4c-1.1 0-2 0.9-2 2v2h-4v4h16v-4zM16 4h-4v-1.996c0.001-0.001 0.002-0.002 0.004-0.004h3.993c0.001 0.001 0.003 0.002 0.004 0.004v1.996zM26 10v-5c0-0.55-0.45-1-1-1h-2v2h1v4h-6l-6 6v8h-8v-18h1v-2h-2c-0.55 0-1 0.45-1 1v20c0 0.55 0.45 1 1 1h9v6h20v-22h-6zM18 12.828v3.172h-3.172l3.172-3.172zM30 30h-16v-12h6v-6h10v18zM22 4h-4v-2c0-1.1-0.9-2-2-2h-4c-1.1 0-2 0.9-2 2v2h-4v4h16v-4zM16 4h-4v-1.996c0.001-0.001 0.002-0.002 0.004-0.004h3.993c0.001 0.001 0.003 0.002 0.004 0.004v1.996zM26 10v-5c0-0.55-0.45-1-1-1h-2v2h1v4h-6l-6 6v8h-8v-18h1v-2h-2c-0.55 0-1 0.45-1 1v20c0 0.55 0.45 1 1 1h9v6h20v-22h-6zM18 12.828v3.172h-3.172l3.172-3.172zM30 30h-16v-12h6v-6h10v18z" styleClass="text4" />
+                     </children>
+                     <styleClass>
+                        <String fx:value="back1" />
+                        <String fx:value="icon" />
+                     </styleClass>
+                  </HBox>
+                  <HBox styleClass="AdminTitle" HBox.hgrow="ALWAYS">
+                     <children>
+                        <Label fx:id="title" styleClass="text1" text="Label" />
+                     </children>
+                  </HBox>
+               </children>
+            </HBox>
+         </children>
+      </VBox>
+   </top>
+   <center>
+      <StackPane prefHeight="150.0" prefWidth="200.0" BorderPane.alignment="CENTER" />
+   </center>
+   <bottom>
+      <HBox BorderPane.alignment="CENTER">
+         <children>
+            <Label fx:id="message" text="Label" />
+         </children>
+         <styleClass>
+            <String fx:value="messageBar" />
+            <String fx:value="back1" />
+         </styleClass>
+      </HBox>
+   </bottom>
+   <stylesheets>
+      <URL value="@layout.css" />
+      <URL value="@color.css" />
+   </stylesheets>
+</BorderPane>

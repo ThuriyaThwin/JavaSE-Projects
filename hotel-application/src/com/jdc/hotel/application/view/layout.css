@@ -24,3 +24,34 @@
 .loginTitleView Label{
 	-fx-font-size: 30px;
 }
+
+.AdminHomeView {
+	-fx-pref-width: 1180px;
+	-fx-pref-height: 780px;
+}
+
+.AdminTitle {
+	-fx-alignment: center-right;
+}
+
+.AdminTitle Label{
+	-fx-font-size: 30px;
+}
+
+.iconBar {
+	-fx-pref-height: 80px;
+	-fx-padding: 10px;
+	-fx-alignment: center-left;
+	-fx-spacing: 5;
+}
+
+.icon{
+	-fx-pref-width: 80px;
+	-fx-alignment: center;
+}
+
+.messageBar {
+	-fx-pref-height: 60px;
+	-fx-padding: 10px;
+	-fx-alignment: center-left;
+}
