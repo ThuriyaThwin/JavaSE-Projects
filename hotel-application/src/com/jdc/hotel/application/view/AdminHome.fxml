@@ -111,7 +111,7 @@
       </VBox>
    </top>
    <center>
-      <StackPane fx:id="content" prefHeight="150.0" prefWidth="200.0" BorderPane.alignment="CENTER" />
+      <StackPane fx:id="content" BorderPane.alignment="CENTER" />
    </center>
    <bottom>
       <HBox BorderPane.alignment="CENTER">
