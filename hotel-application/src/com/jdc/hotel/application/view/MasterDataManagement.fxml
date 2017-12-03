@@ -1,8 +1,75 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import java.lang.String?>
+<?import java.net.URL?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.VBox?>
 
-<VBox xmlns:fx="http://javafx.com/fxml/1">
-	<!-- TODO Add Nodes -->
+<VBox xmlns="http://javafx.com/javafx/9" xmlns:fx="http://javafx.com/fxml/1">
+   <stylesheets>
+      <URL value="@color.css" />
+      <URL value="@layout.css" />
+   </stylesheets>
+   <styleClass>
+      <String fx:value="contentView" />
+      <String fx:value="back1" />
+   </styleClass>
+   <children>
+      <HBox styleClass="searchForm">
+         <children>
+            <VBox styleClass="formGroup">
+               <children>
+                  <Label text="Table" />
+                  <ComboBox prefWidth="150.0" />
+               </children>
+            </VBox>
+            <VBox layoutX="20.0" layoutY="20.0" styleClass="formGroup">
+               <children>
+                  <Label text="Status" />
+                  <ComboBox prefWidth="150.0" />
+               </children>
+            </VBox>
+            <VBox layoutX="20.0" layoutY="20.0" styleClass="formGroup">
+               <children>
+                  <Label />
+                  <Button mnemonicParsing="false" text="Search">
+                     <styleClass>
+                        <String fx:value="back3" />
+                        <String fx:value="text1" />
+                     </styleClass>
+                  </Button>
+               </children>
+            </VBox>
+            <VBox layoutX="180.0" layoutY="20.0" styleClass="formGroup">
+               <children>
+                  <Label />
+                  <Button mnemonicParsing="false" text="Add New">
+                     <styleClass>
+                        <String fx:value="back3" />
+                        <String fx:value="text1" />
+                     </styleClass>
+                  </Button>
+               </children>
+            </VBox>
+         </children>
+      </HBox>
+      <TableView prefHeight="200.0" prefWidth="200.0" VBox.vgrow="ALWAYS">
+        <columns>
+          <TableColumn prefWidth="59.0" text="ID" />
+          <TableColumn prefWidth="183.99996948242188" text="Table" />
+            <TableColumn prefWidth="142.0" text="Column" />
+            <TableColumn prefWidth="126.0" text="Value" />
+            <TableColumn prefWidth="101.0" text="Status" />
+            <TableColumn prefWidth="147.0" text="Create User" />
+            <TableColumn prefWidth="148.0" text="Creation" />
+            <TableColumn prefWidth="120.0" text="Update User" />
+            <TableColumn prefWidth="147.0" text="Update Time" />
+        </columns>
+      </TableView>
+   </children>
 </VBox>
-
