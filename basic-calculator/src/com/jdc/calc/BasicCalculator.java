@@ -22,6 +22,8 @@ public class BasicCalculator implements Initializable{
 
     @FXML
     private GridPane grid;
+    
+    private boolean finish;
 
 	@Override
 	public void initialize(URL location, ResourceBundle resources) {
@@ -46,34 +48,41 @@ public class BasicCalculator implements Initializable{
 		switch(str) {
 		case "C":
 			clear();
+			finish = false;
 			break;
 		case "+/-":
 			plusOrMinus();
+			finish = false;
 			break;
 		case "%":
 			doPercent();
+			finish = true;
 			break;
 		case ".":
 			doDecimal();
+			finish = false;
 			break;
 		case "=":
 			calculate();
+			finish = true;
 			break;
 		case "+":
 		case "-":
 		case "⨉":
 		case "÷":
 			pressOperator(str);
+			finish = false;
 			break;
 		default:
 			pressNumber(str);
+			finish = false;
 			break;
 		}
 	}
 
 	private void pressNumber(String str) {
 		String string = result.getText();
-		if(string.equals("0")) {
+		if(string.equals("0") || finish) {
 			result.setText(str);
 		} else {
 			result.setText(string.concat(str));

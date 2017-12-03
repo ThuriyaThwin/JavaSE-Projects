@@ -1,5 +1,6 @@
 package com.jdc.contact.model;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.function.Predicate;
 import java.util.stream.Collectors;
@@ -37,7 +38,7 @@ public abstract class ContactRepo {
 	}
 
 	public List<Contact> getAll() {
-		return list;
+		return new ArrayList<>(list);
 	}
 
 	public List<Contact> search(Group group, String name, String phone) {

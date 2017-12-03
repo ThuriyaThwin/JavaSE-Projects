@@ -55,13 +55,14 @@
       <TableView prefHeight="200.0" prefWidth="200.0" VBox.vgrow="ALWAYS">
         <columns>
           <TableColumn prefWidth="59.0" text="ID" />
-          <TableColumn prefWidth="271.9999694824219" text="Room Type" />
-            <TableColumn prefWidth="132.0" text="Bed Count" />
-            <TableColumn prefWidth="113.0" text="Status" />
+          <TableColumn prefWidth="181.99996948242188" text="Room Type" />
+            <TableColumn prefWidth="109.0" text="Price" />
+            <TableColumn prefWidth="126.0" text="Bed Count" />
+            <TableColumn prefWidth="122.0" text="Status" />
             <TableColumn prefWidth="140.0" text="Create User" />
-            <TableColumn prefWidth="161.0" text="Creation" />
-            <TableColumn prefWidth="130.0" text="Update User" />
-            <TableColumn prefWidth="168.0" text="Update Time" />
+            <TableColumn prefWidth="140.0" text="Creation" />
+            <TableColumn prefWidth="140.0" text="Update User" />
+            <TableColumn prefWidth="155.0" text="Update Time" />
         </columns>
       </TableView>
    </children>

@@ -2,7 +2,7 @@ package com.jdc.contact.model;
 
 import java.io.Serializable;
 
-public class Contact implements Serializable{
+public class Contact implements Serializable, Comparable<Contact>{
 
 	private static final long serialVersionUID = 1L;
 
@@ -88,5 +88,10 @@ public class Contact implements Serializable{
 
 	public enum Group {
 		School, Work, Friend, Others
+	}
+
+	@Override
+	public int compareTo(Contact o) {
+		return o.id - id;
 	}
 }
