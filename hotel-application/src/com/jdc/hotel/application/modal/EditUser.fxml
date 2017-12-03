@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.String?>
+<?import java.net.URL?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+
+<VBox styleClass="loginForm" xmlns="http://javafx.com/javafx/9" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.jdc.hotel.application.modal.EditUser">
+   <children>
+      <HBox>
+         <children>
+            <Label fx:id="title" styleClass="text1" text="User" />
+         </children>
+         <styleClass>
+            <String fx:value="loginTitleView" />
+            <String fx:value="back4" />
+         </styleClass>
+      </HBox>
+      <VBox styleClass="form" VBox.vgrow="ALWAYS">
+         <children>
+            <Label />
+            <HBox styleClass="formGroup">
+               <children>
+                  <VBox styleClass="formGroup" HBox.hgrow="ALWAYS">
+                     <children>
+                        <Label text="Name" />
+                        <TextField promptText="Enter Name" />
+                     </children>
+                  </VBox>
+                  <VBox styleClass="formGroup" HBox.hgrow="ALWAYS">
+                     <children>
+                        <Label text="Login ID" />
+                        <TextField promptText="Enter Login ID" />
+                     </children>
+                  </VBox>
+               </children>
+            </HBox>
+            <VBox layoutX="70.0" layoutY="203.0" styleClass="formGroup">
+               <children>
+                  <Label text="Phone" />
+                  <TextField promptText="Enter Phone Number" />
+               </children>
+            </VBox>
+            <VBox layoutX="70.0" layoutY="272.0" styleClass="formGroup">
+               <children>
+                  <Label text="Email" />
+                  <TextField promptText="Enter Email Address" />
+               </children>
+            </VBox>
+            <HBox styleClass="formGroup">
+               <children>
+                  <Button mnemonicParsing="false" onAction="#close" text="Close">
+                     <styleClass>
+                        <String fx:value="back3" />
+                        <String fx:value="text1" />
+                     </styleClass>
+                  </Button>
+                  <Button layoutX="10.0" layoutY="10.0" mnemonicParsing="false" onAction="#save" text="Save">
+                     <styleClass>
+                        <String fx:value="back3" />
+                        <String fx:value="text1" />
+                     </styleClass>
+                  </Button>
+               </children>
+            </HBox>
+         </children>
+      </VBox>
+   </children>
+   <stylesheets>
+      <URL value="@../view/color.css" />
+      <URL value="@../view/layout.css" />
+   </stylesheets>
+</VBox>

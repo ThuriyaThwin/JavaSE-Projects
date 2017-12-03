@@ -11,8 +11,7 @@
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.VBox?>
 
-
-<VBox xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/9">
+<VBox xmlns="http://javafx.com/javafx/9" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.jdc.hotel.application.view.Rooms">
    <stylesheets>
       <URL value="@color.css" />
       <URL value="@layout.css" />
@@ -45,7 +44,18 @@
             <VBox layoutX="357.0" layoutY="20.0" styleClass="formGroup">
                <children>
                   <Label />
-                  <Button mnemonicParsing="false" text="Search">
+                  <Button mnemonicParsing="false" onAction="#search" text="Search">
+                     <styleClass>
+                        <String fx:value="back3" />
+                        <String fx:value="text1" />
+                     </styleClass>
+                  </Button>
+               </children>
+            </VBox>
+            <VBox layoutX="534.0" layoutY="20.0" styleClass="formGroup">
+               <children>
+                  <Label />
+                  <Button mnemonicParsing="false" onAction="#addNew" text="Add New">
                      <styleClass>
                         <String fx:value="back3" />
                         <String fx:value="text1" />

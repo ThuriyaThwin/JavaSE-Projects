@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.String?>
+<?import java.net.URL?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+
+<VBox styleClass="loginForm" xmlns="http://javafx.com/javafx/9" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.jdc.hotel.application.modal.EditRoomTypes">
+   <children>
+      <HBox>
+         <children>
+            <Label fx:id="title" styleClass="text1" text="Room Type" />
+         </children>
+         <styleClass>
+            <String fx:value="loginTitleView" />
+            <String fx:value="back4" />
+         </styleClass>
+      </HBox>
+      <VBox styleClass="form" VBox.vgrow="ALWAYS">
+         <children>
+            <Label />
+            <VBox styleClass="formGroup">
+               <children>
+                  <Label text="Room Type Name" />
+                  <TextField />
+               </children>
+            </VBox>
+            <HBox styleClass="formGroup">
+               <children>
+                  <VBox styleClass="formGroup">
+                     <children>
+                        <Label text="Bed Count" />
+                        <TextField />
+                     </children>
+                  </VBox>
+                  <VBox layoutX="10.0" layoutY="10.0" styleClass="formGroup" HBox.hgrow="ALWAYS">
+                     <children>
+                        <Label text="Room Charges" />
+                        <TextField />
+                     </children>
+                  </VBox>
+               </children>
+            </HBox>
+            <HBox styleClass="formGroup">
+               <children>
+                  <Button mnemonicParsing="false" onAction="#close" text="Close">
+                     <styleClass>
+                        <String fx:value="back3" />
+                        <String fx:value="text1" />
+                     </styleClass>
+                  </Button>
+                  <Button layoutX="10.0" layoutY="10.0" mnemonicParsing="false" onAction="#save" text="Save">
+                     <styleClass>
+                        <String fx:value="back3" />
+                        <String fx:value="text1" />
+                     </styleClass>
+                  </Button>
+               </children>
+            </HBox>
+         </children>
+      </VBox>
+   </children>
+   <stylesheets>
+      <URL value="@../view/color.css" />
+      <URL value="@../view/layout.css" />
+   </stylesheets>
+</VBox>

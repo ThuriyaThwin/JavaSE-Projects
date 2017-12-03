@@ -1,5 +1,13 @@
 package com.jdc.hotel.application.view;
 
-public class LaundryItems {
+import com.jdc.hotel.application.modal.EditLaundryItem;
 
+public class LaundryItems {
+	public void search() {
+		
+	}
+	
+	public void addNew() {
+		EditLaundryItem.showView();
+	}
 }

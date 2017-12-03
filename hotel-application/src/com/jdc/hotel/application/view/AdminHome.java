@@ -4,6 +4,9 @@ import java.net.URL;
 import java.util.Properties;
 import java.util.ResourceBundle;
 
+import com.jdc.hotel.application.modal.ChangePassword;
+import com.jdc.hotel.application.modal.EditUser;
+
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
@@ -73,7 +76,7 @@ public class AdminHome implements Initializable{
 					String id = node.getId();
 					
 					if(id.equals("UserEdit")) {
-						
+						EditUser.showView();
 					} else {
 						loadView(id);
 					}

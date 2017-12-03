@@ -17,7 +17,7 @@ public class MrBot {
 		
 		if(null == lastQuestion) {
 			// asking
-			String result = dictionary.get(question);
+			String result = dictionary.get(question.trim().toLowerCase());
 			if(null == result) {
 				// no answer
 				lastQuestion = question;
@@ -32,7 +32,7 @@ public class MrBot {
 				return "I said teach me!!!! m(_0_)m";
 			}
 			
-			dictionary.put(lastQuestion, question);
+			dictionary.put(lastQuestion.trim().toLowerCase(), question);
 			lastQuestion = null;
 			return "Thank you!";
 		}
