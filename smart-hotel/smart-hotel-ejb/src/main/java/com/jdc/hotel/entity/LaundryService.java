@@ -1,12 +1,20 @@
 package com.jdc.hotel.entity;
 
-import java.io.Serializable;
+import javax.persistence.Entity;
 
-public class LaundryService extends HotelService implements Serializable {
+@Entity
+public class LaundryService extends HotelService {
 
-	public LaundryService() {
-	}
+	private static final long serialVersionUID = 1L;
 
 	private LaundryItem item;
+
+	public LaundryItem getItem() {
+		return item;
+	}
+
+	public void setItem(LaundryItem item) {
+		this.item = item;
+	}
 
 }

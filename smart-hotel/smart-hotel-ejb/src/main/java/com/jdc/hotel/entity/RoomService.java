@@ -1,12 +1,20 @@
 package com.jdc.hotel.entity;
 
-import java.io.Serializable;
+import javax.persistence.Entity;
 
-public class RoomService extends HotelService implements Serializable {
+@Entity
+public class RoomService extends HotelService {
 
-	public RoomService() {
-	}
+	private static final long serialVersionUID = 1L;
 
 	private RoomServiceItem item;
+
+	public RoomServiceItem getItem() {
+		return item;
+	}
+
+	public void setItem(RoomServiceItem item) {
+		this.item = item;
+	}
 
 }

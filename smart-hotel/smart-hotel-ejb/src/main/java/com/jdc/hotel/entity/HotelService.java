@@ -5,9 +5,12 @@ import java.time.LocalDateTime;
 
 import javax.persistence.Entity;
 import javax.persistence.Id;
+import javax.persistence.ManyToOne;
+import javax.persistence.GeneratedValue;
+import static javax.persistence.GenerationType.IDENTITY;
 
 @Entity
-public class HotelService implements Serializable {
+public abstract class HotelService implements Serializable {
 
 	private static final long serialVersionUID = 1L;
 
@@ -15,6 +18,7 @@ public class HotelService implements Serializable {
 	}
 
 	@Id
+	@GeneratedValue(strategy = IDENTITY)
 	private long id;
 
 	private LocalDateTime serviceTime;
@@ -23,7 +27,18 @@ public class HotelService implements Serializable {
 
 	private int count;
 
-	public RoomReservation reservation;
+	@ManyToOne
+	private RoomReservation reservation;
+
+	private Security security;
+
+	public Security getSecurity() {
+		return security;
+	}
+
+	public void setSecurity(Security security) {
+		this.security = security;
+	}
 
 	public long getId() {
 		return id;
