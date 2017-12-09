@@ -4,7 +4,6 @@ import java.net.URL;
 import java.util.ResourceBundle;
 
 import javafx.beans.value.ChangeListener;
-import javafx.beans.value.ObservableValue;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Label;
@@ -49,21 +48,14 @@ public class BmiCalculator implements Initializable{
 
 	@Override
 	public void initialize(URL location, ResourceBundle resources) {
-		lbs.textProperty().addListener(new ChangeListener<String>() {
-
-			@Override
-			public void changed(ObservableValue<? extends String> observable, String oldValue, String newValue) {
+		lbs.textProperty().addListener((a,b,c) -> {
 				// clear result
 				clearResult();
 
 				setKilogram();
-			}
-		});
+			});
 		
-		ChangeListener<String> meterConverter = new ChangeListener<String>() {
-
-			@Override
-			public void changed(ObservableValue<? extends String> observable, String oldValue, String newValue) {
+		ChangeListener<String> meterConverter = (a,b,c) -> {
 				
 				try {
 					
@@ -91,8 +83,7 @@ public class BmiCalculator implements Initializable{
 				}
 
 				
-			}
-		};
+			};
 		
 		feet.textProperty().addListener(meterConverter);
 		inches.textProperty().addListener(meterConverter);

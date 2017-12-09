@@ -3,8 +3,6 @@ package com.jdc.calc;
 import java.net.URL;
 import java.util.ResourceBundle;
 
-import javafx.event.ActionEvent;
-import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.Node;
@@ -31,13 +29,7 @@ public class BasicCalculator implements Initializable{
 		for(Node n : grid.getChildren()) {
 			if(n instanceof Button) {
 				Button b = (Button) n;
-				b.setOnAction(new EventHandler<ActionEvent>() {
-					
-					@Override
-					public void handle(ActionEvent event) {
-						pressButton(b.getText());
-					}
-				});
+				b.setOnAction(event -> pressButton(b.getText()));
 			}
 		}
 		
