@@ -1,0 +1,15 @@
+.MainView {
+	-fx-pref-width: 680px;
+	-fx-pref-height: 420px;
+}
+
+.IconBar {
+	-fx-padding: 10;
+	-fx-spacing: 5;
+}
+
+.Icon {
+	-fx-alignment: center;
+	-fx-padding: 10;
+	-fx-pref-width: 60px;
+}
