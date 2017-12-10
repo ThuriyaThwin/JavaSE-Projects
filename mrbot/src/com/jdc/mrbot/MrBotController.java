@@ -15,7 +15,7 @@ public class MrBotController {
     private MrBot bot;
     
     public MrBotController() {
-    		bot = new MrBot();
+    		bot = MrBot.getInstance();
 	}
     
     public void ask() {

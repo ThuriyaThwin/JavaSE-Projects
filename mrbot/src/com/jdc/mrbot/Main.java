@@ -14,6 +14,7 @@ public class Main extends Application {
 			VBox root = (VBox)FXMLLoader.load(getClass().getResource("MrBotView.fxml"));
 			Scene scene = new Scene(root);
 			primaryStage.setScene(scene);
+			primaryStage.setOnHiding(event -> MrBot.close());
 			primaryStage.show();
 		} catch(Exception e) {
 			e.printStackTrace();
