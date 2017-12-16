@@ -1,5 +1,9 @@
 package com.jdc.hotel.application.view;
 
+import com.jdc.hotel.client.MasterDataClient;
+
+import javafx.concurrent.Service;
+import javafx.concurrent.Task;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
@@ -26,22 +30,46 @@ public class Login {
 	}
 
 	public void managerLogin() {
-		try {
-			// login operation
-			
-			// show manager view
-			Stage stage = new Stage(StageStyle.UNDECORATED);
-			Parent root = FXMLLoader.load(getClass().getResource("AdminHome.fxml"));
-			stage.setScene(new Scene(root));
-			stage.show();
-			
-			close();
-		} catch (Exception e) {
-			e.printStackTrace();
-		}
+
+		CommonDataLoader loader = new CommonDataLoader();
+
+		loader.setOnSucceeded(event -> {
+			try {
+				// login operation
+				// show manager view
+				Stage stage = new Stage(StageStyle.UNDECORATED);
+				Parent root = FXMLLoader.load(getClass().getResource("AdminHome.fxml"));
+				stage.setScene(new Scene(root));
+								
+				stage.show();
+
+				close();
+			} catch (Exception e) {
+				e.printStackTrace();
+			}
+		});
+		
+		loader.start();
+
 	}
 
 	public void receptionLogin() {
+
+	}
+
+	class CommonDataLoader extends Service<Void> {
+
+		@Override
+		protected Task<Void> createTask() {
+			return new Task<Void>() {
+
+				@Override
+				protected Void call() throws Exception {
+					MasterDataClient.getClient().init();
+					return null;
+				}
+			};
+		}
 
 	}
 
