@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.shape.Rectangle?>
+<?import javafx.scene.text.Font?>
+
+
+<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/9" fx:controller="com.jdc.trans.TransitionDemo">
+   <children>
+      <Label layoutX="175.0" layoutY="21.0" text="Transition Tutorial">
+         <font>
+            <Font size="29.0" />
+         </font>
+      </Label>
+      <Rectangle fx:id="node" arcHeight="5.0" arcWidth="5.0" fill="DODGERBLUE" height="100.0" layoutX="175.0" layoutY="150.0" stroke="BLACK" strokeType="INSIDE" width="100.0" />
+      <HBox layoutX="70.0" layoutY="313.0" spacing="10.0">
+         <children>
+            <Button mnemonicParsing="false" onAction="#changeMode" text="SEQ" />
+            <Button mnemonicParsing="false" onAction="#changeMode" text="Parallel" />
+            <Button layoutX="65.0" layoutY="10.0" mnemonicParsing="false" onAction="#addTransition" text="Rotate" />
+            <Button layoutX="138.0" layoutY="10.0" mnemonicParsing="false" onAction="#addTransition" text="Translate" />
+            <Button layoutX="207.0" layoutY="10.0" mnemonicParsing="false" onAction="#addTransition" text="Fade" />
+            <Button layoutX="293.0" layoutY="10.0" mnemonicParsing="false" onAction="#addTransition" text="Fill" />
+            <Button layoutX="352.0" layoutY="10.0" mnemonicParsing="false" onAction="#handle" prefHeight="27.0" prefWidth="51.0" text="Play" />
+         </children>
+      </HBox>
+      <HBox alignment="CENTER" layoutX="100.0" layoutY="360.0" prefHeight="17.0" prefWidth="378.0">
+         <children>
+            <Label fx:id="mode" text="SEQ" />
+         </children>
+      </HBox>
+      <VBox fx:id="transitionNames" layoutX="423.0" layoutY="81.0" prefHeight="200.0" prefWidth="143.0" spacing="10.0" />
+   </children>
+</AnchorPane>

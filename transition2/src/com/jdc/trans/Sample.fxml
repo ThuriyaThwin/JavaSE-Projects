@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Slider?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.shape.Circle?>
+<?import javafx.scene.shape.Line?>
+
+<AnchorPane fx:id="pane" prefHeight="600.0" prefWidth="400.0" xmlns="http://javafx.com/javafx/9" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.jdc.trans.SampleController">
+   <children>
+      <Circle fx:id="node" fill="DODGERBLUE" layoutX="200.0" layoutY="500.0" radius="50.0" stroke="BLACK" strokeType="INSIDE" />
+      <Line endX="150.0" layoutX="200.0" layoutY="550.0" startX="-150.0" />
+      <Label layoutX="104.0" layoutY="563.0" text="Catch" />
+      <Label fx:id="catchCount" layoutX="158.0" layoutY="563.0" text="0" />
+      <Line endY="-30.0" layoutX="200.0" layoutY="590.0" startY="-10.0" />
+      <Label layoutX="226.0" layoutY="563.0" text="Loose" />
+      <Label fx:id="looseCount" layoutX="282.0" layoutY="562.0" text="0" />
+      <Slider fx:id="slider" layoutX="34.0" layoutY="275.0" min="30.0" orientation="VERTICAL" prefHeight="225.0" prefWidth="16.0" showTickLabels="true" showTickMarks="true" />
+      <Slider fx:id="speedSlider" blockIncrement="1.0" layoutX="351.0" layoutY="275.0" majorTickUnit="0.5" max="3.0" minorTickCount="4" orientation="VERTICAL" prefHeight="225.0" prefWidth="16.0" showTickLabels="true" showTickMarks="true" />
+   </children>
+</AnchorPane>
