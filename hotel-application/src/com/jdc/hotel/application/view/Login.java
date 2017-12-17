@@ -1,6 +1,7 @@
 package com.jdc.hotel.application.view;
 
 import com.jdc.hotel.client.MasterDataClient;
+import com.jdc.hotel.client.RoomTypeClient;
 
 import javafx.concurrent.Service;
 import javafx.concurrent.Task;
@@ -66,6 +67,7 @@ public class Login {
 				@Override
 				protected Void call() throws Exception {
 					MasterDataClient.getClient().init();
+					RoomTypeClient.getClient().init();
 					return null;
 				}
 			};

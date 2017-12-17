@@ -2,7 +2,7 @@ package com.jdc.hotel.model;
 
 import java.io.Serializable;
 
-public class RoomType implements Serializable {
+public class RoomType extends AbstractSecurityModel implements Serializable {
 
 	private static final long serialVersionUID = 1L;
 
@@ -16,8 +16,6 @@ public class RoomType implements Serializable {
 	private int bedCount;
 
 	private double price;
-
-	private Security security;
 
 	public long getId() {
 		return id;
@@ -49,14 +47,6 @@ public class RoomType implements Serializable {
 
 	public void setPrice(double price) {
 		this.price = price;
-	}
-
-	public Security getSecurity() {
-		return security;
-	}
-
-	public void setSecurity(Security security) {
-		this.security = security;
 	}
 
 }

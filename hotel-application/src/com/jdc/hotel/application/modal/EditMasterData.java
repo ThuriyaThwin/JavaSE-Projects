@@ -69,6 +69,13 @@ public class EditMasterData implements Initializable {
 			controller.saveHandler = saveHandler;
 			controller.oldData = data;
 			
+			if(null != data) {
+				Table tbl = Table.valueOf(data.getTblName());
+				controller.table.setValue(tbl);
+				controller.columns.setValue(data.getColName());
+				controller.value.setText(data.getValue());
+			}
+			
 			controller.title.setText(data == null ? "Create New Data" : "Update Data");
 			
 			stage.setScene(new Scene(root));
