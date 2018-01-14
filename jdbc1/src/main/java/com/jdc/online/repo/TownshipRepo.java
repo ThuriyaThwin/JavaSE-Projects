@@ -1,4 +1,4 @@
-package com.jdc.online.model;
+package com.jdc.online.repo;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -7,13 +7,13 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 
-import com.jdc.jdbc.helper.AbstractModel;
+import com.jdc.jdbc.helper.AbstractRepo;
 import com.jdc.jdbc.helper.ConnectionManager;
 import com.jdc.online.entity.Township;
 
-public class TownshipModel extends AbstractModel<Township>{
+public class TownshipRepo extends AbstractRepo<Township>{
 
-	public TownshipModel() {
+	public TownshipRepo() {
 		super(Township.class);
 	}
 

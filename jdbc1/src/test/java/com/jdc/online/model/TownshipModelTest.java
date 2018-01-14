@@ -10,14 +10,15 @@ import org.junit.BeforeClass;
 import org.junit.Test;
 
 import com.jdc.online.entity.Township;
+import com.jdc.online.repo.TownshipRepo;
 
 public class TownshipModelTest {
 
-	private static TownshipModel model;
+	private static TownshipRepo model;
 
 	@BeforeClass
 	public static void setUpBeforeClass() throws Exception {
-		model = new TownshipModel();
+		model = new TownshipRepo();
 	}
 
 	@Test

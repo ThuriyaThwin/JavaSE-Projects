@@ -12,15 +12,16 @@ import org.junit.Test;
 
 import com.jdc.jdbc.helper.ConnectionManager;
 import com.jdc.online.entity.Category;
+import com.jdc.online.repo.CategoryRepo;
 
 public class CategoryModelTest {
 
-	private static CategoryModel model;
+	private static CategoryRepo model;
 
 	@BeforeClass
 	public static void setUpBeforeClass() throws Exception {
 		ConnectionManager.truncate("category");
-		model = new CategoryModel();
+		model = new CategoryRepo();
 	}
 
 	@Test

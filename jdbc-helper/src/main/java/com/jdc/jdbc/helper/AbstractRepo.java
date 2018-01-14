@@ -8,11 +8,11 @@ import java.sql.Statement;
 import java.util.ArrayList;
 import java.util.List;
 
-public abstract class AbstractModel<T extends BaseEntity> {
+public abstract class AbstractRepo<T extends BaseEntity> {
 
 	protected TableInfoHelper<T> helper;
 	
-	public AbstractModel(Class<T> type) {
+	public AbstractRepo(Class<T> type) {
 		helper = new TableInfoHelper<>(type);
 	}
 	

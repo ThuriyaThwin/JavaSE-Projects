@@ -12,15 +12,16 @@ import org.junit.Test;
 
 import com.jdc.jdbc.helper.ConnectionManager;
 import com.jdc.online.entity.State;
+import com.jdc.online.repo.StateRepo;
 
 public class StateModelTest {
 
-	private static StateModel model;
+	private static StateRepo model;
 
 	@BeforeClass
 	public static void setUpBeforeClass() throws Exception {
 		ConnectionManager.truncate("state");
-		model = new StateModel();
+		model = new StateRepo();
 	}
 
 	@Test
