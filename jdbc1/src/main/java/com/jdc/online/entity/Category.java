@@ -1,8 +1,8 @@
 package com.jdc.online.entity;
 
-import com.jdc.online.model.api.BaseEntity;
-import com.jdc.online.model.api.Id;
-import com.jdc.online.model.api.Table;
+import com.jdc.jdbc.helper.BaseEntity;
+import com.jdc.jdbc.helper.Id;
+import com.jdc.jdbc.helper.Table;
 
 @Table("category")
 public class Category implements BaseEntity {

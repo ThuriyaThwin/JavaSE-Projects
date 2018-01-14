@@ -1,15 +1,15 @@
 package com.jdc.online.entity;
 
-import com.jdc.online.model.api.BaseEntity;
-import com.jdc.online.model.api.Column;
-import com.jdc.online.model.api.Id;
+import com.jdc.jdbc.helper.BaseEntity;
+import com.jdc.jdbc.helper.Column;
+import com.jdc.jdbc.helper.Id;
 
 public class Township implements BaseEntity{
 
 	@Id
 	private int id;
 	private String name;
-	@Column(name="state_id")
+	@Column("state_id")
 	private int stateId;
 
 	public int getId() {

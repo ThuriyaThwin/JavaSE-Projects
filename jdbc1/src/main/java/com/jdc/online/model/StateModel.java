@@ -7,9 +7,9 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 
+import com.jdc.jdbc.helper.AbstractModel;
+import com.jdc.jdbc.helper.ConnectionManager;
 import com.jdc.online.entity.State;
-import com.jdc.online.model.api.AbstractModel;
-import com.jdc.online.model.api.ConnectionManager;
 
 public class StateModel extends AbstractModel<State> {
 

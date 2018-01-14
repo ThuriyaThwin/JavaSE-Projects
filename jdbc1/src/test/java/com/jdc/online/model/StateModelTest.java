@@ -10,8 +10,8 @@ import java.util.List;
 import org.junit.BeforeClass;
 import org.junit.Test;
 
+import com.jdc.jdbc.helper.ConnectionManager;
 import com.jdc.online.entity.State;
-import com.jdc.online.model.api.ConnectionManager;
 
 public class StateModelTest {
 

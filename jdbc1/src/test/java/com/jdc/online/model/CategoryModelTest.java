@@ -1,14 +1,17 @@
 package com.jdc.online.model;
 
-import static org.junit.Assert.*;
+import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertNotEquals;
+import static org.junit.Assert.assertNotNull;
+import static org.junit.Assert.assertNull;
 
 import java.util.List;
 
 import org.junit.BeforeClass;
 import org.junit.Test;
 
+import com.jdc.jdbc.helper.ConnectionManager;
 import com.jdc.online.entity.Category;
-import com.jdc.online.model.api.ConnectionManager;
 
 public class CategoryModelTest {
 

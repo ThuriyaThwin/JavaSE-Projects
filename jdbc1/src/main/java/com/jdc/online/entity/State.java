@@ -1,7 +1,7 @@
 package com.jdc.online.entity;
 
-import com.jdc.online.model.api.BaseEntity;
-import com.jdc.online.model.api.Id;
+import com.jdc.jdbc.helper.BaseEntity;
+import com.jdc.jdbc.helper.Id;
 
 public class State implements BaseEntity{
 
