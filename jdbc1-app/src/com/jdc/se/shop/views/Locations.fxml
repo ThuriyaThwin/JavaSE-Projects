@@ -2,14 +2,16 @@
 
 <?import java.lang.String?>
 <?import java.net.URL?>
+<?import javafx.geometry.Insets?>
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.ListView?>
+<?import javafx.scene.control.ScrollPane?>
 <?import javafx.scene.layout.FlowPane?>
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.VBox?>
 
-<VBox styleClass="contentView" xmlns="http://javafx.com/javafx/9" xmlns:fx="http://javafx.com/fxml/1">
+<VBox styleClass="contentView" xmlns="http://javafx.com/javafx/9" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.jdc.se.shop.views.Locations">
    <stylesheets>
       <URL value="@color.css" />
       <URL value="@layout.css" />
@@ -32,8 +34,8 @@
                         <String fx:value="padd20" />
                      </styleClass>
                   </HBox>
-                  <ListView prefHeight="200.0" prefWidth="200.0" VBox.vgrow="ALWAYS" />
-                  <Button mnemonicParsing="false" text="Upload States">
+                  <ListView fx:id="states" prefHeight="200.0" prefWidth="200.0" VBox.vgrow="ALWAYS" />
+                  <Button mnemonicParsing="false" onAction="#uploadState" text="Upload States">
                      <styleClass>
                         <String fx:value="width300" />
                         <String fx:value="padd20" />
@@ -42,7 +44,7 @@
                         <String fx:value="fs20" />
                      </styleClass>
                   </Button>
-                  <Button layoutX="10.0" layoutY="296.0" mnemonicParsing="false" text="Upload Townships">
+                  <Button layoutX="10.0" layoutY="296.0" mnemonicParsing="false" onAction="#uploadTownship" text="Upload Townships">
                      <styleClass>
                         <String fx:value="width300" />
                         <String fx:value="padd20" />
@@ -68,7 +70,15 @@
                         <String fx:value="ImportantBack" />
                      </styleClass>
                   </HBox>
-                  <FlowPane prefHeight="200.0" prefWidth="200.0" VBox.vgrow="ALWAYS" />
+                  <ScrollPane hbarPolicy="NEVER" VBox.vgrow="ALWAYS">
+                     <content>
+                        <FlowPane fx:id="townships" hgap="10.0" styleClass="wid1120" vgap="10.0">
+                           <padding>
+                              <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                           </padding>
+                        </FlowPane>
+                     </content>
+                  </ScrollPane>
                </children>
             </VBox>
          </children>

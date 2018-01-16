@@ -51,3 +51,16 @@
 .flowContent {
 	-fx-pref-width: 1400px;
 }
+
+.wid1120 {
+	-fx-pref-width: 1120px;
+}
+
+.township {
+	-fx-pref-width: 240px;
+	-fx-padding: 20px;
+}
+
+.township Label {
+	-fx-font-size: 18px;
+}

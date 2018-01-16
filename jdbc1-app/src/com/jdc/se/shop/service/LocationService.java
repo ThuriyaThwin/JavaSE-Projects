@@ -28,6 +28,18 @@ public class LocationService {
 		stateRepo = new StateRepo();
 	}
 	
+	public void uploadStates(List<State> states) {
+		for (State state : states) {
+			stateRepo.insert(state);
+		}
+	}
+	
+	public void uploadTownships(List<Township> townships) {
+		for (Township township : townships) {
+			townshipRepo.insert(township);
+		}
+	}
+	
 	public State findStateById(int id) {
 		return stateRepo.findById(id);
 	}
