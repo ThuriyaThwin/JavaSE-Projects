@@ -47,3 +47,7 @@
 .right {
 	-fx-alignment: center-right;
 }
+
+.flowContent {
+	-fx-pref-width: 1400px;
+}
