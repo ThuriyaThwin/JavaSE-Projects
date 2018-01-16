@@ -20,5 +20,6 @@
  }
  
  .contentView {
- 
+ 	-fx-pref-width: 1480px;
+ 	-fx-pref-height: 860px;
  }

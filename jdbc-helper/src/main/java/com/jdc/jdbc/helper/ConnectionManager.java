@@ -4,15 +4,23 @@ import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
 import java.sql.Statement;
+import java.util.Properties;
 
 public class ConnectionManager {
 
-	private static final String URL = "jdbc:mysql://localhost:3306/online_shop_db";
-	private static final String PASS = "admin";
-	private static final String USR = "root";
+	private static Properties props;
+	
+	static {
+		try {
+			props = new Properties();
+			props.load(ConnectionManager.class.getResourceAsStream("/META-INF/db.properties"));
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+	}
 
 	public static Connection getConnection() throws SQLException {
-		return DriverManager.getConnection(URL, USR, PASS);
+		return DriverManager.getConnection(props.getProperty("db.url"), props.getProperty("db.user"), props.getProperty("db.pass"));
 	}
 
 	public static void truncate(String... strings) {

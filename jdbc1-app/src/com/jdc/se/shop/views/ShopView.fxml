@@ -8,16 +8,17 @@
 <?import javafx.scene.control.MenuItem?>
 <?import javafx.scene.control.SeparatorMenuItem?>
 <?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.StackPane?>
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.shape.SVGPath?>
 
-<VBox styleClass="mainView" xmlns="http://javafx.com/javafx/9" xmlns:fx="http://javafx.com/fxml/1">
+<VBox styleClass="mainView" xmlns="http://javafx.com/javafx/9" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.jdc.se.shop.views.ShopView">
    <stylesheets>
       <URL value="@color.css" />
       <URL value="@layout.css" />
    </stylesheets>
    <children>
-      <MenuBar>
+      <MenuBar fx:id="menubar">
         <menus>
           <Menu mnemonicParsing="false" text="File">
             <items>
@@ -43,7 +44,7 @@
           </Menu>
         </menus>
       </MenuBar>
-      <HBox>
+      <HBox fx:id="toolBar">
          <children>
             <VBox layoutX="20.0" layoutY="20.0" styleClass="WorningBack">
                <children>
@@ -95,7 +96,7 @@
             </VBox>
             <HBox alignment="CENTER_RIGHT" HBox.hgrow="ALWAYS">
                <children>
-                  <Label text="My Shop Home">
+                  <Label fx:id="title" text="My Shop Home">
                      <styleClass>
                         <String fx:value="title" />
                         <String fx:value="HilightText" />
@@ -109,5 +110,6 @@
             <String fx:value="HilightBack" />
          </styleClass>
       </HBox>
+      <StackPane fx:id="stack" VBox.vgrow="ALWAYS" />
    </children>
 </VBox>

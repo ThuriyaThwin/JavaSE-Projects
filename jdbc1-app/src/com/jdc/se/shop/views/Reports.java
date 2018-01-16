@@ -1,5 +1,5 @@
 package com.jdc.se.shop.views;
 
-public class TownshipManagement {
+public class Reports {
 
 }

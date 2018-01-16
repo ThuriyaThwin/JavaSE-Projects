@@ -7,6 +7,7 @@ import static org.junit.Assert.assertNull;
 
 import java.util.List;
 
+import org.junit.AfterClass;
 import org.junit.BeforeClass;
 import org.junit.Test;
 
@@ -22,6 +23,11 @@ public class CategoryModelTest {
 	public static void setUpBeforeClass() throws Exception {
 		ConnectionManager.truncate("category");
 		model = new CategoryRepo();
+	}
+
+	@AfterClass
+	public static void after() throws Exception {
+		ConnectionManager.truncate("category");
 	}
 
 	@Test

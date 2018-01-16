@@ -9,6 +9,7 @@ import java.util.List;
 import org.junit.BeforeClass;
 import org.junit.Test;
 
+import com.jdc.jdbc.helper.ConnectionManager;
 import com.jdc.online.entity.Township;
 import com.jdc.online.repo.TownshipRepo;
 
@@ -18,6 +19,7 @@ public class TownshipModelTest {
 
 	@BeforeClass
 	public static void setUpBeforeClass() throws Exception {
+		ConnectionManager.truncate("state", "township");
 		model = new TownshipRepo();
 	}
 
