@@ -1,12 +1,43 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import java.lang.String?>
 <?import java.net.URL?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.VBox?>
 
-
-<VBox xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/9">
+<VBox xmlns="http://javafx.com/javafx/9" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.jdc.se.shop.views.CustomerManagement">
    <stylesheets>
       <URL value="@color.css" />
       <URL value="@layout.css" />
    </stylesheets>
+   <styleClass>
+      <String fx:value="contentView" />
+      <String fx:value="padd20" />
+      <String fx:value="space10" />
+   </styleClass>
+   <children>
+      <HBox styleClass="space10">
+         <children>
+            <ComboBox prefHeight="27.0" prefWidth="198.0" promptText="State" />
+            <ComboBox layoutX="10.0" layoutY="10.0" prefHeight="27.0" prefWidth="198.0" promptText="Township" />
+            <TextField promptText="Name" />
+            <TextField layoutX="10.0" layoutY="10.0" promptText="Phone" />
+            <TextField layoutX="187.0" layoutY="10.0" promptText="Email" />
+         </children>
+      </HBox>
+      <TableView prefHeight="200.0" prefWidth="200.0" VBox.vgrow="ALWAYS">
+        <columns>
+          <TableColumn prefWidth="75.0" text="ID" />
+          <TableColumn prefWidth="198.0" text="Name" />
+            <TableColumn prefWidth="198.0" text="Phone" />
+            <TableColumn prefWidth="232.0" text="Email" />
+            <TableColumn prefWidth="330.0" text="Address" />
+            <TableColumn prefWidth="402.0" text="Remarks" />
+        </columns>
+      </TableView>
+   </children>
 </VBox>
