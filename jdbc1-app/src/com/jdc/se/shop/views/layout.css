@@ -56,11 +56,12 @@
 	-fx-pref-width: 1120px;
 }
 
-.township {
+.township, .category  {
 	-fx-pref-width: 240px;
 	-fx-padding: 20px;
 }
 
-.township Label {
+.township Label, .category Label, .category TextField {
 	-fx-font-size: 18px;
 }
+
