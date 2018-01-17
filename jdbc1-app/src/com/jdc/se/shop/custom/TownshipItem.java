@@ -15,6 +15,4 @@ public class TownshipItem extends HBox{
 		label.getStyleClass().add("WorningText");
 		getChildren().add(label);
 	}
-	
-	
 }
