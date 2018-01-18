@@ -56,12 +56,21 @@
 	-fx-pref-width: 1120px;
 }
 
-.township, .category  {
-	-fx-pref-width: 240px;
-	-fx-padding: 20px;
+.wid480 {
+	-fx-pref-width: 480px;
 }
 
-.township Label, .category Label, .category TextField {
+.wid120 {
+	-fx-pref-width: 120px;
+}
+
+.township, .category, .product  {
+	-fx-pref-width: 240px;
+	-fx-padding: 20px;
+	-fx-spacing: 10px;
+}
+
+.township Label, .category Label, .category TextField, .product Label, .product TextField  {
 	-fx-font-size: 18px;
 }
 

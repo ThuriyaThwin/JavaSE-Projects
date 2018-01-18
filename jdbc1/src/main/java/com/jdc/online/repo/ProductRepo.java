@@ -8,5 +8,5 @@ public class ProductRepo extends AbstractRepo<Product> {
 	public ProductRepo() {
 		super(Product.class);
 	}
-
+	
 }

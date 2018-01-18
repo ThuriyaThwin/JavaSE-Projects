@@ -88,11 +88,13 @@ public abstract class AbstractRepo<T extends BaseEntity> {
 	}
 
 	public List<T> search(String where, List<Object> params) {
-		String sql = String.format("select * from %s ", tableName());
+		String sql = String.format("select * from `%s` ", tableName());
 		
 		if(null != where && !where.isEmpty() && null != params && !params.isEmpty()) {
-			sql = sql.concat(where);
+			sql = sql.concat("where 1=1 and ").concat(where);
 		}
+		
+		System.out.println(sql);
 		
 		List<T> list = new ArrayList<>();
 		// get connection
@@ -108,7 +110,7 @@ public abstract class AbstractRepo<T extends BaseEntity> {
 			}
 			
 			// execute sql
-			ResultSet rs = stmt.executeQuery(sql);
+			ResultSet rs = stmt.executeQuery();
 
 			// get results from result set
 			while (rs.next()) {

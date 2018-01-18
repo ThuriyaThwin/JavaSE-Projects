@@ -41,6 +41,8 @@ public class TownshipRepo extends AbstractRepo<Township>{
 		try (Connection conn = ConnectionManager.getConnection(); PreparedStatement stmt = conn.prepareStatement(sql)) {
 			stmt.setInt(1, stateId);
 			ResultSet rs = stmt.executeQuery();
+			
+			System.out.println(sql);
 
 			while (rs.next()) {
 				list.add(helper.getData(rs));
