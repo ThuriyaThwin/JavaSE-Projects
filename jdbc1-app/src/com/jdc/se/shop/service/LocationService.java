@@ -1,5 +1,6 @@
 package com.jdc.se.shop.service;
 
+import java.util.Arrays;
 import java.util.List;
 
 import com.jdc.online.entity.State;
@@ -49,7 +50,7 @@ public class LocationService {
 	}
 	
 	public List<Township> findTownshipByState(State state) {
-		return townshipRepo.findByStateId(state.getId());
+		return townshipRepo.search("state_id = ?", Arrays.asList(state.getId()));
 	}
 
 }

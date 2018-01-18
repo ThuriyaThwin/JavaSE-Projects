@@ -57,19 +57,6 @@ public class StateModelTest {
 	}
 
 	@Test
-	public void test4() {
-
-		// find by name like
-		List<State> list1 = model.findByNameLike("D");
-		assertNotNull(list1);
-		assertEquals(1, list1.size());
-
-		List<State> list3 = model.findByNameLike("E");
-		assertNotNull(list3);
-		assertEquals(0, list3.size());
-	}
-
-	@Test
 	public void test5() {
 		// find by id
 		State s1 = model.findById(1);
