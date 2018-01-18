@@ -43,11 +43,11 @@ public class ProductItem extends VBox{
 		getStyleClass().add("WorningBack");
 		lblName.getStyleClass().add("WorningText");
 		lblPrice.getStyleClass().add("WorningText");
-		getChildren().addAll(lblName, lblPrice, edit);
+		getChildren().addAll(lblName, lblPrice, editBox);
 		
 		editBox.setOnMouseClicked(event -> {
 			getChildren().clear();
-			getChildren().addAll(name, price, save);
+			getChildren().addAll(name, price, saveBox);
 		});
 		
 		saveBox.setOnMouseClicked(event -> {
