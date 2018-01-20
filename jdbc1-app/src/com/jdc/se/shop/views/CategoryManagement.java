@@ -9,6 +9,8 @@ import java.util.function.Consumer;
 import java.util.stream.Collectors;
 
 import com.jdc.online.entity.Category;
+import com.jdc.se.shop.MessageHandler;
+import com.jdc.se.shop.ShopException;
 import com.jdc.se.shop.custom.CategoryItem;
 import com.jdc.se.shop.service.CategoryService;
 
@@ -46,14 +48,23 @@ public class CategoryManagement implements Initializable, Consumer<Category>{
 	}
 
 	public void addNew() {
-		
-		if(!name.getText().isEmpty()) {
+	
+		try {
+			
 			Category c = new Category();
 			c.setName(name.getText());
+			
+			if(c.getName() == null || c.getName().isEmpty()) {
+				throw new ShopException("Please enter Category Name.");
+			}
+			
 			service.save(c);
 			name.clear();
 			
 			loadCategory();
+			
+		} catch (ShopException e) {
+			MessageHandler.handle(e);
 		}
 		
 	}
@@ -65,6 +76,10 @@ public class CategoryManagement implements Initializable, Consumer<Category>{
 			
 			File file = fc.showOpenDialog(flowPane.getScene().getWindow());
 			
+			if(null == file) {
+				throw new ShopException("Please select a file to upload.");
+			}
+			
 			Files.lines(file.toPath())
 				.map(line -> {
 					Category c = new Category();
@@ -75,6 +90,8 @@ public class CategoryManagement implements Initializable, Consumer<Category>{
 				});
 			
 			loadCategory();
+		} catch (ShopException e) {
+			MessageHandler.handle(e);
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
