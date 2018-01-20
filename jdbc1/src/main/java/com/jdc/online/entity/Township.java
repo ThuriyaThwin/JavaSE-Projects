@@ -35,5 +35,10 @@ public class Township implements BaseEntity{
 	public void setStateId(int stateId) {
 		this.stateId = stateId;
 	}
+	
+	@Override
+	public String toString() {
+		return name;
+	}
 
 }

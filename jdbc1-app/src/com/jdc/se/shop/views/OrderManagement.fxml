@@ -9,7 +9,7 @@
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.VBox?>
 
-<VBox xmlns="http://javafx.com/javafx/9" xmlns:fx="http://javafx.com/fxml/1">
+<VBox xmlns="http://javafx.com/javafx/9" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.jdc.se.shop.views.OrderManagement">
 	<stylesheets>
 		<URL value="@color.css" />
 		<URL value="@layout.css" />
@@ -17,13 +17,13 @@
 	<children>
 		<HBox styleClass="space10">
 			<children>
-				<DatePicker promptText="Date From" />
-				<DatePicker layoutX="10.0" layoutY="10.0" promptText="Date To" />
-				<TextField prefHeight="27.0" prefWidth="249.0" promptText="Customer Name" />
-				<TextField promptText="Order ID" />
+				<DatePicker fx:id="dateFrom" promptText="Date From" />
+				<DatePicker fx:id="dateTo" layoutX="10.0" layoutY="10.0" promptText="Date To" />
+				<TextField fx:id="customerName" prefHeight="27.0" prefWidth="249.0" promptText="Customer Name" />
+				<TextField fx:id="orderId" promptText="Order ID" />
 			</children>
 		</HBox>
-		<TableView VBox.vgrow="ALWAYS">
+		<TableView fx:id="table" VBox.vgrow="ALWAYS">
 			<columns>
 				<TableColumn prefWidth="75.0" text="ID" />
 				<TableColumn prefWidth="209.0" text="Customer Name" />
@@ -32,8 +32,8 @@
 				<TableColumn prefWidth="171.0" text="Sub Total" />
 				<TableColumn prefWidth="118.0" text="Tax" />
 				<TableColumn prefWidth="162.0" text="Total" />
-				<TableColumn prefWidth="162.0" text="Phone" />
-				<TableColumn prefWidth="224.0" text="Email" />
+				<TableColumn prefWidth="162.0" text="Email" />
+				<TableColumn prefWidth="224.0" text="Address" />
 			</columns>
 		</TableView>
 	</children>
