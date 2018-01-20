@@ -28,9 +28,6 @@ public class CustomerManagement implements Initializable{
     private TextField name;
 
     @FXML
-    private TextField phone;
-
-    @FXML
     private TextField email;
 
     @FXML
@@ -46,7 +43,6 @@ public class CustomerManagement implements Initializable{
 		locationService = LocationService.getService();
 		
 		name.textProperty().addListener((a,b,c) -> loadData());
-		phone.textProperty().addListener((a,b,c) -> loadData());
 		email.textProperty().addListener((a,b,c) -> loadData());
 		townships.valueProperty().addListener((a,b,c) -> loadData());
 		
@@ -63,7 +59,7 @@ public class CustomerManagement implements Initializable{
 
 	private void loadData() {
 		table.getItems().clear();
-		List<CustomerVO> list = service.find(states.getValue(), townships.getValue(), name.getText(), phone.getText(), email.getText());
+		List<CustomerVO> list = service.find(townships.getValue(), name.getText(), email.getText());
 		table.getItems().addAll(list);
 	}
 

@@ -26,9 +26,6 @@ public class OrderManagement implements Initializable {
 	private TextField customerName;
 
 	@FXML
-	private TextField orderId;
-
-	@FXML
 	private TableView<OrderVO> table;
 	
 	private OrderService service;
@@ -40,7 +37,6 @@ public class OrderManagement implements Initializable {
 		dateFrom.valueProperty().addListener((a,b,c) -> loadData());
 		dateTo.valueProperty().addListener((a,b,c) -> loadData());
 		customerName.textProperty().addListener((a,b,c) -> loadData());
-		orderId.textProperty().addListener((a,b,c) -> loadData());
 		
 		dateFrom.setValue(LocalDate.now().minusDays(3));
 	}
@@ -48,7 +44,7 @@ public class OrderManagement implements Initializable {
 	private void loadData() {
 		table.getItems().clear();
 		
-		List<OrderVO> list = service.search(dateFrom.getValue(), dateTo.getValue(), customerName.getText(), orderId.getText());
+		List<OrderVO> list = service.search(dateFrom.getValue(), dateTo.getValue(), customerName.getText());
 		
 		table.getItems().addAll(list);
 	}

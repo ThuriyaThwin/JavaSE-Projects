@@ -50,7 +50,7 @@ public class LocationService {
 	}
 	
 	public List<Township> findTownshipByState(State state) {
-		return townshipRepo.search("state_id = ?", Arrays.asList(state.getId()));
+		return townshipRepo.search("and state_id = ?", Arrays.asList(state.getId()));
 	}
 
 }
