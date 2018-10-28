@@ -118,6 +118,7 @@ public class ProductManagement implements Initializable, Consumer<Product> {
 						Product p = new Product();
 						p.setName(array[0]);
 						p.setPrice(Integer.parseInt(array[1]));
+						p.setCategory_id(c.getId());
 						return p;
 					}).collect(Collectors.toList());
 			

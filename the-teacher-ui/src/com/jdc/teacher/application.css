@@ -1,0 +1,46 @@
+.mainFrame {
+	-fx-pref-width: 1180px;
+	-fx-pref-height: 780px;	
+	-fx-background-color: #e0f7fa;
+}
+
+.sideBar {
+	-fx-pref-width: 240px;
+	-fx-background-color: #00838f;
+}
+
+.title {
+	-fx-alignment: center-left;
+	-fx-padding: 20px;	
+}
+
+.title Label {
+	-fx-font-size: 24px;
+	-fx-font-weight: bold;
+	-fx-text-fill: #006064;
+}
+
+.cover Label {
+	-fx-text-fill: #84ffff;
+	-fx-font-size: 18px;	
+}
+
+.leftMenu {
+	-fx-padding: 20 10 10 10;
+	-fx-spacing: 5;
+}
+
+.menuItem {
+	-fx-alignment: center-left;
+	-fx-padding: 5;
+	-fx-spacing: 10;
+}
+
+.menuItem SVGPath {
+	-fx-fill: #84ffff;
+}
+
+.menuItem Label {
+	-fx-font-size: 18px;
+	-fx-text-fill: #84ffff;
+}

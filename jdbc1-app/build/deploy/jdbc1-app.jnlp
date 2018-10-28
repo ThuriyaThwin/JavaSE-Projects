@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<jnlp spec="1.0" xmlns:jfx="http://javafx.com" href="jdbc1-app.jnlp">
+  <information>
+    <title>jdbc1-app</title>
+    <vendor>Java Developer Class</vendor>
+    <description>Dream Shop</description>
+    <offline-allowed/>
+  </information>
+  <resources>
+    <j2se version="1.6+" href="http://java.sun.com/products/autodl/j2se"/>
+    <jar href="jdbc1-app.jar" size="42186" download="eager" />
+    <jar href="libs/jdbc-helper-1.0.jar" size="11567" download="eager" />
+    <jar href="libs/jdbc1-1.0.jar" size="10351" download="eager" />
+    <jar href="libs/mysql-connector-java-6.0.6.jar" size="2001778" download="eager" />
+  </resources>
+  <jfx:javafx-desc  width="0" height="0" main-class="com.jdc.se.shop.ShopApplication"  name="Dream Shop" />
+  <update check="background"/>
+</jnlp>

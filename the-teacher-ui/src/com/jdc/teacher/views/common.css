@@ -1,0 +1,58 @@
+.contentView {
+	-fx-pref-width: 988px;
+	-fx-pref-height: 711px;
+	-fx-padding: 20;
+	-fx-spacing: 20;
+}
+
+.searchBar {
+	-fx-spacing: 10;
+}
+
+.popup {
+}
+
+.title {
+	-fx-padding: 20;
+}
+
+.title Label {
+	-fx-font-size: 24px;
+	-fx-text-fill: #006064;
+}
+
+Button {
+	-fx-pref-width: 120px;
+}
+
+.year {
+	-fx-pref-width: 150px;
+}
+
+.student {
+	-fx-pref-width: 240px;
+}
+
+.rightColumn {
+	-fx-alignment: center-right;
+}
+
+.iconBox {
+	-fx-padding: 10;
+	-fx-alignment: top-center;
+}
+
+.fs18 {
+	-fx-font-size: 18px;
+}
+
+.dataBox {
+	-fx-alignment: center-left;
+	-fx-spacing: 10;
+	-fx-padding: 10;
+}
+
+.classRoomItem {
+	-fx-pref-width: 240px;
+	-fx-background-color: #b2ebf2;
+}

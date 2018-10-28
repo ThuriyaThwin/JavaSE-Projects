@@ -4,6 +4,8 @@ import java.util.function.Consumer;
 
 import com.jdc.online.entity.Category;
 import com.jdc.online.entity.Product;
+import com.jdc.se.shop.MessageHandler;
+import com.jdc.se.shop.ShopException;
 
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -45,11 +47,31 @@ public class ProductAdd {
 	}
 	
 	public void save() {
-		Product p = new Product();
-		p.setCategory_id(c.getId());
-		p.setName(name.getText());
-		p.setPrice(Integer.parseInt(price.getText()));
-		saveHandler.accept(p);
-		name.getScene().getWindow().hide();
+		
+		try {
+
+			if(name.getText().trim().isEmpty()) {
+				throw new ShopException("Please enter product name.");
+			}
+			
+			if(price.getText().trim().isEmpty()) {
+				throw new ShopException("Please enter Price.");
+			}
+			
+			try {
+				Product p = new Product();
+				p.setCategory_id(c.getId());
+				p.setName(name.getText());
+				p.setPrice(Integer.parseInt(price.getText().trim()));
+				saveHandler.accept(p);
+				name.getScene().getWindow().hide();
+				
+			} catch (NumberFormatException e) {
+				throw new ShopException("Please enter price with digit.");
+			}
+			
+		} catch (ShopException e) {
+			MessageHandler.handle(e);
+		}
 	}
 }

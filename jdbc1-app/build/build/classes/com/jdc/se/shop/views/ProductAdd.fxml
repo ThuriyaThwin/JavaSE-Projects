@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.String?>
+<?import java.net.URL?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.VBox?>
+
+
+<VBox xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/9" fx:controller="com.jdc.se.shop.views.ProductAdd">
+   <stylesheets>
+      <URL value="@color.css" />
+      <URL value="@layout.css" />
+   </stylesheets>
+   <styleClass>
+      <String fx:value="wid480" />
+      <String fx:value="padd20" />
+      <String fx:value="space10" />
+   </styleClass>
+   <children>
+      <Label styleClass="fs20" text="Add Porduct" />
+      <VBox>
+         <children>
+            <Label text="Product Name" />
+            <TextField fx:id="name" promptText="Enter Product Name" />
+         </children>
+      </VBox>
+      <VBox layoutX="30.0" layoutY="66.0">
+         <children>
+            <Label text="Price" />
+            <TextField fx:id="price" promptText="Enter Price in Digit" />
+         </children>
+      </VBox>
+      <Button mnemonicParsing="false" onAction="#save" text="SAVE">
+         <styleClass>
+            <String fx:value="wid120" />
+            <String fx:value="HilightBack" />
+            <String fx:value="HilightText" />
+         </styleClass>
+      </Button>
+   </children>
+</VBox>

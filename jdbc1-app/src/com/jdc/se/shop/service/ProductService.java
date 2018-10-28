@@ -2,10 +2,12 @@ package com.jdc.se.shop.service;
 
 import java.util.Arrays;
 import java.util.List;
+import java.util.stream.Collectors;
 
 import com.jdc.online.entity.Category;
 import com.jdc.online.entity.Product;
 import com.jdc.online.repo.ProductRepo;
+import com.jdc.se.shop.service.vo.ProductVO;
 
 public class ProductService {
 	
@@ -27,7 +29,7 @@ public class ProductService {
 	}
 
 	public List<Product> findByCategory(Category c) {
-		return repo.search("`category_id` = ?", Arrays.asList(c.getId()));
+		return repo.search("and `category_id` = ?", Arrays.asList(c.getId()));
 	}
 
 	public void save(Product t) {
@@ -42,6 +44,16 @@ public class ProductService {
 		for(Product p : products) {
 			save(p);
 		}
+	}
+
+	public List<ProductVO> findVoByCategory(Category c) {
+
+		return findByCategory(c).stream().map(p -> {
+			ProductVO vo = new ProductVO();
+			vo.setProduct(p);
+			vo.setCategory(c);
+			return vo;
+		}).collect(Collectors.toList());
 	}
 
 }

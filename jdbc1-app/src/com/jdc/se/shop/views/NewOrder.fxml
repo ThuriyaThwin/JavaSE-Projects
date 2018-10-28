@@ -1,12 +1,69 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import java.lang.String?>
 <?import java.net.URL?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.VBox?>
+<?import javafx.scene.control.cell.PropertyValueFactory?>
 
-
-<VBox xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/9">
-   <stylesheets>
-      <URL value="@color.css" />
-      <URL value="@layout.css" />
-   </stylesheets>
+<VBox xmlns="http://javafx.com/javafx/9" xmlns:fx="http://javafx.com/fxml/1"
+	fx:controller="com.jdc.se.shop.views.NewOrder">
+	<stylesheets>
+		<URL value="@color.css" />
+		<URL value="@layout.css" />
+	</stylesheets>
+	<children>
+		<HBox styleClass="space10" VBox.vgrow="ALWAYS">
+			<children>
+				<VBox styleClass="productView">
+					<children>
+						<HBox>
+							<children>
+								<Label styleClass="fs20" text="Select Product" />
+							</children>
+							<styleClass>
+								<String fx:value="padd20" />
+								<String fx:value="ImportantBack" />
+								<String fx:value="ImportantText" />
+							</styleClass>
+						</HBox>
+						<HBox styleClass="padd20">
+							<children>
+								<ComboBox fx:id="category" prefHeight="27.0" prefWidth="264.0"
+									promptText="Category" />
+							</children>
+						</HBox>
+						<TableView fx:id="productTable" prefHeight="200.0"
+							prefWidth="200.0" VBox.vgrow="ALWAYS">
+							<columns>
+								<TableColumn prefWidth="183.27915954589844" text="Category" >
+									<cellValueFactory>
+										<PropertyValueFactory property="categoryName" />
+									</cellValueFactory>
+								</TableColumn>
+								<TableColumn prefWidth="189.3195343017578" text="Name"  >
+									<cellValueFactory>
+										<PropertyValueFactory property="productName" />
+									</cellValueFactory>
+								</TableColumn>
+								<TableColumn prefWidth="218.37554931640625" text="Price"  >
+									<cellValueFactory>
+										<PropertyValueFactory property="price" />
+									</cellValueFactory>
+								</TableColumn>
+							</columns>
+						</TableView>
+					</children>
+				</VBox>
+			</children>
+		</HBox>
+	</children>
+	<styleClass>
+		<String fx:value="contentView" />
+		<String fx:value="padd20" />
+	</styleClass>
 </VBox>

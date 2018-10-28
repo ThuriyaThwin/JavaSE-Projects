@@ -1,0 +1,32 @@
+.BaseBack {
+	-fx-background-color: #A7FFEB;
+}
+
+.HilightBack {
+	-fx-background-color: #004D40;
+}
+
+.WorningBack {
+	-fx-background-color: #1DE9B6;
+}
+
+.ImportantBack {
+	-fx-background-color: #00BFA5;
+}
+
+.BaseText {
+	-fx-text-fill: #004D40;	
+}
+
+.HilightText {
+	-fx-text-fill: #A7FFEB;
+}
+
+.WorningText {
+	-fx-text-fill: #004D40;
+}
+
+.ImportantText {
+	-fx-text-fill: #004D40;
+}
+

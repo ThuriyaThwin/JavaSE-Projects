@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.String?>
+<?import java.net.URL?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.cell.PropertyValueFactory?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+
+<VBox xmlns="http://javafx.com/javafx/9" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.jdc.se.shop.views.CustomerManagement">
+	<stylesheets>
+		<URL value="@color.css" />
+		<URL value="@layout.css" />
+	</stylesheets>
+	<styleClass>
+		<String fx:value="contentView" />
+		<String fx:value="padd20" />
+		<String fx:value="space10" />
+	</styleClass>
+	<children>
+		<HBox styleClass="space10">
+			<children>
+				<ComboBox fx:id="states" prefHeight="27.0" prefWidth="198.0" promptText="State" />
+				<ComboBox fx:id="townships" layoutX="10.0" layoutY="10.0" prefHeight="27.0" prefWidth="198.0" promptText="Township" />
+				<TextField fx:id="name" promptText="Name" />
+				<TextField fx:id="email" layoutX="187.0" layoutY="10.0" promptText="Email" />
+			</children>
+		</HBox>
+		<TableView fx:id="table" prefHeight="200.0" prefWidth="200.0" VBox.vgrow="ALWAYS">
+			<columns>
+				<TableColumn prefWidth="75.0" text="ID">
+					<cellValueFactory>
+						<PropertyValueFactory property="id" />
+					</cellValueFactory>
+				</TableColumn>
+				<TableColumn prefWidth="198.0" text="Name">
+					<cellValueFactory>
+						<PropertyValueFactory property="name" />
+					</cellValueFactory>
+				</TableColumn>
+				<TableColumn prefWidth="198.0" text="Date of Birth">
+					<cellValueFactory>
+						<PropertyValueFactory property="dob" />
+					</cellValueFactory>
+				</TableColumn>
+				<TableColumn prefWidth="232.0" text="Email">
+					<cellValueFactory>
+						<PropertyValueFactory property="email" />
+					</cellValueFactory>
+				</TableColumn>
+				<TableColumn prefWidth="330.0" text="Address">
+					<cellValueFactory>
+						<PropertyValueFactory property="address" />
+					</cellValueFactory>
+				</TableColumn>
+				<TableColumn prefWidth="402.0" text="Remarks">
+					<cellValueFactory>
+						<PropertyValueFactory property="remark" />
+					</cellValueFactory>
+				</TableColumn>
+			</columns>
+		</TableView>
+	</children>
+</VBox>

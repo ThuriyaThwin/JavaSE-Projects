@@ -1,0 +1,76 @@
+ .mainView {
+ 	-fx-pref-width: 1480px;
+ 	-fx-pref-height: 980px;
+ }
+ 
+ .toolsBar {
+ 	-fx-padding: 10px;
+ 	-fx-spacing: 10px;
+ }
+ 
+ .title {
+ 	-fx-font-size: 26px;
+ }
+ 
+ .toolsBar VBox {
+ 	-fx-alignment: center;
+ 	-fx-padding: 10px;
+ 	-fx-pref-width: 100px;
+ 	
+ }
+ 
+ .contentView {
+ 	-fx-pref-width: 1480px;
+ 	-fx-pref-height: 860px;
+ }
+ 
+.padd20 {
+ 	-fx-padding: 10px;
+}
+
+.padd20 {
+ 	-fx-padding: 20px;
+}
+
+.space10 {
+	-fx-spacing: 10px;
+}
+
+.width300 {
+	-fx-pref-width: 300px;
+}
+
+.fs20 {
+	-fx-font-size: 20px;
+}
+
+.right {
+	-fx-alignment: center-right;
+}
+
+.flowContent {
+	-fx-pref-width: 1400px;
+}
+
+.wid1120 {
+	-fx-pref-width: 1120px;
+}
+
+.wid480 {
+	-fx-pref-width: 480px;
+}
+
+.wid120 {
+	-fx-pref-width: 120px;
+}
+
+.township, .category, .product  {
+	-fx-pref-width: 240px;
+	-fx-padding: 20px;
+	-fx-spacing: 10px;
+}
+
+.township Label, .category Label, .category TextField, .product Label, .product TextField  {
+	-fx-font-size: 18px;
+}
+
